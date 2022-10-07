@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="" />
+    <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,8 +98,16 @@
       <workItem from="1665138621376" duration="14000" />
       <workItem from="1665138641788" duration="517000" />
       <workItem from="1665139171008" duration="333000" />
-      <workItem from="1665139523520" duration="93000" />
+      <workItem from="1665139523520" duration="244000" />
     </task>
+    <task id="LOCAL-00001" summary="set up java module in IDEA">
+      <created>1665139668689</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665139668689</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +125,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="set up java module in IDEA" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up java module in IDEA" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
       <screen x="0" y="0" width="2048" height="1112" />
@@ -128,10 +142,30 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
+    <state width="1995" height="290" key="GridCell.Tab.0.bottom" timestamp="1665139623963">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1995" height="290" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665139623963" />
+    <state width="1995" height="290" key="GridCell.Tab.0.center" timestamp="1665139623963">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1995" height="290" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665139623963" />
+    <state width="1995" height="290" key="GridCell.Tab.0.left" timestamp="1665139623962">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1995" height="290" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665139623962" />
+    <state width="1995" height="290" key="GridCell.Tab.0.right" timestamp="1665139623963">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1995" height="290" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665139623963" />
     <state x="377" y="26" key="SettingsEditor" timestamp="1665139616625">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665139616625" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665139683805">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665139683805" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
