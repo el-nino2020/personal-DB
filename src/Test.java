@@ -53,4 +53,61 @@ public class Test {
             e.printStackTrace();
         }
     }
+
+    @org.junit.Test
+    public void useProcessBuilder() {
+        String filePath = "D:\\CODES(daima)\\personal-DB\\src\\createTables.sql";
+        String[] command = {"certutil",
+                "-hashfile",
+                filePath,
+                "md5"};
+        ProcessBuilder processBuilder = new ProcessBuilder(command);
+
+        //将新进程的输出导向当前java程序的输出，但是编码不同仍旧是问题
+//        processBuilder.inheritIO();
+
+        try {
+
+            Process process = processBuilder.start();
+            process.waitFor();
+            InputStream inputStream = process.getInputStream();
+
+            // windows命令行使用gbk编码，需要转换
+            BufferedReader reader = new BufferedReader(new InputStreamReader
+                    (inputStream, "gbk"));
+
+            System.out.println(reader.readLine());
+            System.out.println(reader.readLine());
+            System.out.println(reader.readLine());
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @org.junit.Test
+    public void changeCMDCharset() {
+        //TODO: 启动了两个cmd窗口（进程），只有第一个进程的编码被修改为UTF8
+        try {
+            Process process = Runtime.getRuntime().exec("C:\\WINDOWS\\system32\\chcp.com 65001");
+            process.waitFor();
+            //change cmd character set/encoding to UTF 8;
+
+            String filePath = "D:\\CODES(daima)\\personal-DB\\src\\createTables.sql";
+            String[] command = {"certutil",
+                    "-hashfile",
+                    filePath,
+                    "md5"};
+            ProcessBuilder processBuilder = new ProcessBuilder(command);
+
+            processBuilder.inheritIO();
+            process = processBuilder.start();
+            process.waitFor();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
