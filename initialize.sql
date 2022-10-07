@@ -1,5 +1,4 @@
--- pay attention to the privilege of the user running this .sql file
-
+-- pay attention to the privileges of the user running this .sql file
 
 SELECT * FROM mysql.user;
 
