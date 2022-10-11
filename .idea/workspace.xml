@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.12.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/personal-DB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/personal-DB.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
@@ -66,28 +67,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CODES(daima)\personal-DB\lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\CODES(daima)\personal-DB\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.Test.changeCMDCharset">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="personal-DB" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -156,7 +146,10 @@
       <workItem from="1665139171008" duration="333000" />
       <workItem from="1665139523520" duration="398000" />
       <workItem from="1665146590539" duration="2553000" />
-      <workItem from="1665183364010" duration="1519000" />
+      <workItem from="1665183364010" duration="1621000" />
+      <workItem from="1665232603780" duration="9000" />
+      <workItem from="1665281752124" duration="76000" />
+      <workItem from="1665376596793" duration="528000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -186,7 +179,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665148948203</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add view">
+      <created>1665184934866</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665184934867</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add some test case">
+      <created>1665184947885</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665184947885</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +216,9 @@
     <MESSAGE value="add gitignore" />
     <MESSAGE value="move .sql files to /src/" />
     <MESSAGE value="java与命令行交互，我似乎没必要写一个.bat文件作为整个项目的开始了" />
-    <option name="LAST_COMMIT_MESSAGE" value="java与命令行交互，我似乎没必要写一个.bat文件作为整个项目的开始了" />
+    <MESSAGE value="add view" />
+    <MESSAGE value="add some test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="add some test case" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -224,30 +233,30 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="287" key="GridCell.Tab.0.bottom" timestamp="1665184799149">
+    <state width="1995" height="287" key="GridCell.Tab.0.bottom" timestamp="1665184985594">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="287" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665184799149" />
-    <state width="1995" height="287" key="GridCell.Tab.0.center" timestamp="1665184799148">
+    <state width="1995" height="287" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665184985594" />
+    <state width="1995" height="287" key="GridCell.Tab.0.center" timestamp="1665184985594">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="287" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665184799148" />
-    <state width="1995" height="287" key="GridCell.Tab.0.left" timestamp="1665184799148">
+    <state width="1995" height="287" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665184985594" />
+    <state width="1995" height="287" key="GridCell.Tab.0.left" timestamp="1665184985594">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="287" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665184799148" />
-    <state width="1995" height="287" key="GridCell.Tab.0.right" timestamp="1665184799149">
+    <state width="1995" height="287" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665184985594" />
+    <state width="1995" height="287" key="GridCell.Tab.0.right" timestamp="1665184985594">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="287" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665184799149" />
+    <state width="1995" height="287" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665184985594" />
     <state x="377" y="26" key="SettingsEditor" timestamp="1665139616625">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665139616625" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665148958792">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665184959172">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665148958792" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665184959172" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

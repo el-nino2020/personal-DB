@@ -1,3 +1,5 @@
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.io.*;
 
 public class Test {
@@ -106,6 +108,14 @@ public class Test {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @org.junit.Test
+    public void randomStringGenerate() {
+        int n = 20;
+        for (int i = 0; i < n; i++) {
+            System.out.println(RandomStringUtils.randomAscii(100));
         }
     }
 
