@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/TestCMDEncoding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/BasicDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/FileInfoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/createTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/createTables.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +71,7 @@
       <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dao" />
       <recent name="utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -164,7 +166,7 @@
       <workItem from="1665281752124" duration="76000" />
       <workItem from="1665376596793" duration="528000" />
       <workItem from="1665530719296" duration="177000" />
-      <workItem from="1665564273433" duration="6592000" />
+      <workItem from="1665564273433" duration="8051000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -236,7 +238,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665568618691</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="解决命令行编码导致的编译和运行的问题">
+      <created>1665570999252</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665570999252</updated>
+    </task>
+    <task id="LOCAL-00012" summary="java bean for record">
+      <created>1665572204207</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1665572204207</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +281,9 @@
     <MESSAGE value="配置文件" />
     <MESSAGE value="View层基本代码" />
     <MESSAGE value="添加了一个Service类，用来处理数据库登录" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了一个Service类，用来处理数据库登录" />
+    <MESSAGE value="解决命令行编码导致的编译和运行的问题" />
+    <MESSAGE value="java bean for record" />
+    <option name="LAST_COMMIT_MESSAGE" value="java bean for record" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -276,10 +294,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665139039580" />
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665566413719">
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665572331974">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665566413719" />
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665572331974" />
     <state x="752" y="200" key="FileChooserDialogImpl" timestamp="1665139500539">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -304,10 +322,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665139616625" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665568676546">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665571107458">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665568676546" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665571107458" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
