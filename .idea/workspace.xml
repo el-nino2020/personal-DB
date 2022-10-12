@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.12.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/personal-DB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/personal-DB.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,10 +72,21 @@
       <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Test.changeCMDCharset">
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test" />
+  <component name="RunManager" selected="Application.View">
+    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="View" />
       <module name="personal-DB" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.View" />
         <item itemvalue="JUnit.Test.changeCMDCharset" />
         <item itemvalue="JUnit.Test.useProcessBuilder" />
         <item itemvalue="JUnit.Test.waitForCommandLine" />
         <item itemvalue="JUnit.Test.callCommandLine" />
-        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -150,6 +159,8 @@
       <workItem from="1665232603780" duration="9000" />
       <workItem from="1665281752124" duration="76000" />
       <workItem from="1665376596793" duration="528000" />
+      <workItem from="1665530719296" duration="177000" />
+      <workItem from="1665564273433" duration="460000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -193,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665184947885</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add an apache package to generate random string">
+      <created>1665530879372</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665530879372</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +236,8 @@
     <MESSAGE value="java与命令行交互，我似乎没必要写一个.bat文件作为整个项目的开始了" />
     <MESSAGE value="add view" />
     <MESSAGE value="add some test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="add some test case" />
+    <MESSAGE value="add an apache package to generate random string" />
+    <option name="LAST_COMMIT_MESSAGE" value="add an apache package to generate random string" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -233,22 +252,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="287" key="GridCell.Tab.0.bottom" timestamp="1665184985594">
+    <state width="1995" height="530" key="GridCell.Tab.0.bottom" timestamp="1665564718956">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="287" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665184985594" />
-    <state width="1995" height="287" key="GridCell.Tab.0.center" timestamp="1665184985594">
+    <state width="1995" height="530" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665564718956" />
+    <state width="1995" height="530" key="GridCell.Tab.0.center" timestamp="1665564718956">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="287" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665184985594" />
-    <state width="1995" height="287" key="GridCell.Tab.0.left" timestamp="1665184985594">
+    <state width="1995" height="530" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665564718956" />
+    <state width="1995" height="530" key="GridCell.Tab.0.left" timestamp="1665564718956">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="287" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665184985594" />
-    <state width="1995" height="287" key="GridCell.Tab.0.right" timestamp="1665184985594">
+    <state width="1995" height="530" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665564718956" />
+    <state width="1995" height="530" key="GridCell.Tab.0.right" timestamp="1665564718956">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="287" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665184985594" />
+    <state width="1995" height="530" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665564718956" />
     <state x="377" y="26" key="SettingsEditor" timestamp="1665139616625">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -261,9 +280,9 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665148511685">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665564443980">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665148511685" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665564443980" />
   </component>
 </project>
