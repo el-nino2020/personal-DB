@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,16 +68,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\CODES(daima)\personal-DB\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\CODES(daima)\personal-DB\lib" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODES(daima)\personal-DB\src" />
     </key>
   </component>
   <component name="RunManager" selected="Application.View">
     <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="View" />
+      <option name="MAIN_CLASS_NAME" value="view.View" />
       <module name="personal-DB" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,8 +99,8 @@
     </configuration>
     <configuration name="Test.callCommandLine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.Test" />
       <option name="METHOD_NAME" value="callCommandLine" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -103,8 +109,8 @@
     </configuration>
     <configuration name="Test.changeCMDCharset" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.Test" />
       <option name="METHOD_NAME" value="changeCMDCharset" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -113,8 +119,8 @@
     </configuration>
     <configuration name="Test.useProcessBuilder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.Test" />
       <option name="METHOD_NAME" value="useProcessBuilder" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -123,8 +129,8 @@
     </configuration>
     <configuration name="Test.waitForCommandLine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.Test" />
       <option name="METHOD_NAME" value="waitForCommandLine" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -160,7 +166,7 @@
       <workItem from="1665281752124" duration="76000" />
       <workItem from="1665376596793" duration="528000" />
       <workItem from="1665530719296" duration="177000" />
-      <workItem from="1665564273433" duration="460000" />
+      <workItem from="1665564273433" duration="4160000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -211,7 +217,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665530879372</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="配置文件">
+      <created>1665564867132</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665564867132</updated>
+    </task>
+    <task id="LOCAL-00009" summary="View层基本代码">
+      <created>1665564886747</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665564886747</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +257,9 @@
     <MESSAGE value="add view" />
     <MESSAGE value="add some test case" />
     <MESSAGE value="add an apache package to generate random string" />
-    <option name="LAST_COMMIT_MESSAGE" value="add an apache package to generate random string" />
+    <MESSAGE value="配置文件" />
+    <MESSAGE value="View层基本代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="View层基本代码" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -248,26 +270,30 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665139039580" />
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665566413719">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665566413719" />
     <state x="752" y="200" key="FileChooserDialogImpl" timestamp="1665139500539">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="530" key="GridCell.Tab.0.bottom" timestamp="1665564718956">
+    <state width="1995" height="530" key="GridCell.Tab.0.bottom" timestamp="1665568387765">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="530" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665564718956" />
-    <state width="1995" height="530" key="GridCell.Tab.0.center" timestamp="1665564718956">
+    <state width="1995" height="530" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665568387765" />
+    <state width="1995" height="530" key="GridCell.Tab.0.center" timestamp="1665568387765">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="530" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665564718956" />
-    <state width="1995" height="530" key="GridCell.Tab.0.left" timestamp="1665564718956">
+    <state width="1995" height="530" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665568387765" />
+    <state width="1995" height="530" key="GridCell.Tab.0.left" timestamp="1665568387765">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="530" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665564718956" />
-    <state width="1995" height="530" key="GridCell.Tab.0.right" timestamp="1665564718956">
+    <state width="1995" height="530" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665568387765" />
+    <state width="1995" height="530" key="GridCell.Tab.0.right" timestamp="1665568387765">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="530" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665564718956" />
+    <state width="1995" height="530" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665568387765" />
     <state x="377" y="26" key="SettingsEditor" timestamp="1665139616625">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -280,9 +306,9 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665564443980">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665567336803">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665564443980" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665567336803" />
   </component>
 </project>

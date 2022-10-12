@@ -1,3 +1,5 @@
+package test;
+
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.io.*;
