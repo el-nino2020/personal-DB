@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/TestCMDEncoding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +164,7 @@
       <workItem from="1665281752124" duration="76000" />
       <workItem from="1665376596793" duration="528000" />
       <workItem from="1665530719296" duration="177000" />
-      <workItem from="1665564273433" duration="4160000" />
+      <workItem from="1665564273433" duration="6592000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -231,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665564886747</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="添加了一个Service类，用来处理数据库登录">
+      <created>1665568618691</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665568618691</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +264,8 @@
     <MESSAGE value="add an apache package to generate random string" />
     <MESSAGE value="配置文件" />
     <MESSAGE value="View层基本代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="View层基本代码" />
+    <MESSAGE value="添加了一个Service类，用来处理数据库登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了一个Service类，用来处理数据库登录" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -278,30 +284,30 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="530" key="GridCell.Tab.0.bottom" timestamp="1665568387765">
+    <state width="1995" height="752" key="GridCell.Tab.0.bottom" timestamp="1665568567840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="530" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665568387765" />
-    <state width="1995" height="530" key="GridCell.Tab.0.center" timestamp="1665568387765">
+    <state width="1995" height="752" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665568567840" />
+    <state width="1995" height="752" key="GridCell.Tab.0.center" timestamp="1665568567840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="530" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665568387765" />
-    <state width="1995" height="530" key="GridCell.Tab.0.left" timestamp="1665568387765">
+    <state width="1995" height="752" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665568567840" />
+    <state width="1995" height="752" key="GridCell.Tab.0.left" timestamp="1665568567840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="530" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665568387765" />
-    <state width="1995" height="530" key="GridCell.Tab.0.right" timestamp="1665568387765">
+    <state width="1995" height="752" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665568567840" />
+    <state width="1995" height="752" key="GridCell.Tab.0.right" timestamp="1665568567840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="530" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665568387765" />
+    <state width="1995" height="752" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665568567840" />
     <state x="377" y="26" key="SettingsEditor" timestamp="1665139616625">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665139616625" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665184959172">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665568676546">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665184959172" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665568676546" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
