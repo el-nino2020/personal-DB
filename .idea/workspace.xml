@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dao/BasicDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/FileInfoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/createTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/createTables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/BasicDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BasicDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +164,7 @@
       <workItem from="1665281752124" duration="76000" />
       <workItem from="1665376596793" duration="528000" />
       <workItem from="1665530719296" duration="177000" />
-      <workItem from="1665564273433" duration="8051000" />
+      <workItem from="1665564273433" duration="8281000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -252,7 +250,28 @@
       <option name="project" value="LOCAL" />
       <updated>1665572204207</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="copied from previous project, with some adaptation">
+      <created>1665572545548</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1665572545548</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update comment">
+      <created>1665572557585</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1665572557585</updated>
+    </task>
+    <task id="LOCAL-00015" summary="项目配置文件更新">
+      <created>1665572576399</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1665572576399</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +302,10 @@
     <MESSAGE value="添加了一个Service类，用来处理数据库登录" />
     <MESSAGE value="解决命令行编码导致的编译和运行的问题" />
     <MESSAGE value="java bean for record" />
-    <option name="LAST_COMMIT_MESSAGE" value="java bean for record" />
+    <MESSAGE value="copied from previous project, with some adaptation" />
+    <MESSAGE value="update comment" />
+    <MESSAGE value="项目配置文件更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="项目配置文件更新" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -322,10 +344,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665139616625" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665571107458">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665572583783">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665571107458" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665572583783" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

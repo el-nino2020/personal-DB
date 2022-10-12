@@ -28,7 +28,6 @@ public class BasicDAO<T> {
      * @return 受影响的行数
      */
     public int update(String sql, Object... parameters) {
-        Connection connection = null;
 
         try {
             return qr.update(connection, sql, parameters);
@@ -44,7 +43,6 @@ public class BasicDAO<T> {
      * @return 多行记录
      */
     public List<T> queryMultiRow(String sql, Class<T> clazz, Object... parameters) {
-        Connection connection = null;
 
         try {
             return qr.query(connection, sql,
@@ -61,7 +59,6 @@ public class BasicDAO<T> {
      * @return 单行记录
      */
     public T querySingleRow(String sql, Class<T> clazz, Object... parameters) {
-        Connection connection = null;
 
         try {
             return qr.query(connection, sql,
@@ -78,7 +75,6 @@ public class BasicDAO<T> {
      * @return 单行单列的数据
      */
     public Object queryScalar(String sql, Object... parameters) {
-        Connection connection = null;
 
         try {
             return qr.query(connection, sql, new ScalarHandler(), parameters);
