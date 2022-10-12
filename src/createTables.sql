@@ -15,5 +15,5 @@ CREATE TABLE template_table(
 
 CREATE INDEX filenameIndex ON template_table(filename);
 
--- change 'newTale' to other (folder) name 
+-- change 'newTale' to other (table/folder) name
 CREATE TABLE newTable LIKE template_table;
