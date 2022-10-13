@@ -9,6 +9,7 @@ public class FileInfo {
     private String passwd;
     private String md5value;
     private String note;
+    private int filesize;
 
 
     public FileInfo() {
@@ -23,6 +24,7 @@ public class FileInfo {
                 ", passwd='" + passwd + '\'' +
                 ", md5value='" + md5value + '\'' +
                 ", note='" + note + '\'' +
+                ", filesize=" + filesize +
                 '}';
     }
 
@@ -72,5 +74,13 @@ public class FileInfo {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public int getFilesize() {
+        return filesize;
+    }
+
+    public void setFilesize(int filesize) {
+        this.filesize = filesize;
     }
 }
