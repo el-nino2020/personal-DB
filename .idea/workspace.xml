@@ -20,14 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/BasicDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BasicDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/FileInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/FileInfoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,15 +91,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -207,7 +200,8 @@
       <workItem from="1665705585074" duration="2235000" />
       <workItem from="1665712408452" duration="30000" />
       <workItem from="1665719085903" duration="2378000" />
-      <workItem from="1665725145489" duration="7903000" />
+      <workItem from="1665725145489" duration="7986000" />
+      <workItem from="1665737344470" duration="532000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -356,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665707784745</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="update">
+      <created>1665734000715</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1665734000715</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +397,8 @@
     <MESSAGE value="Utility需要增加几个与命令行交互的方法" />
     <MESSAGE value="更新Utility" />
     <MESSAGE value="测试如何打开Windows选择文件框" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试如何打开Windows选择文件框" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -415,22 +417,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="769" key="GridCell.Tab.0.bottom" timestamp="1665732886602">
+    <state width="1995" height="596" key="GridCell.Tab.0.bottom" timestamp="1665734003353">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="769" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665732886602" />
-    <state width="1995" height="769" key="GridCell.Tab.0.center" timestamp="1665732886602">
+    <state width="1995" height="596" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665734003353" />
+    <state width="1995" height="596" key="GridCell.Tab.0.center" timestamp="1665734003353">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="769" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665732886602" />
-    <state width="1995" height="769" key="GridCell.Tab.0.left" timestamp="1665732886602">
+    <state width="1995" height="596" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665734003353" />
+    <state width="1995" height="596" key="GridCell.Tab.0.left" timestamp="1665734003352">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="769" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665732886602" />
-    <state width="1995" height="769" key="GridCell.Tab.0.right" timestamp="1665732886602">
+    <state width="1995" height="596" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665734003352" />
+    <state width="1995" height="596" key="GridCell.Tab.0.right" timestamp="1665734003353">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="769" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665732886602" />
+    <state width="1995" height="596" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665734003353" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -439,10 +441,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665707826705">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665734021404">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665707826705" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665734021404" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
