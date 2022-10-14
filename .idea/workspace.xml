@@ -20,9 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/guava_31_1_jre.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/guava-31.1-jre.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/personal-DB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/personal-DB.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,15 +72,15 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CODES(daima)\personal-DB\lib" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODES(daima)\personal-DB\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="dao" />
       <recent name="utils" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\CODES(daima)\personal-DB\src" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Test">
@@ -102,33 +108,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.chooseFolder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileInfoService.testMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="chooseFolder" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test.fileChooser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="personal-DB" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="fileChooser" />
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.FileInfoService" />
+      <option name="METHOD_NAME" value="testMethod" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,6 +135,22 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.Test" />
       <option name="METHOD_NAME" value="useFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.useGuava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="personal-DB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.Test" />
+      <option name="METHOD_NAME" value="useGuava" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,10 +175,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.FileInfoService.testMethod" />
+        <item itemvalue="JUnit.Test.useGuava" />
         <item itemvalue="JUnit.Test.useFile" />
         <item itemvalue="JUnit.Test.useJtable" />
-        <item itemvalue="JUnit.Test.chooseFolder" />
-        <item itemvalue="JUnit.Test.fileChooser" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +207,9 @@
       <workItem from="1665712408452" duration="30000" />
       <workItem from="1665719085903" duration="2378000" />
       <workItem from="1665725145489" duration="7986000" />
-      <workItem from="1665737344470" duration="532000" />
+      <workItem from="1665737344470" duration="567000" />
+      <workItem from="1665737978839" duration="268000" />
+      <workItem from="1665742921616" duration="5914000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -357,7 +365,35 @@
       <option name="project" value="LOCAL" />
       <updated>1665734000715</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add two service classes">
+      <created>1665737902881</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1665737902881</updated>
+    </task>
+    <task id="LOCAL-00024" summary="update comment">
+      <created>1665738117259</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1665738117259</updated>
+    </task>
+    <task id="LOCAL-00025" summary="更新readme">
+      <created>1665743175522</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1665743175522</updated>
+    </task>
+    <task id="LOCAL-00026" summary="在使用DML前开启事务">
+      <created>1665743901636</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1665743901636</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +425,6 @@
     <MESSAGE value="解决命令行编码导致的编译和运行的问题" />
     <MESSAGE value="java bean for record" />
     <MESSAGE value="copied from previous project, with some adaptation" />
-    <MESSAGE value="update comment" />
     <MESSAGE value="项目配置文件更新" />
     <MESSAGE value="little update" />
     <MESSAGE value="update schema and bean" />
@@ -398,7 +433,11 @@
     <MESSAGE value="更新Utility" />
     <MESSAGE value="测试如何打开Windows选择文件框" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="add two service classes" />
+    <MESSAGE value="update comment" />
+    <MESSAGE value="更新readme" />
+    <MESSAGE value="在使用DML前开启事务" />
+    <option name="LAST_COMMIT_MESSAGE" value="在使用DML前开启事务" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -409,30 +448,30 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665139039580" />
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665728928251">
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665746730692">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665728928251" />
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665746730692" />
     <state x="752" y="200" key="FileChooserDialogImpl" timestamp="1665139500539">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="596" key="GridCell.Tab.0.bottom" timestamp="1665734003353">
+    <state width="1995" height="596" key="GridCell.Tab.0.bottom" timestamp="1665746529155">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="596" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665734003353" />
-    <state width="1995" height="596" key="GridCell.Tab.0.center" timestamp="1665734003353">
+    <state width="1995" height="596" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665746529155" />
+    <state width="1995" height="596" key="GridCell.Tab.0.center" timestamp="1665746529155">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="596" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665734003353" />
-    <state width="1995" height="596" key="GridCell.Tab.0.left" timestamp="1665734003352">
+    <state width="1995" height="596" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665746529155" />
+    <state width="1995" height="596" key="GridCell.Tab.0.left" timestamp="1665746529155">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="596" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665734003352" />
-    <state width="1995" height="596" key="GridCell.Tab.0.right" timestamp="1665734003353">
+    <state width="1995" height="596" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665746529155" />
+    <state width="1995" height="596" key="GridCell.Tab.0.right" timestamp="1665746529155">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="596" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665734003353" />
+    <state width="1995" height="596" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665746529155" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -441,25 +480,25 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665734021404">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665743910546">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665734021404" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665743910546" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665719807546">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665748479068">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665719807546" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665748479068" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/Test.java</url>
-          <line>162</line>
+          <line>150</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

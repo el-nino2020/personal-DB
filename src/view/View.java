@@ -1,8 +1,11 @@
 package view;
 
+import domain.FileInfo;
 import service.AccountService;
+import service.DBService;
 import service.FileInfoService;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class View {
@@ -10,6 +13,8 @@ public class View {
     private static final int LOGIN_TRY_TIMES = 5;
 
     private AccountService accountService = new AccountService();
+    private DBService dbService = new DBService(accountService);
+
     private FileInfoService fileInfoService = new FileInfoService(accountService);
 
 
@@ -24,6 +29,8 @@ public class View {
             System.out.println("========== Personal DB =============");
             System.out.println("\t\t1.  压缩并记录文件(夹)");
             System.out.println("\t\t2.  解压文件");
+            System.out.println("\t\t3.  新建表");
+            System.out.println("\t\t4.  查询数据库");
             System.out.println("\t\tq.  退出系统");
             System.out.println("=========================================");
             System.out.print("输入你的选择: ");
@@ -35,6 +42,7 @@ public class View {
                 case "2":
                     decompressArchive();
                     break;
+                //TODO 新加入的选项3和4
                 case "q":
                     menuLoop = false;
                     break;
@@ -83,11 +91,33 @@ public class View {
 
 
     private void makeArchiveAndRecord() {
-        if (!loginDBMS(LOGIN_TRY_TIMES)) return;
+        if (!loginDBMS(LOGIN_TRY_TIMES)) {
+            System.out.println("该操作失败，需要先登录数据库账户");
+            return;
+        }
+
+        //TODO 要压缩的文件/文件夹的绝对路径
+        //TODO ArchiveService要生成随机的字符串作为密码，并在内存中保存该密码
+        //TODO 压缩文件
+        //TODO 根据压缩文件的信息和保存的密码，生成FileInfo对象
+        //TODO 将FileInfo对象写入数据库
+        //TODO 数据库备份——没错，每次调用该方法，都要备份一次数据库
+        //TODO 用保存的密码测试压缩文件。如果测试失败，有点尴尬，上面哪一步肯定出现问题了，考虑重做整个过程
     }
 
     private void decompressArchive() {
-        if (!loginDBMS(LOGIN_TRY_TIMES)) return;
+        if (!loginDBMS(LOGIN_TRY_TIMES)) {
+            System.out.println("该操作失败，需要先登录数据库账户");
+            return;
+        }
+        System.out.print("请输入要解压的压缩包的绝对路径: ");
+        File file = new File(scanner.next());
+
+        FileInfo fileInfo = fileInfoService.getFileInfo(file);
+        String fileDirectory = file.getParent();
+
+        //TODO 核对md5、文件大小、修改时间等信息
+        //TODO 完成ArchiveService中的解压功能，在对应目录下解压
 
     }
 

@@ -1,30 +1,18 @@
 package test;
 
+import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.io.*;
-import java.nio.file.FileSystem;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        //路径只输入一个 \ 没有问题
-        while (true) {
-            Scanner scanner = new Scanner(System.in);
 
-            System.out.print("请输入： ");
-            File file = new File(scanner.next());
-            System.out.println(file.getName());
-            System.out.println(file.getAbsolutePath());
-            System.out.println(file.getParent());
-            System.out.println(file.exists());
-            System.out.println(file.isFile());
-            System.out.println(file.isDirectory());
-        }
     }
 
     @org.junit.Test
@@ -210,6 +198,19 @@ public class Test {
         System.out.println(file.getName());
         System.out.println(file.isFile());
         System.out.println(file.isDirectory());
+    }
+
+    @org.junit.Test
+    public void useGuava() {
+        int a = -1;
+        Preconditions.checkArgument(a < 0, String.format("a = %d", a));
+
+        try {
+            a = 0;
+            Preconditions.checkArgument(a < 0, String.format("a = %d", a));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
 
