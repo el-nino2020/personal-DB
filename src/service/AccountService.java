@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * 负责登录DBMS，并提供Connection对象
+ */
 public class AccountService {
     private static final String DBMS_URL = "jdbc:mysql://localhost:3306/cloud_backup";
     public static final String USER = "backupadmin";
@@ -45,5 +48,13 @@ public class AccountService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 只能给同一个package中的其他service类用
+     * @return
+     */
+     Connection getConnection() {
+        return connection;
     }
 }

@@ -7,10 +7,24 @@ import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.io.*;
 import java.nio.file.FileSystem;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
+        //路径只输入一个 \ 没有问题
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
 
+            System.out.print("请输入： ");
+            File file = new File(scanner.next());
+            System.out.println(file.getName());
+            System.out.println(file.getAbsolutePath());
+            System.out.println(file.getParent());
+            System.out.println(file.exists());
+            System.out.println(file.isFile());
+            System.out.println(file.isDirectory());
+        }
     }
 
     @org.junit.Test
@@ -132,7 +146,7 @@ public class Test {
     @org.junit.Test
     public void fileChooser() {
 
-       //这个Java自带的选择文件框有点难用,而且难看
+        //这个Java自带的选择文件框有点难用,而且难看
         // www.geeksforgeeks.org/java-swing-jfilechooser/#:~:text=JFileChooser%20is%20a%20part%20of,%2C%20panels%2C%20dialogs%2C%20etc%20.
 //        JFileChooser jFileChooser = new JFileChooser(FileSystemView.getFileSystemView());
 //        jFileChooser.showSaveDialog(null);
@@ -146,14 +160,56 @@ public class Test {
 //        }
 
 
-        //这个有用
+        //这个有用，但是没法选择文件夹，而压缩时通常是压缩文件夹
         //https://stackoverflow.com/questions/40255039/how-to-choose-file-in-java
         FileDialog dialog = new FileDialog((Frame) null, "Select File to Open");
         dialog.setMode(FileDialog.LOAD);
+        dialog.setMultipleMode(true);
         dialog.setVisible(true);
-        String file = dialog.getFile();
-        System.out.println(file + " chosen.");
+        //单个文件
+        //        String file = dialog.getFile();
+//        System.out.println(file + " chosen.");
 
+        //多个文件
+        File[] files = dialog.getFiles();
+        System.out.println(Arrays.toString(files));
+
+
+    }
+
+    @org.junit.Test
+    public void chooseFolder() {
+        JFileChooser jFileChooser = new JFileChooser(FileSystemView.getFileSystemView());
+        jFileChooser.setMultiSelectionEnabled(true);
+        jFileChooser.setCurrentDirectory(new File("C:\\Users\\Morgan\\Desktop"));
+//        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);//只显示文件夹
+        jFileChooser.setDialogTitle("choose direcotry(ies)");
+        jFileChooser.setPreferredSize(new Dimension(1200, 800));
+
+        //设置字体似乎没用
+        jFileChooser.setFont(new Font("Arial", Font.PLAIN, 15));
+
+
+        jFileChooser.showDialog(null, null);
+        System.out.println(Arrays.toString(jFileChooser.getSelectedFiles()));
+
+    }
+
+
+    @org.junit.Test
+    public void useFile() {
+        Scanner scanner = new Scanner(System.in);
+        File file = new File("D:\\GAME\\Watamari - A Match Made in Heaven\\Watamari_dx11_x86.exe");
+        System.out.println(file.getName());
+        System.out.println(file.getAbsolutePath());
+        System.out.println(file.getParent());
+        System.out.println(file.isFile());
+        System.out.println(file.isDirectory());
+        System.out.println("=========================");
+        file = new File("D:\\GAME\\フタマタ恋愛\\全CG存档");
+        System.out.println(file.getName());
+        System.out.println(file.isFile());
+        System.out.println(file.isDirectory());
     }
 
 

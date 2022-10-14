@@ -1,6 +1,7 @@
 package view;
 
 import service.AccountService;
+import service.FileInfoService;
 
 import java.util.Scanner;
 
@@ -9,6 +10,9 @@ public class View {
     private static final int LOGIN_TRY_TIMES = 5;
 
     private AccountService accountService = new AccountService();
+    private FileInfoService fileInfoService = new FileInfoService(accountService);
+
+
     private Scanner scanner = new Scanner(System.in);
     boolean menuLoop = true;
 

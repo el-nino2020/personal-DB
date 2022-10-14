@@ -20,7 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/BasicDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BasicDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/FileInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/FileInfoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +68,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -76,60 +82,92 @@
       <recent name="D:\CODES(daima)\personal-DB\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.View">
-    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.View" />
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.Test" />
       <module name="personal-DB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.callCommandLine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.chooseFolder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="callCommandLine" />
+      <option name="METHOD_NAME" value="chooseFolder" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.changeCMDCharset" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.fileChooser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="changeCMDCharset" />
+      <option name="METHOD_NAME" value="fileChooser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.useProcessBuilder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.useFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="useProcessBuilder" />
+      <option name="METHOD_NAME" value="useFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.waitForCommandLine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.useJtable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="waitForCommandLine" />
+      <option name="METHOD_NAME" value="useJtable" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.View" />
-        <item itemvalue="JUnit.Test.changeCMDCharset" />
-        <item itemvalue="JUnit.Test.useProcessBuilder" />
-        <item itemvalue="JUnit.Test.waitForCommandLine" />
-        <item itemvalue="JUnit.Test.callCommandLine" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.Test.useFile" />
+        <item itemvalue="JUnit.Test.useJtable" />
+        <item itemvalue="JUnit.Test.chooseFolder" />
+        <item itemvalue="JUnit.Test.fileChooser" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +202,12 @@
       <workItem from="1665281752124" duration="76000" />
       <workItem from="1665376596793" duration="528000" />
       <workItem from="1665530719296" duration="177000" />
-      <workItem from="1665564273433" duration="8281000" />
+      <workItem from="1665564273433" duration="8449000" />
+      <workItem from="1665654603638" duration="4512000" />
+      <workItem from="1665705585074" duration="2235000" />
+      <workItem from="1665712408452" duration="30000" />
+      <workItem from="1665719085903" duration="2378000" />
+      <workItem from="1665725145489" duration="7903000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -271,7 +314,49 @@
       <option name="project" value="LOCAL" />
       <updated>1665572576399</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="little update">
+      <created>1665572706609</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1665572706609</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update schema and bean">
+      <created>1665656847395</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1665656847395</updated>
+    </task>
+    <task id="LOCAL-00018" summary="研究了一番rar命令行">
+      <created>1665663109077</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1665663109077</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Utility需要增加几个与命令行交互的方法">
+      <created>1665663788430</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1665663788430</updated>
+    </task>
+    <task id="LOCAL-00020" summary="更新Utility">
+      <created>1665707753564</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1665707753564</updated>
+    </task>
+    <task id="LOCAL-00021" summary="测试如何打开Windows选择文件框">
+      <created>1665707784745</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1665707784745</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +390,13 @@
     <MESSAGE value="copied from previous project, with some adaptation" />
     <MESSAGE value="update comment" />
     <MESSAGE value="项目配置文件更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目配置文件更新" />
+    <MESSAGE value="little update" />
+    <MESSAGE value="update schema and bean" />
+    <MESSAGE value="研究了一番rar命令行" />
+    <MESSAGE value="Utility需要增加几个与命令行交互的方法" />
+    <MESSAGE value="更新Utility" />
+    <MESSAGE value="测试如何打开Windows选择文件框" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试如何打开Windows选择文件框" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -316,45 +407,60 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665139039580" />
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665572331974">
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665728928251">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665572331974" />
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665728928251" />
     <state x="752" y="200" key="FileChooserDialogImpl" timestamp="1665139500539">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="752" key="GridCell.Tab.0.bottom" timestamp="1665568567840">
+    <state width="1995" height="769" key="GridCell.Tab.0.bottom" timestamp="1665732886602">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="752" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665568567840" />
-    <state width="1995" height="752" key="GridCell.Tab.0.center" timestamp="1665568567840">
+    <state width="1995" height="769" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665732886602" />
+    <state width="1995" height="769" key="GridCell.Tab.0.center" timestamp="1665732886602">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="752" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665568567840" />
-    <state width="1995" height="752" key="GridCell.Tab.0.left" timestamp="1665568567840">
+    <state width="1995" height="769" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665732886602" />
+    <state width="1995" height="769" key="GridCell.Tab.0.left" timestamp="1665732886602">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="752" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665568567840" />
-    <state width="1995" height="752" key="GridCell.Tab.0.right" timestamp="1665568567840">
+    <state width="1995" height="769" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665732886602" />
+    <state width="1995" height="769" key="GridCell.Tab.0.right" timestamp="1665732886602">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="752" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665568567840" />
-    <state x="377" y="26" key="SettingsEditor" timestamp="1665139616625">
+    <state width="1995" height="769" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665732886602" />
+    <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665139616625" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665572583783">
+    <state x="743" y="185" key="RollbackChangesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665706072450" />
+    <state x="377" y="26" key="SettingsEditor" timestamp="1665719109884">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665572583783" />
+    <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665707826705">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665707826705" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665567336803">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665719807546">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665567336803" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665719807546" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/Test.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -15,19 +15,12 @@ import java.util.List;
  */
 public class BasicDAO<T> {
     private QueryRunner qr = new QueryRunner();
-    private Connection connection;
-
-
-    public BasicDAO(Connection connection) {
-        this.connection = connection;
-    }
-
     /**
      * @param sql        DML语句
      * @param parameters 替换sql中的 ? 占位符
      * @return 受影响的行数
      */
-    public int update(String sql, Object... parameters) {
+    public int update(Connection connection, String sql, Object... parameters) {
 
         try {
             return qr.update(connection, sql, parameters);
@@ -42,7 +35,7 @@ public class BasicDAO<T> {
      * @param parameters 替换sql中的占位符 ?
      * @return 多行记录
      */
-    public List<T> queryMultiRow(String sql, Class<T> clazz, Object... parameters) {
+    public List<T> queryMultiRow(Connection connection, String sql, Class<T> clazz, Object... parameters) {
 
         try {
             return qr.query(connection, sql,
@@ -58,7 +51,7 @@ public class BasicDAO<T> {
      * @param parameters 替换sql中的占位符 ?
      * @return 单行记录
      */
-    public T querySingleRow(String sql, Class<T> clazz, Object... parameters) {
+    public T querySingleRow(Connection connection, String sql, Class<T> clazz, Object... parameters) {
 
         try {
             return qr.query(connection, sql,
@@ -74,7 +67,7 @@ public class BasicDAO<T> {
      * @param parameters 替换sql中的占位符 ?
      * @return 单行单列的数据
      */
-    public Object queryScalar(String sql, Object... parameters) {
+    public Object queryScalar(Connection connection, String sql, Object... parameters) {
 
         try {
             return qr.query(connection, sql, new ScalarHandler(), parameters);

@@ -1,8 +1,11 @@
 package utils;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Utility {
     private Utility() {
@@ -11,7 +14,7 @@ public class Utility {
 
 
     /**
-     * 开启一个新的进程来运行command，将输出以行为单位，存入List中返回
+     * 开启一个新的进程来运行command，将输出以行为单位存入List中返回
      *
      * @param commands  一条MS-DOS命令的各个组成部分，拼接在一起形成一条完整的DOS命令
      * @param directory DOS命令运行在哪个目录下；如果为NULL，则为当前Java程序的运行目录
@@ -43,4 +46,5 @@ public class Utility {
 
         return ans;
     }
+
 }
