@@ -2,7 +2,11 @@ package test;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
+import java.awt.*;
 import java.io.*;
+import java.nio.file.FileSystem;
 
 public class Test {
     public static void main(String[] args) {
@@ -119,6 +123,37 @@ public class Test {
         for (int i = 0; i < n; i++) {
             System.out.println(RandomStringUtils.randomAscii(100));
         }
+    }
+
+
+    /**
+     * 测试Windows的选择文件框
+     */
+    @org.junit.Test
+    public void fileChooser() {
+
+       //这个Java自带的选择文件框有点难用,而且难看
+        // www.geeksforgeeks.org/java-swing-jfilechooser/#:~:text=JFileChooser%20is%20a%20part%20of,%2C%20panels%2C%20dialogs%2C%20etc%20.
+//        JFileChooser jFileChooser = new JFileChooser(FileSystemView.getFileSystemView());
+//        jFileChooser.showSaveDialog(null);
+
+
+        //这个命令无效
+//        try {
+//            Runtime.getRuntime().exec("explorer.exe /select,");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+
+        //这个有用
+        //https://stackoverflow.com/questions/40255039/how-to-choose-file-in-java
+        FileDialog dialog = new FileDialog((Frame) null, "Select File to Open");
+        dialog.setMode(FileDialog.LOAD);
+        dialog.setVisible(true);
+        String file = dialog.getFile();
+        System.out.println(file + " chosen.");
+
     }
 
 
