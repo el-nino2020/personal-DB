@@ -20,6 +20,7 @@ public class FileInfoService {
     }
 
 
+    //TODO:不会使用info.lastmodified，直接使用MySQL的NOW()函数
     public boolean insertFileInfo(FileInfo info,String tableName /*TODO:还需要知道插入哪张表*/) {
         loginAssert();
     }
