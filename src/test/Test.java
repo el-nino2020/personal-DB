@@ -2,6 +2,7 @@ package test;
 
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.RandomStringUtils;
+import utils.Utility;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -12,7 +13,12 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println(new File(scanner.next()).length());
+//            System.out.print("请输入文件路径：");
+//            System.out.println(Utility.getFileMD5(new File(scanner.next())));
+        }
     }
 
     @org.junit.Test

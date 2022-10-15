@@ -20,12 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/guava_31_1_jre.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/guava-31.1-jre.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/personal-DB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/personal-DB.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/createTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/createTables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ArchiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
@@ -97,13 +99,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -209,7 +213,8 @@
       <workItem from="1665725145489" duration="7986000" />
       <workItem from="1665737344470" duration="567000" />
       <workItem from="1665737978839" duration="268000" />
-      <workItem from="1665742921616" duration="5914000" />
+      <workItem from="1665742921616" duration="6449000" />
+      <workItem from="1665812429274" duration="3738000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -393,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665743901636</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑">
+      <created>1665748919166</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1665748919166</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +424,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="set up java module in IDEA" />
     <MESSAGE value="add gitignore" />
     <MESSAGE value="move .sql files to /src/" />
     <MESSAGE value="java与命令行交互，我似乎没必要写一个.bat文件作为整个项目的开始了" />
@@ -437,7 +448,8 @@
     <MESSAGE value="update comment" />
     <MESSAGE value="更新readme" />
     <MESSAGE value="在使用DML前开启事务" />
-    <option name="LAST_COMMIT_MESSAGE" value="在使用DML前开启事务" />
+    <MESSAGE value="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -456,22 +468,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="596" key="GridCell.Tab.0.bottom" timestamp="1665746529155">
+    <state width="1995" height="573" key="GridCell.Tab.0.bottom" timestamp="1665815394232">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="596" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665746529155" />
-    <state width="1995" height="596" key="GridCell.Tab.0.center" timestamp="1665746529155">
+    <state width="1995" height="573" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665815394232" />
+    <state width="1995" height="573" key="GridCell.Tab.0.center" timestamp="1665815394232">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="596" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665746529155" />
-    <state width="1995" height="596" key="GridCell.Tab.0.left" timestamp="1665746529155">
+    <state width="1995" height="573" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665815394232" />
+    <state width="1995" height="573" key="GridCell.Tab.0.left" timestamp="1665815394232">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="596" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665746529155" />
-    <state width="1995" height="596" key="GridCell.Tab.0.right" timestamp="1665746529155">
+    <state width="1995" height="573" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665815394232" />
+    <state width="1995" height="573" key="GridCell.Tab.0.right" timestamp="1665815394232">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="596" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665746529155" />
+    <state width="1995" height="573" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665815394232" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -480,25 +492,25 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665743910546">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665748926580">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665743910546" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665748926580" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665748479068">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665812993294">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665748479068" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665812993294" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/Test.java</url>
-          <line>150</line>
+          <line>156</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

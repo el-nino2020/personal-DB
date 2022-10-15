@@ -31,6 +31,9 @@ public class FileInfoService {
         }
 
 
+
+
+
         return true;
     }
 
@@ -52,7 +55,6 @@ public class FileInfoService {
 
         Preconditions.checkState(new DBService(accountService).tableExists(tableName), "文件所属的表不存在");
 
-
         String sql = "select * from ? where id = ?;";
         FileInfo ans = fileInfoDAO.querySingleRow(accountService.getConnection(),
                 sql,
@@ -62,14 +64,13 @@ public class FileInfoService {
     }
 
     /**
-     * 根据rar压缩包的文件信息, 生成对应的FileInfo，方便向数据库中插入记录
+     * 根据rar压缩包的文件信息, 生成对应的FileInfo
      *
      * @param file 一个rar压缩包
      * @return
      */
     public FileInfo makeFileInfo(File file) {
-        //TODO: 还需要知道压缩包的密码
-        return new FileInfo();
+        return null;
     }
 
 
@@ -96,6 +97,9 @@ public class FileInfoService {
 
         return ans;
     }
+
+
+
 
 
 }

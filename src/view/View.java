@@ -2,8 +2,10 @@ package view;
 
 import domain.FileInfo;
 import service.AccountService;
+import service.ArchiveService;
 import service.DBService;
 import service.FileInfoService;
+import utils.Utility;
 
 import java.io.File;
 import java.util.Scanner;
@@ -17,6 +19,7 @@ public class View {
 
     private FileInfoService fileInfoService = new FileInfoService(accountService);
 
+    private ArchiveService archiveService = new ArchiveService();
 
     private Scanner scanner = new Scanner(System.in);
     boolean menuLoop = true;
@@ -115,9 +118,11 @@ public class View {
 
         FileInfo fileInfo = fileInfoService.getFileInfo(file);
         String fileDirectory = file.getParent();
+        
+        fileInfo.checkAndInform(file);
 
-        //TODO 核对md5、文件大小、修改时间等信息
         //TODO 完成ArchiveService中的解压功能，在对应目录下解压
+
 
     }
 

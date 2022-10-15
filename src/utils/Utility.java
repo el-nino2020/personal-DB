@@ -1,11 +1,19 @@
 package utils;
 
 
+import com.google.common.base.Preconditions;
+
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Utility {
+    private static final DateTimeFormatter TIME_FORMATTER =
+            DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+
+
     private Utility() {
 
     }
@@ -43,6 +51,26 @@ public class Utility {
         }
 
         return ans;
+    }
+
+    public static String getFileMD5(File file) {
+        Preconditions.checkNotNull(file);
+        Preconditions.checkArgument(file.exists());
+        Preconditions.checkArgument(file.isFile());
+
+        List<String> results = runSystemCommand(null,
+                "C:\\Windows\\System32\\certutil.exe",
+                "-hashfile",
+                file.getAbsolutePath(),
+                "md5");
+        if (!results.get(0).contains("MD5")) {
+            throw new RuntimeException("求MD5过程出错");
+        }
+        return results.get(1);
+    }
+
+    public static String getFormattedTime(LocalDateTime time) {
+        return TIME_FORMATTER.format(time).toString();
     }
 
 }
