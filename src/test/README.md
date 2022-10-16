@@ -78,10 +78,19 @@
     
     - 如果压缩文件有密码，使用`-hp`参数
 
-## 3. 获得文件的MD5值
+# 3. 获得文件的MD5值
 
 - ```sh
     certutil -hashfile 文件路径 md5
+    ```
+
+
+
+# 4. 编译时包含`.jar`文件
+
+- 当前位于`/src/`下，使用`/test/testIncludingJar.java`作为例子
+
+- ```sh
     ```
 
 - 

@@ -3,7 +3,6 @@ package test;
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.RandomStringUtils;
 import service.ArchiveService;
-import utils.Utility;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -14,16 +13,15 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
+
+
         ArchiveService archiveService = new ArchiveService();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("请输入文件路径：");
             File file = new File(scanner.next());
-            无法输入带中文的路径，有问题
-                    Google搜索： java string change encoding
-            https://www.baeldung.com/java-string-encode-utf-8
-            https://stackoverflow.com/questions/5729806/encode-string-to-utf-8
-            System.out.println(archiveService.compress(file,"r1"));
+
+            System.out.println(archiveService.compress(file, "r1"));
         }
 
     }
@@ -224,6 +222,39 @@ public class Test {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+
+    /**
+     * this method fail when opening cmd
+     */
+    public void processIO() {
+        try {
+            ProcessBuilder processBuilder = new ProcessBuilder("C:\\Windows\\System32\\cmd.exe");
+            Scanner scanner = new Scanner(System.in);
+
+            Process process = processBuilder.start();
+
+
+            InputStream inputStream = process.getInputStream();
+            OutputStream outputStream = process.getOutputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "gbk"));
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream, "gbk"));
+            String line;
+
+            while (true) {
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+                writer.write(scanner.next());
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
