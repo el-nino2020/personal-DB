@@ -39,7 +39,7 @@ public class FileInfo {
         }
 
 
-        long length = file.length();
+        long length = file.length();//返回文件的字节数
         if (length == filesize) {
             System.out.println("压缩文件大小与记录的一致");
         } else {

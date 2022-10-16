@@ -31,9 +31,10 @@ public class DBService {
     public List<String> getAllTableNames() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
         Connection connection = accountService.getConnection();
+
+
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-
 
         ArrayList<String> ans = new ArrayList<>();
 

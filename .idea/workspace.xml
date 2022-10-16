@@ -20,16 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/dao/TableInfoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/TableInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/createTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/createTables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ArchiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,15 +96,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -214,7 +209,9 @@
       <workItem from="1665737344470" duration="567000" />
       <workItem from="1665737978839" duration="268000" />
       <workItem from="1665742921616" duration="6449000" />
-      <workItem from="1665812429274" duration="3738000" />
+      <workItem from="1665812429274" duration="4140000" />
+      <workItem from="1665824911694" duration="6000" />
+      <workItem from="1665900708631" duration="2282000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -405,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665748919166</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="开发中。。。值得一提的是修改了表的定义和增添了一张新的表`meta_table`">
+      <created>1665816356783</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1665816356783</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +428,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add gitignore" />
     <MESSAGE value="move .sql files to /src/" />
     <MESSAGE value="java与命令行交互，我似乎没必要写一个.bat文件作为整个项目的开始了" />
     <MESSAGE value="add view" />
@@ -449,7 +452,8 @@
     <MESSAGE value="更新readme" />
     <MESSAGE value="在使用DML前开启事务" />
     <MESSAGE value="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑" />
+    <MESSAGE value="开发中。。。值得一提的是修改了表的定义和增添了一张新的表`meta_table`" />
+    <option name="LAST_COMMIT_MESSAGE" value="开发中。。。值得一提的是修改了表的定义和增添了一张新的表`meta_table`" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -460,30 +464,30 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665139039580" />
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665746730692">
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665900789243">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665746730692" />
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665900789243" />
     <state x="752" y="200" key="FileChooserDialogImpl" timestamp="1665139500539">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="573" key="GridCell.Tab.0.bottom" timestamp="1665815394232">
+    <state width="1995" height="573" key="GridCell.Tab.0.bottom" timestamp="1665902890564">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="573" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665815394232" />
-    <state width="1995" height="573" key="GridCell.Tab.0.center" timestamp="1665815394232">
+    <state width="1995" height="573" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665902890564" />
+    <state width="1995" height="573" key="GridCell.Tab.0.center" timestamp="1665902890563">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="573" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665815394232" />
-    <state width="1995" height="573" key="GridCell.Tab.0.left" timestamp="1665815394232">
+    <state width="1995" height="573" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665902890563" />
+    <state width="1995" height="573" key="GridCell.Tab.0.left" timestamp="1665902890563">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="573" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665815394232" />
-    <state width="1995" height="573" key="GridCell.Tab.0.right" timestamp="1665815394232">
+    <state width="1995" height="573" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665902890563" />
+    <state width="1995" height="573" key="GridCell.Tab.0.right" timestamp="1665902890564">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="573" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665815394232" />
+    <state width="1995" height="573" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665902890564" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -492,10 +496,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665748926580">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665816363466">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665748926580" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665816363466" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -510,7 +514,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/Test.java</url>
-          <line>156</line>
+          <line>163</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -2,6 +2,7 @@ package test;
 
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.RandomStringUtils;
+import service.ArchiveService;
 import utils.Utility;
 
 import javax.swing.*;
@@ -13,12 +14,18 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
+        ArchiveService archiveService = new ArchiveService();
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println(new File(scanner.next()).length());
-//            System.out.print("请输入文件路径：");
-//            System.out.println(Utility.getFileMD5(new File(scanner.next())));
+            System.out.print("请输入文件路径：");
+            File file = new File(scanner.next());
+            无法输入带中文的路径，有问题
+                    Google搜索： java string change encoding
+            https://www.baeldung.com/java-string-encode-utf-8
+            https://stackoverflow.com/questions/5729806/encode-string-to-utf-8
+            System.out.println(archiveService.compress(file,"r1"));
         }
+
     }
 
     @org.junit.Test

@@ -121,9 +121,11 @@ public class View {
         
         fileInfo.checkAndInform(file);
 
-        //TODO 完成ArchiveService中的解压功能，在对应目录下解压
-
-
+        System.out.println("测试压缩包");
+        archiveService.testRar(file,fileInfo.getPasswd());
+        System.out.println("开始解压");
+        archiveService.decompress(file, fileInfo.getPasswd());
+        System.out.println("解压完成");
     }
 
     private void quitSystem() {
