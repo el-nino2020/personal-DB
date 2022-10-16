@@ -88,9 +88,11 @@
 
 # 4. 编译时包含`.jar`文件
 
-- 当前位于`/src/`下，使用`/test/testIncludingJar.java`作为例子
+- 当前位于`\src\`下，使用`\test\testIncludingJar.java`作为例子
 
 - ```sh
+    javac -cp ..\lib\commons-lang3-3.12.0.jar;. test\testIncludingJar.java
+    java -cp ..\lib\commons-lang3-3.12.0.jar;. test.testIncludingJar
     ```
-
-- 
+    
+- 参考https://stackoverflow.com/questions/9844777/issue-with-running-guava
