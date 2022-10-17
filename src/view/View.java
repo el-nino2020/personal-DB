@@ -1,6 +1,7 @@
 package view;
 
 import domain.FileInfo;
+import domain.TableInfo;
 import service.AccountService;
 import service.ArchiveService;
 import service.DBService;
@@ -11,6 +12,7 @@ import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.io.File;
+import java.util.List;
 import java.util.Scanner;
 
 public class View {
@@ -39,7 +41,7 @@ public class View {
             System.out.println("\t\t1.  压缩并记录文件(夹)");
             System.out.println("\t\t2.  解压文件");
             System.out.println("\t\t3.  新建表");
-            System.out.println("\t\t4.  查询数据库");
+            System.out.println("\t\t4.  查询现有表");
             System.out.println("\t\tq.  退出系统");
             System.out.println("=========================================");
             System.out.print("输入你的选择: ");
@@ -54,6 +56,9 @@ public class View {
                     else System.out.println("总结: 操作失败");
                     break;
                 //TODO 新加入的选项3和4
+                case "4":
+                    showAllTables();
+                    break;
                 case "q":
                     menuLoop = false;
                     break;
@@ -113,14 +118,16 @@ public class View {
             File file = chooseFileInGUI(true);
             Utility.ifNullThrow(file, "选择的文件不存在");//这个异常基本不可能发生
 
-            //TODO 展示现有的表，选择要存放的表
-
+            //TODO 展示现有的表（在一个新的窗口展示，在现有cmd中展示显得有些拥挤），选择要存放的表，考虑能否在Jtable中打勾来选择
+            String tableName;
             //TODO 根据选择的表，找到其AUTO_INCREMENT的值，用于生成压缩文件的名字：表名_ID.rar，ID即为表中的ID字段
-
+            String id = dbService.getAUTOINCREMENTValue(tableName);
+            String archiveName = tableName + "_" + id;
             //TODO ArchiveService要生成随机的字符串作为密码，并在内存中保存该密码
             //TODO 压缩文件
-//            archiveService.compress(file, );
+            String archivePassword = archiveService.compress(file, archiveName);
             //TODO 根据压缩文件的信息和保存的密码，生成FileInfo对象
+
             //TODO 将FileInfo对象写入数据库
             //TODO 数据库备份——没错，每次调用该方法，都要备份一次数据库
             //TODO 用保存的密码测试压缩文件。如果测试失败，有点尴尬，上面哪一步肯定出现问题了，考虑重做整个过程
@@ -165,6 +172,43 @@ public class View {
         }
         return true;
     }
+
+
+    public void showAllTables() {
+        if (!loginDBMS(LOGIN_TRY_TIMES)) {
+            System.out.println("该操作失败，需要先登录数据库账户");
+        }
+
+        List<TableInfo> list = dbService.getAllTableInfo();
+        JFrame frame = new JFrame();
+
+        frame.setTitle("所有表");
+
+        String[][] data = new String[list.size()][2];
+
+        for (int i = 0; i < list.size(); i++) {
+            data[i][0] = list.get(i).getId() + "";
+            data[i][1] = list.get(i).getTablename();
+            data[i][2] = list.get(i).getNote();
+        }
+
+        // Column Names
+        String[] columnNames = {"序号", "表名", "注释"};
+
+        // Initializing the JTable
+        JTable table = new JTable(data, columnNames);
+        table.setBounds(30, 40, 600, 500);
+        table.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        // adding it to JScrollPane
+        JScrollPane sp = new JScrollPane(table);
+        frame.add(sp);
+        // Frame Size
+        frame.setSize(500, 200);
+        // Frame Visible = true
+        frame.setVisible(true);
+    }
+
 
     //TODO: 参考https://stackoverflow.com/questions/13798163/jfilechooser-appearance里面的回答，也许有除了
     //JFileChooser以外更好的实现，但现阶段这个实现够用了
@@ -230,8 +274,6 @@ public class View {
 //        setFileChooserFont(chooser.getComponents(), new Font("Arial", Font.BOLD, 15));
 
     }
-
-
 
 
     private void quitSystem() {

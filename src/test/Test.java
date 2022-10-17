@@ -15,11 +15,12 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        View view = new View();
-        while (true) {
-            File file = view.chooseFileInGUI(true);
-            System.out.println(file);
-        }
+//        View view = new View();
+//        while (true) {
+//            File file = view.chooseFileInGUI(true);
+//            System.out.println(file);
+//        }
+//        System.out.println("'");
 
     }
 
@@ -297,6 +298,35 @@ public class Test {
             }
         }
 
+    }
+
+    public void useTables() {
+        JFrame f = new JFrame();
+
+        // Frame Title
+        f.setTitle("JTable Example");
+
+        // Data to be displayed in the JTable
+        String[][] data = {
+                {"Kundan Kumar Jha", "4031", "CSE"},
+                {"Anand Jha", "6014", "IT"}
+        };
+
+        // Column Names
+        String[] columnNames = {"Name", "Roll Number", "Department"};
+
+        // Initializing the JTable
+        JTable j = new JTable(data, columnNames);
+        j.setBounds(30, 40, 200, 300);
+
+        // adding it to JScrollPane
+        JScrollPane sp = new JScrollPane(j);
+        f.add(sp);
+        // Frame Size
+        f.setSize(500, 200);
+        // Frame Visible = true
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 }

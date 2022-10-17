@@ -30,7 +30,8 @@ public class Utility {
 
 
     /**
-     * 开启一个新的进程来运行command，将输出以行为单位存入List中返回
+     * 开启一个新的进程来运行command，将输出以行为单位存入List中返回。需要注意，当前Java进程会阻塞，
+     * 直到新进程终止
      *
      * @param commands  一条MS-DOS命令的各个组成部分，拼接在一起形成一条完整的DOS命令
      * @param directory DOS命令运行在哪个目录下；如果为NULL，则为当前Java程序的运行目录
