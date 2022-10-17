@@ -1,6 +1,8 @@
 package service;
 
 import com.google.common.base.Preconditions;
+import dao.TableInfoDAO;
+import domain.TableInfo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,9 +16,18 @@ import java.util.List;
  */
 public class DBService {
     AccountService accountService;
+    TableInfoDAO tableInfoDAO = new TableInfoDAO();
 
     public DBService(AccountService accountService) {
         this.accountService = accountService;
+    }
+
+
+    public List<TableInfo> getAllTableInfo() {
+        List<TableInfo> ans = tableInfoDAO.queryMultiRow(accountService.getConnection(),
+                "select * from meta_table;",
+                TableInfo.class);
+        return ans;
     }
 
 

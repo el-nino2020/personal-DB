@@ -2,7 +2,6 @@ package service;
 
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
 import utils.Utility;
 
 import java.io.File;
@@ -14,10 +13,11 @@ public class ArchiveService {
     private static final int PASSWORD_LENGTH = 50;
 
     /**
-     * 使用随机密码压缩一个文件/文件夹，返回该随机密码
+     * 使用随机密码压缩一个文件/文件夹，返回该随机密码，
+     * 生成的压缩包与原始文件在同一目录下
      *
      * @param file       要压缩的文件/文件夹
-     * @param targetName 生成的rar压缩包的名字
+     * @param targetName 生成的rar压缩包的名字，生成的压缩包的名字形如 targetName.rar
      * @return 压缩时使用的随机密码
      */
     public String compress(File file, String targetName) {
@@ -31,6 +31,12 @@ public class ArchiveService {
         return password;
     }
 
+    /**
+     * 生成长度为PASSWORD_LENGTH的ASCII字符串，该字符串中不包含双引号"，
+     * 以便于在命令行输入
+     *
+     * @return
+     */
     public String makePassword() {
         StringBuilder ans = new StringBuilder(RandomStringUtils.randomAscii(PASSWORD_LENGTH));
         //需要将ans中的双引号替换为其他字符
@@ -48,7 +54,7 @@ public class ArchiveService {
                 throw new RuntimeException("生成密码的方法有问题");
             }
         }
-        System.out.println("随机密码生成");
+        System.out.println("随机密码生成成功");
         return ans.toString();
     }
 
@@ -61,7 +67,9 @@ public class ArchiveService {
      */
     public void decompress(File file, String password) {
         Utility.runSystemCommand(file.getParent(),
-                "winrar", "x", "-hp" + "\"" + password + "\"", file.getName());
+                "winrar", "x",
+                "-hp" + "\"" + password + "\"",
+                file.getName());
     }
 
     /**
@@ -73,6 +81,8 @@ public class ArchiveService {
      */
     public void testRar(File file, String password) {
         Utility.runSystemCommand(file.getParent(),
-                "winrar", "t", "-hp" + "\"" + password + "\"", file.getName());
+                "winrar", "t",
+                "-hp" + "\"" + password + "\"",
+                file.getName());
     }
 }

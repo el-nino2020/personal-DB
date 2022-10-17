@@ -32,4 +32,10 @@ public class TableInfo {
     public void setNote(String note) {
         this.note = note;
     }
+
+
+    @Override
+    public String toString() {
+        return id + "\t\t" + tablename + "\t\t\t" + note + "\n";
+    }
 }

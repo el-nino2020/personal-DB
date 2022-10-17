@@ -21,9 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CompileAndRun.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompileAndRun.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/TableInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/TableInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ArchiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +64,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -78,7 +82,7 @@
       <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.View">
+  <component name="RunManager" selected="JUnit.Test.testRarPasswdGen">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Test" />
       <module name="personal-DB" />
@@ -148,7 +152,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.useGuava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.testRarPasswdGen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
       <extension name="coverage">
         <pattern>
@@ -158,7 +162,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="useGuava" />
+      <option name="METHOD_NAME" value="testRarPasswdGen" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,15 +173,15 @@
       <item itemvalue="Application.View" />
       <item itemvalue="JUnit.FileInfoService.testMethod" />
       <item itemvalue="JUnit.Test.processIO" />
-      <item itemvalue="JUnit.Test.useGuava" />
+      <item itemvalue="JUnit.Test.testRarPasswdGen" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Test.testRarPasswdGen" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.View" />
         <item itemvalue="JUnit.Test.processIO" />
         <item itemvalue="JUnit.FileInfoService.testMethod" />
-        <item itemvalue="JUnit.Test.useGuava" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +219,7 @@
       <workItem from="1665919204242" duration="2788000" />
       <workItem from="1665925379963" duration="720000" />
       <workItem from="1665964264643" duration="13000" />
-      <workItem from="1665983105422" duration="1663000" />
+      <workItem from="1665983105422" duration="3655000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -448,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665926086997</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="update">
+      <created>1665986494799</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1665986494799</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +491,6 @@
     <MESSAGE value="Utility需要增加几个与命令行交互的方法" />
     <MESSAGE value="更新Utility" />
     <MESSAGE value="测试如何打开Windows选择文件框" />
-    <MESSAGE value="update" />
     <MESSAGE value="add two service classes" />
     <MESSAGE value="update comment" />
     <MESSAGE value="更新readme" />
@@ -492,7 +502,8 @@
     <MESSAGE value="包含jar包的编译搞定了" />
     <MESSAGE value="以后直接在cmd中运行这个文件就可以测试了" />
     <MESSAGE value="用于删除生成的.class文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="用于删除生成的.class文件" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -503,30 +514,30 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665986454174" />
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665900789243">
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665987120278">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665900789243" />
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1665987120278" />
     <state x="752" y="200" key="FileChooserDialogImpl" timestamp="1665139500539">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="270" key="GridCell.Tab.0.bottom" timestamp="1665986380900">
+    <state width="1995" height="245" key="GridCell.Tab.0.bottom" timestamp="1665986823091">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="270" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665986380900" />
-    <state width="1995" height="270" key="GridCell.Tab.0.center" timestamp="1665986380900">
+    <state width="1995" height="245" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665986823091" />
+    <state width="1995" height="245" key="GridCell.Tab.0.center" timestamp="1665986823091">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="270" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665986380900" />
-    <state width="1995" height="270" key="GridCell.Tab.0.left" timestamp="1665986380900">
+    <state width="1995" height="245" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665986823091" />
+    <state width="1995" height="245" key="GridCell.Tab.0.left" timestamp="1665986823091">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="270" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665986380900" />
-    <state width="1995" height="270" key="GridCell.Tab.0.right" timestamp="1665986380900">
+    <state width="1995" height="245" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665986823091" />
+    <state width="1995" height="245" key="GridCell.Tab.0.right" timestamp="1665986823091">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="270" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665986380900" />
+    <state width="1995" height="245" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665986823091" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -543,10 +554,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665919443789">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665986463780">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665919443789" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665986463780" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

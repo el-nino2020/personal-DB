@@ -7,7 +7,11 @@ import service.DBService;
 import service.FileInfoService;
 import utils.Utility;
 
+import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
+import java.awt.*;
 import java.io.File;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class View {
@@ -23,6 +27,7 @@ public class View {
 
     private Scanner scanner = new Scanner(System.in);
     boolean menuLoop = true;
+    private static final String DESKTOP_PATH = "C:\\Users\\Morgan\\Desktop";
 
 
     public void menu() {
@@ -118,15 +123,56 @@ public class View {
 
         FileInfo fileInfo = fileInfoService.getFileInfo(file);
         String fileDirectory = file.getParent();
-        
+
         fileInfo.checkAndInform(file);
 
         System.out.println("测试压缩包");
-        archiveService.testRar(file,fileInfo.getPasswd());
+        archiveService.testRar(file, fileInfo.getPasswd());
         System.out.println("开始解压");
         archiveService.decompress(file, fileInfo.getPasswd());
         System.out.println("解压完成");
     }
+
+        //TODO test this method
+    public File chooseFileInGUI() {
+        System.out.println("为了方便使用，请输入要压缩的文件(夹)所在的目录. 输入desktop以快速定位桌面");
+        System.out.print("你的输入：");
+
+        String line;
+        File parentDirectory;
+
+        while (true) {
+            line = scanner.nextLine();
+
+            if ("desktop".equals(line)) {
+                parentDirectory = new File(DESKTOP_PATH);
+                break;
+            }
+            parentDirectory = new File(line);
+
+            if (parentDirectory.exists() && parentDirectory.isDirectory()) {
+                break;//输入的目录验证成功
+            }
+            System.out.println("输入有误，请重新输入");
+        }
+
+        System.out.println("请注意，只能选择一个文件(夹)");
+
+        JFileChooser chooser = new JFileChooser(FileSystemView.getFileSystemView());
+        chooser.setMultiSelectionEnabled(false);
+        chooser.setCurrentDirectory(parentDirectory);
+
+        chooser.setDialogTitle("选择一个要压缩的文件(夹)");
+        chooser.setPreferredSize(new Dimension(1200, 800));
+
+        //TODO 设置字体似乎没用
+        chooser.setFont(new Font("Arial", Font.PLAIN, 15));
+
+
+        chooser.showDialog(null, null);
+        return chooser.getSelectedFile();
+    }
+
 
     private void quitSystem() {
         accountService.quitAccount();

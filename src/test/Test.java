@@ -257,5 +257,13 @@ public class Test {
 
     }
 
+    @org.junit.Test
+    public void testRarPasswdGen() {
+        int n = 10000;
+        for (int i = 0; i < n; i++) {
+            new ArchiveService().makePassword();
+        }
+    }
+
 
 }
