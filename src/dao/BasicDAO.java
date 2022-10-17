@@ -80,8 +80,8 @@ public class BasicDAO<T> {
      * @param parameters 替换sql中的占位符 ?
      * @return 单行单列的数据
      */
+    @SuppressWarnings({"unchecked"})
     public Object queryScalar(Connection connection, String sql, Object... parameters) {
-
         try {
             return qr.query(connection, sql, new ScalarHandler(), parameters);
         } catch (SQLException e) {

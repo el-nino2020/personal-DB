@@ -3,25 +3,22 @@ package test;
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.RandomStringUtils;
 import service.ArchiveService;
-import utils.Utility;
+import view.View;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.io.*;
+import java.sql.*;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ArchiveService archiveService = new ArchiveService();
+        View view = new View();
         while (true) {
-            System.out.print("请输入文件路径：");
-            File file = new File(scanner.next());
-
-            System.out.println(archiveService.compress(file, "r1"));
+            File file = view.chooseFileInGUI(true);
+            System.out.println(file);
         }
 
     }
@@ -265,5 +262,41 @@ public class Test {
         }
     }
 
+    @org.junit.Test
+    public void getAUTOINCREMENTValue() {
+        //参考这个：https://stackoverflow.com/questions/15821532/get-current-auto-increment-value-for-any-table
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cloud_backup"
+                    , "backupadmin", "123");
+            preparedStatement = connection.prepareStatement("SHOW TABLE STATUS FROM cloud_backup WHERE `name` LIKE 't1' ");
+            resultSet = preparedStatement.executeQuery();
+            ResultSetMetaData metaData = resultSet.getMetaData();
+
+            while (resultSet.next()) {
+                for (int i = 0; i < metaData.getColumnCount(); i++) {
+                    //注意到: resultSet中字段的顺序并不是固定的，应该根据列名选出AUTO_INCREMENT的值
+                    System.out.println("column count :" + (i + 1));
+                    System.out.print(metaData.getColumnName(i + 1) + ": ");
+                    System.out.println(resultSet.getString(i + 1));
+                    System.out.println();
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                resultSet.close();
+                preparedStatement.close();
+                connection.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+    }
 
 }

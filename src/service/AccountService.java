@@ -13,6 +13,7 @@ public class AccountService {
 
     private Connection connection;
     private boolean loginStatus = false;
+    private transient String DBMSPassword = null;//登录成功后，该字段保存USER的密码，主要用于数据库备份
 
 
     public AccountService() {
@@ -30,10 +31,10 @@ public class AccountService {
             connection = DriverManager.getConnection(DBMS_URL, USER, password);
         } catch (SQLException e) {
             System.out.println(e);
-
         }
-        if (connection != null)
+        if (connection != null) {
             loginStatus = true;
+        }
         return connection != null;
     }
 
@@ -41,6 +42,12 @@ public class AccountService {
         return loginStatus;
     }
 
+    /**
+     * 只能被其他Service调用
+     */
+    String getDBMSPassword() {
+        return DBMSPassword;
+    }
 
     public void quitAccount() {
         try {

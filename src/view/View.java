@@ -11,24 +11,25 @@ import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.io.File;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class View {
-
+    private static final String DESKTOP_PATH = "C:\\Users\\Morgan\\Desktop";
     private static final int LOGIN_TRY_TIMES = 5;
 
     private AccountService accountService = new AccountService();
     private DBService dbService = new DBService(accountService);
-
     private FileInfoService fileInfoService = new FileInfoService(accountService);
-
     private ArchiveService archiveService = new ArchiveService();
 
     private Scanner scanner = new Scanner(System.in);
-    boolean menuLoop = true;
-    private static final String DESKTOP_PATH = "C:\\Users\\Morgan\\Desktop";
+    private boolean menuLoop = true;
+    private JFileChooser chooser;
 
+
+    public View() {
+        initializeJFileChooser();
+    }
 
     public void menu() {
         String choice;
@@ -45,10 +46,12 @@ public class View {
             choice = scanner.next();
             switch (choice) {
                 case "1":
-                    makeArchiveAndRecord();
+                    if (makeArchiveAndRecord()) System.out.println("总结: 操作成功");
+                    else System.out.println("总结: 操作失败");
                     break;
                 case "2":
-                    decompressArchive();
+                    if (decompressArchive()) System.out.println("总结: 操作成功");
+                    else System.out.println("总结: 操作失败");
                     break;
                 //TODO 新加入的选项3和4
                 case "q":
@@ -98,50 +101,88 @@ public class View {
     }
 
 
-    private void makeArchiveAndRecord() {
+    private boolean makeArchiveAndRecord() {
         if (!loginDBMS(LOGIN_TRY_TIMES)) {
             System.out.println("该操作失败，需要先登录数据库账户");
-            return;
+            return false;
         }
 
-        //TODO 要压缩的文件/文件夹的绝对路径
-        //TODO ArchiveService要生成随机的字符串作为密码，并在内存中保存该密码
-        //TODO 压缩文件
-        //TODO 根据压缩文件的信息和保存的密码，生成FileInfo对象
-        //TODO 将FileInfo对象写入数据库
-        //TODO 数据库备份——没错，每次调用该方法，都要备份一次数据库
-        //TODO 用保存的密码测试压缩文件。如果测试失败，有点尴尬，上面哪一步肯定出现问题了，考虑重做整个过程
+
+        try {
+            //TODO 要压缩的文件/文件夹的绝对路径
+            File file = chooseFileInGUI(true);
+            Utility.ifNullThrow(file, "选择的文件不存在");//这个异常基本不可能发生
+
+            //TODO 展示现有的表，选择要存放的表
+
+            //TODO 根据选择的表，找到其AUTO_INCREMENT的值，用于生成压缩文件的名字：表名_ID.rar，ID即为表中的ID字段
+
+            //TODO ArchiveService要生成随机的字符串作为密码，并在内存中保存该密码
+            //TODO 压缩文件
+//            archiveService.compress(file, );
+            //TODO 根据压缩文件的信息和保存的密码，生成FileInfo对象
+            //TODO 将FileInfo对象写入数据库
+            //TODO 数据库备份——没错，每次调用该方法，都要备份一次数据库
+            //TODO 用保存的密码测试压缩文件。如果测试失败，有点尴尬，上面哪一步肯定出现问题了，考虑重做整个过程
+
+        } catch (Exception e) {
+            //以一种温和的方式展示异常信息
+            System.out.println("========== 以下是异常信息 ===============");
+            System.out.println(e);
+            System.out.println("========== 异常信息结束 ===============");
+            return false;
+        }
+        return true;
     }
 
-    private void decompressArchive() {
+    private boolean decompressArchive() {
         if (!loginDBMS(LOGIN_TRY_TIMES)) {
             System.out.println("该操作失败，需要先登录数据库账户");
-            return;
+            return false;
         }
-        System.out.print("请输入要解压的压缩包的绝对路径: ");
-        File file = new File(scanner.next());
+        try {
+            File file = chooseFileInGUI(false);
+            Utility.ifNullThrow(file, "选择的文件不存在");//这个异常基本不可能发生
 
-        FileInfo fileInfo = fileInfoService.getFileInfo(file);
-        String fileDirectory = file.getParent();
+            FileInfo fileInfo = fileInfoService.getFileInfo(file);
+            Utility.ifNullThrow(fileInfo, "数据库不存在该文件的记录");
 
-        fileInfo.checkAndInform(file);
+            fileInfo.checkAndInform(file);
 
-        System.out.println("测试压缩包");
-        archiveService.testRar(file, fileInfo.getPasswd());
-        System.out.println("开始解压");
-        archiveService.decompress(file, fileInfo.getPasswd());
-        System.out.println("解压完成");
+            System.out.println("测试压缩包");
+            archiveService.testRar(file, fileInfo.getPasswd());
+
+            System.out.println("开始解压");
+            archiveService.decompress(file, fileInfo.getPasswd());
+
+            System.out.println("解压完成");
+        } catch (Exception e) {
+            //以一种温和的方式展示异常信息
+            System.out.println("========== 以下是异常信息 ===============");
+            System.out.println(e);
+            System.out.println("========== 异常信息结束 ===============");
+            return false;
+        }
+        return true;
     }
 
-        //TODO test this method
-    public File chooseFileInGUI() {
+    //TODO: 参考https://stackoverflow.com/questions/13798163/jfilechooser-appearance里面的回答，也许有除了
+    //JFileChooser以外更好的实现，但现阶段这个实现够用了
+
+    /**
+     * 以文件窗口的形式(GUI)选择文件
+     *
+     * @param directoryPermitted 是否允许选择文件夹
+     * @return 选择的文件对应的File对象
+     */
+    public File chooseFileInGUI(boolean directoryPermitted) {
         System.out.println("为了方便使用，请输入要压缩的文件(夹)所在的目录. 输入desktop以快速定位桌面");
-        System.out.print("你的输入：");
 
         String line;
         File parentDirectory;
 
         while (true) {
+            System.out.print("你的输入：");
             line = scanner.nextLine();
 
             if ("desktop".equals(line)) {
@@ -157,21 +198,40 @@ public class View {
         }
 
         System.out.println("请注意，只能选择一个文件(夹)");
-
-        JFileChooser chooser = new JFileChooser(FileSystemView.getFileSystemView());
-        chooser.setMultiSelectionEnabled(false);
         chooser.setCurrentDirectory(parentDirectory);
+
+        chooser.setFileSelectionMode(directoryPermitted ?
+                JFileChooser.FILES_AND_DIRECTORIES :
+                JFileChooser.FILES_ONLY);
+
+        chooser.showDialog(null, null);
+        return chooser.getSelectedFile();
+    }
+
+
+    /**
+     * 对chooser进行设置，使得打开文件窗口人性化——原版的JFileChooser根本没法看
+     */
+    private void initializeJFileChooser() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        chooser = new JFileChooser(FileSystemView.getFileSystemView());
+        chooser.setMultiSelectionEnabled(false); //只能选择一个文件
 
         chooser.setDialogTitle("选择一个要压缩的文件(夹)");
         chooser.setPreferredSize(new Dimension(1200, 800));
 
         //TODO 设置字体似乎没用
-        chooser.setFont(new Font("Arial", Font.PLAIN, 15));
+//        chooser.setFont(new Font("Arial", Font.PLAIN, 15));
+//        setFileChooserFont(chooser.getComponents(), new Font("Arial", Font.BOLD, 15));
 
-
-        chooser.showDialog(null, null);
-        return chooser.getSelectedFile();
     }
+
+
 
 
     private void quitSystem() {
