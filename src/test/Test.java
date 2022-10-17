@@ -3,20 +3,20 @@ package test;
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.RandomStringUtils;
 import service.ArchiveService;
+import utils.Utility;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.io.*;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-
-
-        ArchiveService archiveService = new ArchiveService();
         Scanner scanner = new Scanner(System.in);
+        ArchiveService archiveService = new ArchiveService();
         while (true) {
             System.out.print("请输入文件路径：");
             File file = new File(scanner.next());

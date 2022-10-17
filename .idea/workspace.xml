@@ -20,14 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dao/TableInfoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/TableInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ArchiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CompileAndRun.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompileAndRun.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,13 +78,26 @@
       <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.View">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Test" />
       <module name="personal-DB" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.View" />
+      <module name="personal-DB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,7 +132,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.useFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.processIO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
       <extension name="coverage">
         <pattern>
@@ -133,7 +142,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="useFile" />
+      <option name="METHOD_NAME" value="processIO" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,29 +164,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.useJtable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="personal-DB" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="useJtable" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.View" />
+      <item itemvalue="JUnit.FileInfoService.testMethod" />
+      <item itemvalue="JUnit.Test.processIO" />
+      <item itemvalue="JUnit.Test.useGuava" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.View" />
+        <item itemvalue="JUnit.Test.processIO" />
         <item itemvalue="JUnit.FileInfoService.testMethod" />
         <item itemvalue="JUnit.Test.useGuava" />
-        <item itemvalue="JUnit.Test.useFile" />
-        <item itemvalue="JUnit.Test.useJtable" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +211,11 @@
       <workItem from="1665742921616" duration="6449000" />
       <workItem from="1665812429274" duration="4140000" />
       <workItem from="1665824911694" duration="6000" />
-      <workItem from="1665900708631" duration="2282000" />
+      <workItem from="1665900708631" duration="5741000" />
+      <workItem from="1665919204242" duration="2788000" />
+      <workItem from="1665925379963" duration="720000" />
+      <workItem from="1665964264643" duration="13000" />
+      <workItem from="1665983105422" duration="1663000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -409,7 +413,42 @@
       <option name="project" value="LOCAL" />
       <updated>1665816356783</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="开发中。。。主要写了ArchiveService，现在存在编码抓换的问题">
+      <created>1665903134684</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1665903134684</updated>
+    </task>
+    <task id="LOCAL-00030" summary="压缩时包含中文路径的问题解决，只要在命令行编译并运行就没问题了，&#10;用命令行运行`testCMDEncoding.java`，&#10;现在的问题是如何在命令行包括.jar文件">
+      <created>1665921854145</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1665921854145</updated>
+    </task>
+    <task id="LOCAL-00031" summary="包含jar包的编译搞定了">
+      <created>1665925407339</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1665925407339</updated>
+    </task>
+    <task id="LOCAL-00032" summary="以后直接在cmd中运行这个文件就可以测试了">
+      <created>1665925924379</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1665925924379</updated>
+    </task>
+    <task id="LOCAL-00033" summary="用于删除生成的.class文件">
+      <created>1665926086997</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1665926086997</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,11 +467,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="move .sql files to /src/" />
-    <MESSAGE value="java与命令行交互，我似乎没必要写一个.bat文件作为整个项目的开始了" />
-    <MESSAGE value="add view" />
-    <MESSAGE value="add some test case" />
-    <MESSAGE value="add an apache package to generate random string" />
     <MESSAGE value="配置文件" />
     <MESSAGE value="View层基本代码" />
     <MESSAGE value="添加了一个Service类，用来处理数据库登录" />
@@ -453,17 +487,22 @@
     <MESSAGE value="在使用DML前开启事务" />
     <MESSAGE value="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑" />
     <MESSAGE value="开发中。。。值得一提的是修改了表的定义和增添了一张新的表`meta_table`" />
-    <option name="LAST_COMMIT_MESSAGE" value="开发中。。。值得一提的是修改了表的定义和增添了一张新的表`meta_table`" />
+    <MESSAGE value="开发中。。。主要写了ArchiveService，现在存在编码抓换的问题" />
+    <MESSAGE value="压缩时包含中文路径的问题解决，只要在命令行编译并运行就没问题了，&#10;用命令行运行`testCMDEncoding.java`，&#10;现在的问题是如何在命令行包括.jar文件" />
+    <MESSAGE value="包含jar包的编译搞定了" />
+    <MESSAGE value="以后直接在cmd中运行这个文件就可以测试了" />
+    <MESSAGE value="用于删除生成的.class文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="用于删除生成的.class文件" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="#Project_Structure/0.0.2048.1112@0.0.2048.1112" timestamp="1665139426098" />
-    <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1665139039580">
+    <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1665986454174">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665139039580" />
+    <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665986454174" />
     <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1665900789243">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -472,22 +511,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="573" key="GridCell.Tab.0.bottom" timestamp="1665902890564">
+    <state width="1995" height="270" key="GridCell.Tab.0.bottom" timestamp="1665986380900">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="573" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665902890564" />
-    <state width="1995" height="573" key="GridCell.Tab.0.center" timestamp="1665902890563">
+    <state width="1995" height="270" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1665986380900" />
+    <state width="1995" height="270" key="GridCell.Tab.0.center" timestamp="1665986380900">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="573" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665902890563" />
-    <state width="1995" height="573" key="GridCell.Tab.0.left" timestamp="1665902890563">
+    <state width="1995" height="270" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1665986380900" />
+    <state width="1995" height="270" key="GridCell.Tab.0.left" timestamp="1665986380900">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="573" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665902890563" />
-    <state width="1995" height="573" key="GridCell.Tab.0.right" timestamp="1665902890564">
+    <state width="1995" height="270" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1665986380900" />
+    <state width="1995" height="270" key="GridCell.Tab.0.right" timestamp="1665986380900">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="573" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665902890564" />
+    <state width="1995" height="270" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1665986380900" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -496,25 +535,25 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665816363466">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1665926093651">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665816363466" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1665926093651" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665812993294">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1665919443789">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665812993294" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1665919443789" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/Test.java</url>
-          <line>163</line>
+          <line>161</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

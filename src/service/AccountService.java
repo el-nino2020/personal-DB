@@ -44,7 +44,8 @@ public class AccountService {
 
     public void quitAccount() {
         try {
-            connection.close();
+            if (connection != null)
+                connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -52,9 +53,10 @@ public class AccountService {
 
     /**
      * 只能给同一个package中的其他service类用
+     *
      * @return
      */
-     Connection getConnection() {
+    Connection getConnection() {
         return connection;
     }
 }
