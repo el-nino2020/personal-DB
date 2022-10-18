@@ -3,8 +3,12 @@ package service;
 import com.google.common.base.Preconditions;
 import dao.TableInfoDAO;
 import domain.TableInfo;
+import utils.Utility;
 
+import java.io.File;
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +16,13 @@ import java.util.List;
  * 负责数据库的备份和已有表的查询，也许还要负责新建表？
  */
 public class DBService {
-    AccountService accountService;
-    TableInfoDAO tableInfoDAO = new TableInfoDAO();
+    //要将数据库备份到哪个目录下，推荐设置为某一云盘的自动备份目录
+    private static final String DUMP_DESTINATION = "C:\\Users\\Morgan\\Desktop\\mega同步\\";
+    private static final DateTimeFormatter TIME_FORMATTER =
+            DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+
+    private AccountService accountService;
+    private TableInfoDAO tableInfoDAO = new TableInfoDAO();
 
     public DBService(AccountService accountService) {
         this.accountService = accountService;
@@ -119,4 +128,36 @@ public class DBService {
 
         return ans;
     }
+
+
+    /**
+     * 备份cloud_backup数据库至DUMP_DESTINATION下，
+     * 使用当前用户的密码压缩备份文件，然后删除备份文件。
+     * 备份的命令参考：https://www.sqlshack.com/how-to-backup-and-restore-mysql-databases-using-the-mysqldump-command/
+     */
+    public void databaseDump() {
+        Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
+
+        String backupFileName = AccountService.DATABASE +
+                TIME_FORMATTER.format(LocalDateTime.now());
+
+        mysqldump就是无法运行，不知道为啥。在View中输入"5"可以测试这个方法
+        List<String> strings = Utility.runSystemCommand(null,
+                "D:\\mysql5.7.19\\bin\\mysqldump.exe -u " + AccountService.USER +
+                        " -p" + accountService.getDBMSPassword() + " " +
+                        AccountService.DATABASE +
+                        " > " +
+                        DUMP_DESTINATION + backupFileName + ".sql");
+        System.out.println(strings);
+
+        //生成压缩文件
+        new ArchiveService().compress(new File(DUMP_DESTINATION + backupFileName),
+                backupFileName, accountService.getDBMSPassword());
+
+        //删除原始备份文件
+        Utility.runSystemCommand("C:\\Windows\\System32",
+                "del", DUMP_DESTINATION + backupFileName + ".sql");
+    }
+
+
 }

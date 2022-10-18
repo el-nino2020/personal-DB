@@ -3,6 +3,7 @@ package service;
 import com.google.common.base.Preconditions;
 import dao.FileInfoDAO;
 import domain.FileInfo;
+import utils.Utility;
 
 import java.io.File;
 
@@ -20,19 +21,24 @@ public class FileInfoService {
     }
 
 
-    //TODO:不会使用info.lastmodified，直接使用MySQL的NOW()函数
-    public boolean insertFileInfo(FileInfo info, String tableName /*TODO:还需要知道插入哪张表*/) {
+    /**
+     * 向tableName表中插入一条记录，该记录的字段值存储在info中
+     */
+    public boolean insertFileInfo(FileInfo info, String tableName) {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
         Preconditions.checkNotNull(info);
         Preconditions.checkNotNull(tableName);
 
-        if (!new DBService(accountService).tableExists(tableName)) {
-            return false;
-        }
+        String sql = "INSERT INTO ? (id, filename, lastmodified, passwd, md5value, note, filesize) " +
+                "VALUES (NULL, ?, now(), ?, ?, ?, ?)";
 
-
-
-
+        fileInfoDAO.update(accountService.getConnection(), sql,
+                tableName,
+                info.getFilename(),
+                info.getPasswd(),
+                info.getMd5value(),
+                info.getNote(),
+                info.getFilesize());
 
         return true;
     }
@@ -69,8 +75,20 @@ public class FileInfoService {
      * @param file 一个rar压缩包
      * @return
      */
-    public FileInfo makeFileInfo(File file) {
-        return null;
+    public FileInfo makeFileInfo(File file, String originalName, String archivePassword, String note) {
+        Preconditions.checkNotNull(file);
+        Preconditions.checkArgument(file.exists());
+        Preconditions.checkArgument(file.isFile());
+
+        FileInfo ans = new FileInfo();
+
+        ans.setFilename(originalName);
+        ans.setFilesize(file.length());
+        ans.setMd5value(Utility.getFileMD5(file));
+        ans.setPasswd(archivePassword);
+        ans.setNote(note);
+
+        return ans;
     }
 
 
@@ -97,9 +115,6 @@ public class FileInfoService {
 
         return ans;
     }
-
-
-
 
 
 }

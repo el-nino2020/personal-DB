@@ -17,7 +17,7 @@ public class BasicDAO<T> {
     private QueryRunner qr = new QueryRunner();
 
     /**
-     * DML语句，使用事务保证数据一致与安全
+     * DML语句，使用事务保证数据一致性
      * @param sql        DML语句
      * @param parameters 替换sql中的 ? 占位符
      * @return 受影响的行数

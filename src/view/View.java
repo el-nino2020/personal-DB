@@ -59,6 +59,10 @@ public class View {
                 case "4":
                     showAllTables();
                     break;
+                case "5":
+                    loginDBMS(LOGIN_TRY_TIMES);
+                    dbService.databaseDump();
+                    break;
                 case "q":
                     menuLoop = false;
                     break;
@@ -114,33 +118,55 @@ public class View {
 
 
         try {
-            //TODO 要压缩的文件/文件夹的绝对路径
+            //选择要压缩的文件/文件夹的绝对路径
             File file = chooseFileInGUI(true);
             Utility.ifNullThrow(file, "选择的文件不存在");//这个异常基本不可能发生
 
             //TODO 展示现有的表（在一个新的窗口展示，在现有cmd中展示显得有些拥挤），选择要存放的表，考虑能否在Jtable中打勾来选择
-            String tableName;
-            //TODO 根据选择的表，找到其AUTO_INCREMENT的值，用于生成压缩文件的名字：表名_ID.rar，ID即为表中的ID字段
+            System.out.print("请输入文件所属的表名: ");
+            String tableName = scanner.next();
+            if (!dbService.tableExists(tableName))
+                throw new RuntimeException("该表不存在");
+
+            //根据选择的表，找到其AUTO_INCREMENT的值，用于生成压缩文件的名字：表名_ID.rar，ID即为表中的ID字段
             String id = dbService.getAUTOINCREMENTValue(tableName);
+            Utility.ifNullThrow(id, String.format("查找不到表%s的AUTO_INCREMENT值", tableName));//这个异常基本不可能发生
+
             String archiveName = tableName + "_" + id;
-            //TODO ArchiveService要生成随机的字符串作为密码，并在内存中保存该密码
-            //TODO 压缩文件
-            String archivePassword = archiveService.compress(file, archiveName);
+
+            // ArchiveService要生成随机的字符串作为密码，并在内存中保存该密码
+            // 压缩文件
+            String archivePassword = archiveService.compressWithRandomPassword(file, archiveName);
+            Utility.ifNullThrow(archivePassword, "生成的密码有误");//这个异常基本不可能发生
+
+            //TODO 要求用户输入关于源文件的一些说明
+            System.out.println("请输入文件的说明: ");
+            String note = scanner.next();
+
             //TODO 根据压缩文件的信息和保存的密码，生成FileInfo对象
+            FileInfo fileInfo = fileInfoService.makeFileInfo(new File(file.getParent() + archiveName),
+                    file.getName(),
+                    archivePassword,
+                    note);
 
             //TODO 将FileInfo对象写入数据库
-            //TODO 数据库备份——没错，每次调用该方法，都要备份一次数据库
+            if (!fileInfoService.insertFileInfo(fileInfo, tableName)) {
+                throw new RuntimeException("数据库写入文件信息失败");
+            }
+
+            //TODO 数据库备份——没错，每次调用makeArchiveAndRecord，都要备份一次数据库
+
             //TODO 用保存的密码测试压缩文件。如果测试失败，有点尴尬，上面哪一步肯定出现问题了，考虑重做整个过程
 
         } catch (Exception e) {
-            //以一种温和的方式展示异常信息
             System.out.println("========== 以下是异常信息 ===============");
-            System.out.println(e);
+            e.printStackTrace();
             System.out.println("========== 异常信息结束 ===============");
             return false;
         }
         return true;
     }
+
 
     private boolean decompressArchive() {
         if (!loginDBMS(LOGIN_TRY_TIMES)) {
@@ -148,17 +174,22 @@ public class View {
             return false;
         }
         try {
+            //选择要解压的压缩包
             File file = chooseFileInGUI(false);
             Utility.ifNullThrow(file, "选择的文件不存在");//这个异常基本不可能发生
 
+            //从数据库中读取对应的记录
             FileInfo fileInfo = fileInfoService.getFileInfo(file);
             Utility.ifNullThrow(fileInfo, "数据库不存在该文件的记录");
 
+            //对比数据库中的记录与该文件的实际信息
             fileInfo.checkAndInform(file);
 
+            //检验密码是否正确
             System.out.println("测试压缩包");
             archiveService.testRar(file, fileInfo.getPasswd());
 
+            //压缩到同一目录下
             System.out.println("开始解压");
             archiveService.decompress(file, fileInfo.getPasswd());
 
@@ -166,7 +197,7 @@ public class View {
         } catch (Exception e) {
             //以一种温和的方式展示异常信息
             System.out.println("========== 以下是异常信息 ===============");
-            System.out.println(e);
+            e.printStackTrace();
             System.out.println("========== 异常信息结束 ===============");
             return false;
         }

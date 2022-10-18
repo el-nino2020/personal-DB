@@ -7,8 +7,6 @@ import java.io.File;
 import java.time.LocalDateTime;
 
 public class FileInfo {
-
-
     private int id;
     private String filename;
     private LocalDateTime lastmodified;
@@ -125,7 +123,7 @@ public class FileInfo {
         return filesize;
     }
 
-    public void setFilesize(int filesize) {
+    public void setFilesize(long filesize) {
         this.filesize = filesize;
     }
 }

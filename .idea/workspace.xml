@@ -21,8 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CompileAndRun.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompileAndRun.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/BasicDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BasicDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ArchiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
@@ -80,7 +85,7 @@
       <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Test.getAUTOINCREMENTValue">
+  <component name="RunManager" selected="Application.View">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Test" />
       <module name="personal-DB" />
@@ -107,19 +112,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Test.getAUTOINCREMENTValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
       <extension name="coverage">
@@ -136,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.testRarPasswdGen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.useFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
       <extension name="coverage">
         <pattern>
@@ -146,7 +138,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="testRarPasswdGen" />
+      <option name="METHOD_NAME" value="useFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,17 +163,17 @@
     <list>
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.View" />
-      <item itemvalue="JUnit.Test.testRarPasswdGen" />
       <item itemvalue="JUnit.Test.getAUTOINCREMENTValue" />
       <item itemvalue="JUnit.Test.useTables" />
+      <item itemvalue="JUnit.Test.useFile" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.View" />
+        <item itemvalue="JUnit.Test.useFile" />
         <item itemvalue="JUnit.Test.getAUTOINCREMENTValue" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.View" />
         <item itemvalue="JUnit.Test.useTables" />
-        <item itemvalue="JUnit.Test.testRarPasswdGen" />
       </list>
     </recent_temporary>
   </component>
@@ -220,7 +212,10 @@
       <workItem from="1665925379963" duration="720000" />
       <workItem from="1665964264643" duration="13000" />
       <workItem from="1665983105422" duration="3955000" />
-      <workItem from="1666002469011" duration="7979000" />
+      <workItem from="1666002469011" duration="8895000" />
+      <workItem from="1666053373098" duration="6000" />
+      <workItem from="1666087951241" duration="8300000" />
+      <workItem from="1666096797070" duration="1628000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -474,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666007966956</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="TODO: 考虑能否在Jtable中打勾来选择已有的表">
+      <created>1666010968845</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1666010968845</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +495,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加了一个Service类，用来处理数据库登录" />
     <MESSAGE value="解决命令行编码导致的编译和运行的问题" />
     <MESSAGE value="java bean for record" />
     <MESSAGE value="copied from previous project, with some adaptation" />
@@ -518,7 +519,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="开发中。。。要测试chooseFileInGUI这一方法，测试完毕后开始写makeArchiveAndRecord" />
     <MESSAGE value="找到了获得任意一张表的AUTO_INCREMENT值的方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="找到了获得任意一张表的AUTO_INCREMENT值的方法" />
+    <MESSAGE value="TODO: 考虑能否在Jtable中打勾来选择已有的表" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: 考虑能否在Jtable中打勾来选择已有的表" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -537,38 +539,38 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="499" key="GridCell.Tab.0.bottom" timestamp="1666010180295">
+    <state width="1995" height="435" key="GridCell.Tab.0.bottom" timestamp="1666097619840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="499" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666010180295" />
-    <state width="1995" height="499" key="GridCell.Tab.0.center" timestamp="1666010180294">
+    <state width="1995" height="435" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666097619840" />
+    <state width="1995" height="435" key="GridCell.Tab.0.center" timestamp="1666097619840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="499" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666010180294" />
-    <state width="1995" height="499" key="GridCell.Tab.0.left" timestamp="1666010180294">
+    <state width="1995" height="435" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666097619840" />
+    <state width="1995" height="435" key="GridCell.Tab.0.left" timestamp="1666097619840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="499" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666010180294" />
-    <state width="1995" height="499" key="GridCell.Tab.0.right" timestamp="1666010180295">
+    <state width="1995" height="435" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666097619840" />
+    <state width="1995" height="435" key="GridCell.Tab.0.right" timestamp="1666097619840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="499" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666010180295" />
-    <state width="1995" height="285" key="GridCell.Tab.1.bottom" timestamp="1666007635994">
+    <state width="1995" height="435" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666097619840" />
+    <state width="1995" height="435" key="GridCell.Tab.1.bottom" timestamp="1666097619842">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="285" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666007635994" />
-    <state width="1995" height="285" key="GridCell.Tab.1.center" timestamp="1666007635994">
+    <state width="1995" height="435" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666097619842" />
+    <state width="1995" height="435" key="GridCell.Tab.1.center" timestamp="1666097619840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="285" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666007635994" />
-    <state width="1995" height="285" key="GridCell.Tab.1.left" timestamp="1666007635994">
+    <state width="1995" height="435" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666097619840" />
+    <state width="1995" height="435" key="GridCell.Tab.1.left" timestamp="1666097619840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="285" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666007635994" />
-    <state width="1995" height="285" key="GridCell.Tab.1.right" timestamp="1666007635994">
+    <state width="1995" height="435" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666097619840" />
+    <state width="1995" height="435" key="GridCell.Tab.1.right" timestamp="1666097619841">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="285" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666007635994" />
+    <state width="1995" height="435" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666097619841" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -577,10 +579,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666007973178">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666010974673">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666007973178" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666010974673" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

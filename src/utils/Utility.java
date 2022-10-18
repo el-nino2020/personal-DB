@@ -42,7 +42,7 @@ public class Utility {
 
         ProcessBuilder processBuilder = new ProcessBuilder(commands);
         if (directory != null) processBuilder.directory(new File(directory));
-
+        processBuilder.redirectErrorStream(true);
 
         try {
             Process process = processBuilder.start();

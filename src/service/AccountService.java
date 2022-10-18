@@ -10,6 +10,7 @@ import java.sql.SQLException;
 public class AccountService {
     private static final String DBMS_URL = "jdbc:mysql://localhost:3306/cloud_backup";
     public static final String USER = "backupadmin";
+    public static final String DATABASE = "cloud_backup";
 
     private Connection connection;
     private boolean loginStatus = false;
@@ -29,6 +30,7 @@ public class AccountService {
 
         try {
             connection = DriverManager.getConnection(DBMS_URL, USER, password);
+            DBMSPassword = password;
         } catch (SQLException e) {
             System.out.println(e);
         }
