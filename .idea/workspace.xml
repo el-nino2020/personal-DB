@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Param.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Param.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +223,7 @@
       <workItem from="1666135291572" duration="5000" />
       <workItem from="1666135720265" duration="7000" />
       <workItem from="1666136602260" duration="112000" />
-      <workItem from="1666155272828" duration="5166000" />
+      <workItem from="1666155272828" duration="7343000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -504,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666160032911</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="更新程序路径">
+      <created>1666160551441</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1666160551441</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +531,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="项目配置文件更新" />
     <MESSAGE value="little update" />
     <MESSAGE value="update schema and bean" />
     <MESSAGE value="研究了一番rar命令行" />
@@ -548,7 +555,8 @@
     <MESSAGE value="mysqldump就是无法运行，不知道为啥" />
     <MESSAGE value="统一项目参数于common.Param" />
     <MESSAGE value="数据库备份的方法终于写成功了" />
-    <option name="LAST_COMMIT_MESSAGE" value="数据库备份的方法终于写成功了" />
+    <MESSAGE value="更新程序路径" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新程序路径" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -607,18 +615,18 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666160038635">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666160558379">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666160038635" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666160558379" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1666155516742">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1666162608861">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1666155516742" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1666162608861" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -24,7 +24,7 @@ public class FileInfoService {
     /**
      * 向tableName表中插入一条记录，该记录的字段值存储在info中
      */
-    public boolean insertFileInfo(FileInfo info, String tableName) {
+    public void insertFileInfo(FileInfo info, String tableName) {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
         Preconditions.checkNotNull(info);
         Preconditions.checkNotNull(tableName);
@@ -40,7 +40,6 @@ public class FileInfoService {
                 info.getNote(),
                 info.getFilesize());
 
-        return true;
     }
 
     /**

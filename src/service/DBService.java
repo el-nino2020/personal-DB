@@ -48,8 +48,7 @@ public class DBService {
     public List<String> getAllTableNames() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
         Connection connection = accountService.getConnection();
-
-
+        
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
@@ -61,8 +60,6 @@ public class DBService {
 
             while (resultSet.next()) {
                 String tableName = resultSet.getString(1);
-                if ("meta_table".equals(tableName))
-                    continue;
                 ans.add(tableName);
             }
         } catch (SQLException e) {
@@ -170,6 +167,21 @@ public class DBService {
 
         System.out.println("数据库备份成功，本次备份生成的文件为: " +
                 compressedDumpFilePath);
+    }
+
+    /**
+     * 在Param.DATABASE_NAME数据库中创建一张新表，表的模式与template_table相同
+     */
+    public void createNewTable(String tableName) {
+        Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
+        Preconditions.checkArgument(!tableExists(tableName), String.format("%s表已存在，无法再次创建", tableName));
+
+        //用这个方法好像不太对，update指DML，但CREATE属于DDL
+        //需要注意，事务对于DDL无效
+        tableInfoDAO.update(accountService.getConnection(),
+                "CREATE TABLE ? LIKE template_table;", tableName);
+
+        Utility.assertion(tableExists(tableName), String.format("%s表创建失败", tableName));
     }
 
 

@@ -40,13 +40,14 @@ public class View {
             System.out.println("========== Personal DB =============");
             System.out.println("\t\t1.  压缩并记录文件(夹)");
             System.out.println("\t\t2.  解压文件");
-            System.out.println("\t\t3.  新建表");
-            System.out.println("\t\t4.  查询现有表");
+            System.out.println("\t\t3.  查询现有表");
+            System.out.println("\t\t4.  新建表");
             System.out.println("\t\tq.  退出系统");
             System.out.println("=========================================");
             System.out.print("输入你的选择: ");
             choice = scanner.next();
             switch (choice) {
+                //TODO 测试压缩和解压大文件(10G)
                 case "1":
                     if (makeArchiveAndRecord()) System.out.println("总结: 操作成功");
                     else System.out.println("总结: 操作失败");
@@ -56,19 +57,16 @@ public class View {
                     else System.out.println("总结: 操作失败");
                     break;
                 //TODO 新加入的选项3和4
-                case "4":
+                case "3":
                     showAllTables();
                     break;
-                case "5":
-                    loginDBMS(LOGIN_TRY_TIMES);
-                    dbService.databaseDump();
-                    break;
+                case "4":
+
                 case "q":
                     menuLoop = false;
                     break;
                 default:
                     System.out.println("输入有误，请再次输入");
-
             }
         }
         quitSystem();
@@ -116,7 +114,6 @@ public class View {
             return false;
         }
 
-
         try {
             //选择要压缩的文件/文件夹的绝对路径
             File file = chooseFileInGUI(true);
@@ -125,8 +122,7 @@ public class View {
             //TODO 展示现有的表（在一个新的窗口展示，在现有cmd中展示显得有些拥挤），选择要存放的表，考虑能否在Jtable中打勾来选择
             System.out.print("请输入文件所属的表名: ");
             String tableName = scanner.next();
-            if (!dbService.tableExists(tableName))
-                throw new RuntimeException("该表不存在");
+            Utility.assertion(dbService.tableExists(tableName), "该表不存在");
 
             //根据选择的表，找到其AUTO_INCREMENT的值，用于生成压缩文件的名字：表名_ID.rar，ID即为表中的ID字段
             String id = dbService.getAUTOINCREMENTValue(tableName);
@@ -143,20 +139,23 @@ public class View {
             System.out.println("请输入文件的说明: ");
             String note = scanner.next();
 
-            //TODO 根据压缩文件的信息和保存的密码，生成FileInfo对象
-            FileInfo fileInfo = fileInfoService.makeFileInfo(new File(file.getParent() + archiveName),
+            File archiveFile = new File(file.getParent() + archiveName);
+
+            //根据压缩文件的信息和保存的密码，生成FileInfo对象
+            FileInfo fileInfo = fileInfoService.makeFileInfo(archiveFile,
                     file.getName(),
                     archivePassword,
                     note);
 
-            //TODO 将FileInfo对象写入数据库
-            if (!fileInfoService.insertFileInfo(fileInfo, tableName)) {
-                throw new RuntimeException("数据库写入文件信息失败");
-            }
+            //将FileInfo对象写入数据库
+            fileInfoService.insertFileInfo(fileInfo, tableName);
 
-            //TODO 数据库备份——没错，每次调用makeArchiveAndRecord，都要备份一次数据库
+            //数据库备份——没错，每次调用makeArchiveAndRecord，都要备份一次数据库
+            dbService.databaseDump();
 
             //TODO 用保存的密码测试压缩文件。如果测试失败，有点尴尬，上面哪一步肯定出现问题了，考虑重做整个过程
+            System.out.println("最终测试：再次测试压缩包的密码");
+            archiveService.testRar(archiveFile, archivePassword);
 
         } catch (Exception e) {
             System.out.println("========== 以下是异常信息 ===============");
@@ -238,6 +237,28 @@ public class View {
         frame.setSize(500, 200);
         // Frame Visible = true
         frame.setVisible(true);
+    }
+
+
+    private boolean createNewDBTable() {
+        if (!loginDBMS(LOGIN_TRY_TIMES)) {
+            System.out.println("该操作失败，需要先登录数据库账户");
+            return false;
+        }
+
+        try {
+            System.out.print("请输入要新创建的表名: ");
+            String tableName = scanner.next();
+            //TODO :需要先在meta_table中存入新表信息，再创建新表
+            //TODO : 思考meta_table中的数据一致性问题, 即assert(meta_table.recordSize() == cloud_backup.tableSize() -2 )
+        } catch (Exception e) {
+            //以一种温和的方式展示异常信息
+            System.out.println("========== 以下是异常信息 ===============");
+            e.printStackTrace();
+            System.out.println("========== 异常信息结束 ===============");
+            return false;
+        }
+        return true;
     }
 
 
