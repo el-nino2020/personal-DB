@@ -1,5 +1,7 @@
 package service;
 
+import common.Param;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -8,9 +10,11 @@ import java.sql.SQLException;
  * 负责登录DBMS，并提供Connection对象
  */
 public class AccountService {
-    private static final String DBMS_URL = "jdbc:mysql://localhost:3306/cloud_backup";
-    public static final String USER = "backupadmin";
-    public static final String DATABASE = "cloud_backup";
+    private static final String DBMS_URL =
+            String.format("jdbc:mysql://%s:%s/%s",
+                    Param.MYSQL_IP, Param.MYSQL_PORT, Param.DATABASE_NAME);
+    public static final String USER = Param.DBMS_USER;
+    public static final String DATABASE = Param.DATABASE_NAME;
 
     private Connection connection;
     private boolean loginStatus = false;

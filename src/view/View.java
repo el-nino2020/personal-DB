@@ -1,5 +1,6 @@
 package view;
 
+import common.Param;
 import domain.FileInfo;
 import domain.TableInfo;
 import service.AccountService;
@@ -16,8 +17,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class View {
-    private static final String DESKTOP_PATH = "C:\\Users\\Morgan\\Desktop";
-    private static final int LOGIN_TRY_TIMES = 5;
+    private static final int LOGIN_TRY_TIMES = Param.LOGIN_TRY_TIMES;
 
     private AccountService accountService = new AccountService();
     private DBService dbService = new DBService(accountService);
@@ -261,7 +261,7 @@ public class View {
             line = scanner.nextLine();
 
             if ("desktop".equals(line)) {
-                parentDirectory = new File(DESKTOP_PATH);
+                parentDirectory = new File(Param.DESKTOP_PATH);
                 break;
             }
             parentDirectory = new File(line);

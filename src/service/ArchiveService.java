@@ -1,6 +1,7 @@
 package service;
 
 
+import common.Param;
 import org.apache.commons.lang3.RandomStringUtils;
 import utils.Utility;
 
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * 负责压缩包相关的服务
  */
 public class ArchiveService {
-    private static final int PASSWORD_LENGTH = 50;
+    private static final int PASSWORD_LENGTH = Param.PASSWORD_LENGTH;
 
     /**
      * 压缩一个文件/文件夹，生成的压缩包与原始文件在同一目录下
