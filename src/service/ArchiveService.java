@@ -13,6 +13,9 @@ import java.util.ArrayList;
 public class ArchiveService {
     private static final int PASSWORD_LENGTH = Param.PASSWORD_LENGTH;
 
+    private ArchiveService() {
+    }
+
     /**
      * 压缩一个文件/文件夹，生成的压缩包与原始文件在同一目录下
      *
@@ -20,7 +23,7 @@ public class ArchiveService {
      * @param targetName 生成的rar压缩包的名字，生成的压缩包的名字形如 targetName.rar
      * @param password   压缩包的密码，如果为null，压缩包没有密码
      */
-    public void compress(File file, String targetName, String password) {
+    public static void compress(File file, String targetName, String password) {
         ArrayList<String> command = new ArrayList<>();
         command.add("winrar");
         command.add("a");
@@ -42,7 +45,7 @@ public class ArchiveService {
      * @param targetName 生成的rar压缩包的名字，生成的压缩包的名字形如 targetName.rar
      * @return 压缩时使用的随机密码
      */
-    public String compressWithRandomPassword(File file, String targetName) {
+    public static String compressWithRandomPassword(File file, String targetName) {
         String password = makePassword();
 
         compress(file, targetName, password);
@@ -56,7 +59,7 @@ public class ArchiveService {
      *
      * @return
      */
-    public String makePassword() {
+    public static String makePassword() {
         StringBuilder ans = new StringBuilder(RandomStringUtils.randomAscii(PASSWORD_LENGTH));
         //需要将ans中的双引号替换为其他字符
         String alternative = RandomStringUtils.randomAlphanumeric(PASSWORD_LENGTH);
@@ -84,7 +87,7 @@ public class ArchiveService {
      * @param file     要解压的rar压缩包
      * @param password 数据库中记录的该压缩包的密码
      */
-    public void decompress(File file, String password) {
+    public static void decompress(File file, String password) {
         Utility.runSystemCommand(file.getParent(),
                 "winrar", "x",
                 "-hp" + "\"" + password + "\"",
@@ -98,7 +101,7 @@ public class ArchiveService {
      * @param password 压缩包的密码
      * @return 压缩文件是否验证成功
      */
-    public void testRar(File file, String password) {
+    public static void testRar(File file, String password) {
         Utility.runSystemCommand(file.getParent(),
                 "winrar", "t",
                 "-hp" + "\"" + password + "\"",

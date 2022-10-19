@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/Param.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Param.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ArchiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,13 +107,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -223,7 +227,8 @@
       <workItem from="1666135291572" duration="5000" />
       <workItem from="1666135720265" duration="7000" />
       <workItem from="1666136602260" duration="112000" />
-      <workItem from="1666155272828" duration="7343000" />
+      <workItem from="1666155272828" duration="7631000" />
+      <workItem from="1666182486772" duration="306000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -512,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666160551441</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="开发中。。。思考如何创建新表">
+      <created>1666162689637</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1666162689637</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +543,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="little update" />
     <MESSAGE value="update schema and bean" />
     <MESSAGE value="研究了一番rar命令行" />
     <MESSAGE value="Utility需要增加几个与命令行交互的方法" />
@@ -556,7 +567,8 @@
     <MESSAGE value="统一项目参数于common.Param" />
     <MESSAGE value="数据库备份的方法终于写成功了" />
     <MESSAGE value="更新程序路径" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新程序路径" />
+    <MESSAGE value="开发中。。。思考如何创建新表" />
+    <option name="LAST_COMMIT_MESSAGE" value="开发中。。。思考如何创建新表" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -575,38 +587,38 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="865" key="GridCell.Tab.0.bottom" timestamp="1666158835839">
+    <state width="1995" height="865" key="GridCell.Tab.0.bottom" timestamp="1666162910189">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="865" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835839" />
-    <state width="1995" height="865" key="GridCell.Tab.0.center" timestamp="1666158835838">
+    <state width="1995" height="865" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666162910189" />
+    <state width="1995" height="865" key="GridCell.Tab.0.center" timestamp="1666162910189">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="865" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835838" />
-    <state width="1995" height="865" key="GridCell.Tab.0.left" timestamp="1666158835838">
+    <state width="1995" height="865" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666162910189" />
+    <state width="1995" height="865" key="GridCell.Tab.0.left" timestamp="1666162910189">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="865" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835838" />
-    <state width="1995" height="865" key="GridCell.Tab.0.right" timestamp="1666158835838">
+    <state width="1995" height="865" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666162910189" />
+    <state width="1995" height="865" key="GridCell.Tab.0.right" timestamp="1666162910189">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="865" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835838" />
-    <state width="1995" height="865" key="GridCell.Tab.1.bottom" timestamp="1666158835840">
+    <state width="1995" height="865" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666162910189" />
+    <state width="1995" height="865" key="GridCell.Tab.1.bottom" timestamp="1666162910190">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="865" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835840" />
-    <state width="1995" height="865" key="GridCell.Tab.1.center" timestamp="1666158835840">
+    <state width="1995" height="865" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666162910190" />
+    <state width="1995" height="865" key="GridCell.Tab.1.center" timestamp="1666162910189">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="865" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835840" />
-    <state width="1995" height="865" key="GridCell.Tab.1.left" timestamp="1666158835840">
+    <state width="1995" height="865" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666162910189" />
+    <state width="1995" height="865" key="GridCell.Tab.1.left" timestamp="1666162910189">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="865" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835840" />
-    <state width="1995" height="865" key="GridCell.Tab.1.right" timestamp="1666158835840">
+    <state width="1995" height="865" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666162910189" />
+    <state width="1995" height="865" key="GridCell.Tab.1.right" timestamp="1666162910189">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="865" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835840" />
+    <state width="1995" height="865" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666162910189" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -615,18 +627,18 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666160558379">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666162792536">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666160558379" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666162792536" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1666162608861">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1666162866466">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1666162608861" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1666162866466" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

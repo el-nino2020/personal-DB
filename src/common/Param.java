@@ -12,7 +12,6 @@ public class Param {
      */
     public static final String DESKTOP_PATH = "C:\\Users\\Morgan\\Desktop\\";
 
-
     /**
      * 要将数据库备份到哪个目录下，推荐设置为某一云盘的自动备份目录，具体值视主机而定
      */

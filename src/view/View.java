@@ -22,16 +22,16 @@ public class View {
     private AccountService accountService = new AccountService();
     private DBService dbService = new DBService(accountService);
     private FileInfoService fileInfoService = new FileInfoService(accountService);
-    private ArchiveService archiveService = new ArchiveService();
 
     private Scanner scanner = new Scanner(System.in);
     private boolean menuLoop = true;
     private JFileChooser chooser;
 
 
-    public View() {
+    private View() {
         initializeJFileChooser();
     }
+
 
     public void menu() {
         String choice;
@@ -61,7 +61,9 @@ public class View {
                     showAllTables();
                     break;
                 case "4":
+                    break;
 
+                //TODO: 也许要写一个checkDBIntegrity()的函数，检查数据库状态，以便我作为DBA，手动修复不正确的数据库
                 case "q":
                     menuLoop = false;
                     break;
@@ -132,7 +134,7 @@ public class View {
 
             // ArchiveService要生成随机的字符串作为密码，并在内存中保存该密码
             // 压缩文件
-            String archivePassword = archiveService.compressWithRandomPassword(file, archiveName);
+            String archivePassword = ArchiveService.compressWithRandomPassword(file, archiveName);
             Utility.ifNullThrow(archivePassword, "生成的密码有误");//这个异常基本不可能发生
 
             //TODO 要求用户输入关于源文件的一些说明
@@ -155,7 +157,7 @@ public class View {
 
             //TODO 用保存的密码测试压缩文件。如果测试失败，有点尴尬，上面哪一步肯定出现问题了，考虑重做整个过程
             System.out.println("最终测试：再次测试压缩包的密码");
-            archiveService.testRar(archiveFile, archivePassword);
+            ArchiveService.testRar(archiveFile, archivePassword);
 
         } catch (Exception e) {
             System.out.println("========== 以下是异常信息 ===============");
@@ -186,11 +188,11 @@ public class View {
 
             //检验密码是否正确
             System.out.println("测试压缩包");
-            archiveService.testRar(file, fileInfo.getPasswd());
+            ArchiveService.testRar(file, fileInfo.getPasswd());
 
             //压缩到同一目录下
             System.out.println("开始解压");
-            archiveService.decompress(file, fileInfo.getPasswd());
+            ArchiveService.decompress(file, fileInfo.getPasswd());
 
             System.out.println("解压完成");
         } catch (Exception e) {

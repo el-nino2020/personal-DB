@@ -153,7 +153,7 @@ public class DBService {
                 "生成备份文件失败");
 
         //生成压缩文件
-        new ArchiveService().compress(new File(mysqlDumpFilePath),
+        ArchiveService.compress(new File(mysqlDumpFilePath),
                 backupFileName, accountService.getDBMSPassword());
 
         //删除原始备份文件
