@@ -300,30 +300,34 @@ public class Test {
 
     }
 
+    //TODO 需求：生成可以随文字自动变更大小的表格，还有一列可以勾选，程序可以获得勾选信息
+    https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html#AUTO_RESIZE_ALL_COLUMNS
+    AUTO_RESIZE_ALL_COLUMNS这个字段貌似能满足需求
     public void useTables() {
         JFrame f = new JFrame();
 
         // Frame Title
-        f.setTitle("JTable Example");
+        f.setTitle("所有表");
 
         // Data to be displayed in the JTable
         String[][] data = {
-                {"Kundan Kumar Jha", "4031", "CSE"},
-                {"Anand Jha", "6014", "IT"}
+                {"1", "GAME", "各种游戏，测试用表"},
+                {"2", "learning", "别名：学习。主要是大学的各种资料"},
+                {"3", "测试表t2", "随机文字：合法开始电话费咖啡拉风景阿飞了法律纠纷大师来分解斯拉夫萨罗夫书法家拉手福建省法拉省发啊算法"}
         };
 
         // Column Names
-        String[] columnNames = {"Name", "Roll Number", "Department"};
+        String[] columnNames = {"序号", "表名", "注释"};
 
         // Initializing the JTable
         JTable j = new JTable(data, columnNames);
-        j.setBounds(30, 40, 200, 300);
+        j.setBounds(0, 0, 1000, 1000);
 
         // adding it to JScrollPane
         JScrollPane sp = new JScrollPane(j);
         f.add(sp);
         // Frame Size
-        f.setSize(500, 200);
+        f.setSize(1000, 1000);
         // Frame Visible = true
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

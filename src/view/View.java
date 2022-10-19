@@ -34,6 +34,9 @@ public class View {
 
 
     public void menu() {
+        System.out.println("======================================================================");
+
+
         String choice;
         while (menuLoop) {
             System.out.println("=========================================");
@@ -206,6 +209,7 @@ public class View {
     }
 
 
+    //TODO 调用了这个方法后，程序无法正常退出，不知道为什么
     public void showAllTables() {
         if (!loginDBMS(LOGIN_TRY_TIMES)) {
             System.out.println("该操作失败，需要先登录数据库账户");
@@ -216,7 +220,7 @@ public class View {
 
         frame.setTitle("所有表");
 
-        String[][] data = new String[list.size()][2];
+        String[][] data = new String[list.size()][3];
 
         for (int i = 0; i < list.size(); i++) {
             data[i][0] = list.get(i).getId() + "";
@@ -229,16 +233,17 @@ public class View {
 
         // Initializing the JTable
         JTable table = new JTable(data, columnNames);
-        table.setBounds(30, 40, 600, 500);
-        table.setFont(new Font("Arial", Font.PLAIN, 20));
 
-        // adding it to JScrollPane
+        table.setBounds(30, 40, 1000, 1000);
+        table.setFont(new Font("黑体", Font.PLAIN, 20));
+        table.setRowHeight(20);
+        table.setColumnSelectionAllowed(true);
+
         JScrollPane sp = new JScrollPane(table);
         frame.add(sp);
-        // Frame Size
-        frame.setSize(500, 200);
-        // Frame Visible = true
+        frame.setSize(1000, 1000);
         frame.setVisible(true);
+
     }
 
 
