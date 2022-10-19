@@ -18,16 +18,22 @@ public class Utility {
 
     }
 
-
+    //写这两个方法是因为assert并不是默认打开的，不可靠，因此不能使用。也可以使用JUnit5中的Assert包，不过
+    //Junit5好像没有jar文件，我就懒得配置了
     /**
-     * 检查o是否为null，如果是，抛出运行异常，内容为message。写这个方法是因为
-     * assert并不是默认打开的，因此无法使用。也可以使用JUnit5中的Assert包，不过
-     * Junit5好像没有jar文件，我就懒得配置了
+     * 检查o是否为null，如果是，抛出运行异常，内容为message。
      */
     public static void ifNullThrow(Object o, String message) {
         if (o == null) throw new RuntimeException(message);
     }
 
+
+    /**
+     * 检查b是否为false，如果是，抛出运行异常，内容为message。
+     */
+    public static void assertion(Boolean b, String message) {
+        if (!b) throw new RuntimeException(message);
+    }
 
     /**
      * 开启一个新的进程来运行command，将输出以行为单位存入List中返回。需要注意，当前Java进程会阻塞，

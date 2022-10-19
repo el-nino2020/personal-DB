@@ -133,6 +133,7 @@ public class DBService {
      * 备份cloud_backup数据库至DUMP_DESTINATION下，
      * 使用当前用户的密码压缩备份文件，然后删除备份文件。
      * 备份的命令参考：https://www.sqlshack.com/how-to-backup-and-restore-mysql-databases-using-the-mysqldump-command/
+     * 写这个方法出现的问题参考：https://stackoverflow.com/questions/20820213/mysqldump-from-java-application
      */
     public void databaseDump() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
@@ -140,22 +141,31 @@ public class DBService {
         String backupFileName = AccountService.DATABASE +
                 Utility.getFormattedTime(LocalDateTime.now());
 
-        mysqldump就是无法运行，不知道为啥。在View中输入 "5" 可以测试这个方法
         List<String> strings = Utility.runSystemCommand(null,
-                "D:\\mysql5.7.19\\bin\\mysqldump.exe -u " + AccountService.USER +
+                "C:\\windows\\System32\\cmd.exe", "/c",
+                "D:\\mysql5.7.19\\bin\\mysqldump.exe" +
+                        " -u " + AccountService.USER +
                         " -p" + accountService.getDBMSPassword() + " " +
-                        AccountService.DATABASE +
-                        " > " +
+                        AccountService.DATABASE + " > " +
                         DUMP_DESTINATION + backupFileName + ".sql");
-        System.out.println(strings);
+
+        Utility.assertion(new File(DUMP_DESTINATION + backupFileName + ".sql").exists(),
+                "生成备份文件失败");
 
         //生成压缩文件
-        new ArchiveService().compress(new File(DUMP_DESTINATION + backupFileName),
+        new ArchiveService().compress(new File(DUMP_DESTINATION + backupFileName + ".sql"),
                 backupFileName, accountService.getDBMSPassword());
 
         //删除原始备份文件
-        Utility.runSystemCommand("C:\\Windows\\System32",
+        Utility.runSystemCommand(null,
+                "C:\\Windows\\System32\\cmd.exe", "/c",
                 "del", DUMP_DESTINATION + backupFileName + ".sql");
+
+        Utility.assertion(new File(DUMP_DESTINATION + backupFileName + ".rar").exists(),
+                "压缩备份文件失败");
+
+        System.out.println("数据库备份成功，本次备份生成的文件为: " +
+                DUMP_DESTINATION + backupFileName + ".rar");
     }
 
 

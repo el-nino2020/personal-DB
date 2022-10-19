@@ -20,14 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/Param.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/TestMysqldump.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CompileAndRun.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompileAndRun.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/deleteClassFiles.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/deleteClassFiles.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ArchiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +224,7 @@
       <workItem from="1666135291572" duration="5000" />
       <workItem from="1666135720265" duration="7000" />
       <workItem from="1666136602260" duration="112000" />
-      <workItem from="1666155272828" duration="1557000" />
+      <workItem from="1666155272828" duration="4539000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -495,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666098592006</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="统一项目参数于common.Param">
+      <created>1666156988095</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1666156988095</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +518,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="java bean for record" />
     <MESSAGE value="copied from previous project, with some adaptation" />
     <MESSAGE value="项目配置文件更新" />
     <MESSAGE value="little update" />
@@ -539,7 +542,8 @@
     <MESSAGE value="找到了获得任意一张表的AUTO_INCREMENT值的方法" />
     <MESSAGE value="TODO: 考虑能否在Jtable中打勾来选择已有的表" />
     <MESSAGE value="mysqldump就是无法运行，不知道为啥" />
-    <option name="LAST_COMMIT_MESSAGE" value="mysqldump就是无法运行，不知道为啥" />
+    <MESSAGE value="统一项目参数于common.Param" />
+    <option name="LAST_COMMIT_MESSAGE" value="统一项目参数于common.Param" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -558,38 +562,38 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="435" key="GridCell.Tab.0.bottom" timestamp="1666098614146">
+    <state width="1995" height="865" key="GridCell.Tab.0.bottom" timestamp="1666158835839">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="435" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666098614146" />
-    <state width="1995" height="435" key="GridCell.Tab.0.center" timestamp="1666098614146">
+    <state width="1995" height="865" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835839" />
+    <state width="1995" height="865" key="GridCell.Tab.0.center" timestamp="1666158835838">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="435" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666098614146" />
-    <state width="1995" height="435" key="GridCell.Tab.0.left" timestamp="1666098614146">
+    <state width="1995" height="865" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835838" />
+    <state width="1995" height="865" key="GridCell.Tab.0.left" timestamp="1666158835838">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="435" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666098614146" />
-    <state width="1995" height="435" key="GridCell.Tab.0.right" timestamp="1666098614146">
+    <state width="1995" height="865" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835838" />
+    <state width="1995" height="865" key="GridCell.Tab.0.right" timestamp="1666158835838">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="435" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666098614146" />
-    <state width="1995" height="435" key="GridCell.Tab.1.bottom" timestamp="1666098614146">
+    <state width="1995" height="865" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835838" />
+    <state width="1995" height="865" key="GridCell.Tab.1.bottom" timestamp="1666158835840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="435" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666098614146" />
-    <state width="1995" height="435" key="GridCell.Tab.1.center" timestamp="1666098614146">
+    <state width="1995" height="865" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835840" />
+    <state width="1995" height="865" key="GridCell.Tab.1.center" timestamp="1666158835840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="435" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666098614146" />
-    <state width="1995" height="435" key="GridCell.Tab.1.left" timestamp="1666098614146">
+    <state width="1995" height="865" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835840" />
+    <state width="1995" height="865" key="GridCell.Tab.1.left" timestamp="1666158835840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="435" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666098614146" />
-    <state width="1995" height="435" key="GridCell.Tab.1.right" timestamp="1666098614146">
+    <state width="1995" height="865" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835840" />
+    <state width="1995" height="865" key="GridCell.Tab.1.right" timestamp="1666158835840">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="435" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666098614146" />
+    <state width="1995" height="865" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666158835840" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
