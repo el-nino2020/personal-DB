@@ -9,9 +9,9 @@ import utils.Utility;
 import java.io.File;
 import java.sql.*;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * 负责数据库的备份和已有表的查询，也许还要负责新建表？
@@ -141,31 +141,35 @@ public class DBService {
         String backupFileName = AccountService.DATABASE +
                 Utility.getFormattedTime(LocalDateTime.now());
 
+        String mysqlDumpFilePath = DUMP_DESTINATION + backupFileName + ".sql";
+
         List<String> strings = Utility.runSystemCommand(null,
-                "C:\\windows\\System32\\cmd.exe", "/c",
-                "D:\\mysql5.7.19\\bin\\mysqldump.exe" +
+                Param.CMD_PATH, "/c",
+                Param.MYSQLDUMP_PATH +
                         " -u " + AccountService.USER +
                         " -p" + accountService.getDBMSPassword() + " " +
                         AccountService.DATABASE + " > " +
-                        DUMP_DESTINATION + backupFileName + ".sql");
+                        mysqlDumpFilePath);
 
-        Utility.assertion(new File(DUMP_DESTINATION + backupFileName + ".sql").exists(),
+
+        Utility.assertion(new File(mysqlDumpFilePath).exists(),
                 "生成备份文件失败");
 
         //生成压缩文件
-        new ArchiveService().compress(new File(DUMP_DESTINATION + backupFileName + ".sql"),
+        new ArchiveService().compress(new File(mysqlDumpFilePath),
                 backupFileName, accountService.getDBMSPassword());
 
         //删除原始备份文件
         Utility.runSystemCommand(null,
-                "C:\\Windows\\System32\\cmd.exe", "/c",
-                "del", DUMP_DESTINATION + backupFileName + ".sql");
+                Param.CMD_PATH, "/c",
+                "del", mysqlDumpFilePath);
 
-        Utility.assertion(new File(DUMP_DESTINATION + backupFileName + ".rar").exists(),
+        String compressedDumpFilePath = DUMP_DESTINATION + backupFileName + ".rar";
+        Utility.assertion(new File(compressedDumpFilePath).exists(),
                 "压缩备份文件失败");
 
         System.out.println("数据库备份成功，本次备份生成的文件为: " +
-                DUMP_DESTINATION + backupFileName + ".rar");
+                compressedDumpFilePath);
     }
 
 

@@ -18,6 +18,17 @@ public class Param {
      */
     public static final String DUMP_DESTINATION = "C:\\Users\\Morgan\\Desktop\\mega同步\\";
 
+    /**
+     * 当前主机cmd(command prompt)程序的绝对路径，具体值视主机而定
+     */
+    public static final String CMD_PATH = "C:\\windows\\System32\\cmd.exe";
+
+
+    /**
+     * 当前主机mysqldump程序的绝对路径，具体值视主机而定
+     */
+    public static final String MYSQLDUMP_PATH = "D:\\mysql5.7.19\\bin\\mysqldump.exe";
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     //                                      以下参数一般不需要改变                                 //
