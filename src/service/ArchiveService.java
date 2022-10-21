@@ -76,7 +76,7 @@ public class ArchiveService {
 //        }
 //        System.out.println("随机密码生成成功");
 //        return ans.toString();
-        return RandomStringUtils.randomAscii(PASSWORD_LENGTH);
+        return RandomStringUtils.randomAlphanumeric(PASSWORD_LENGTH);
     }
 
 

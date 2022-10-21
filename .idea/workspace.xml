@@ -20,17 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Param.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Param.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/createTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/init2_create_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/initialize.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/init1_create_DB_usr.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ArchiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +223,7 @@
       <workItem from="1666155272828" duration="7631000" />
       <workItem from="1666182486772" duration="2348000" />
       <workItem from="1666228051066" duration="9000" />
-      <workItem from="1666328496005" duration="11019000" />
+      <workItem from="1666328496005" duration="11667000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -550,7 +540,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666335413905</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="按照顺序执行数据库初始化">
+      <created>1666340325265</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1666340325265</updated>
+    </task>
+    <task id="LOCAL-00047" summary="基础测试完毕，在中文Windows cmd环境下中英文都可以">
+      <created>1666340359211</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1666340359211</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,9 +573,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="测试如何打开Windows选择文件框" />
-    <MESSAGE value="add two service classes" />
-    <MESSAGE value="update comment" />
     <MESSAGE value="更新readme" />
     <MESSAGE value="在使用DML前开启事务" />
     <MESSAGE value="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑" />
@@ -594,7 +595,10 @@
     <MESSAGE value="研究Jtable中" />
     <MESSAGE value="开发完毕?" />
     <MESSAGE value="开发完毕?待测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="开发完毕?待测试" />
+    <MESSAGE value="按照顺序执行数据库初始哈" />
+    <MESSAGE value="按照顺序执行数据库初始化" />
+    <MESSAGE value="基础测试完毕，在中文Windows cmd环境下中英文都可以" />
+    <option name="LAST_COMMIT_MESSAGE" value="基础测试完毕，在中文Windows cmd环境下中英文都可以" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
