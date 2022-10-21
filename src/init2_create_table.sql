@@ -1,4 +1,4 @@
-
+CREATE DATABASE IF NOT EXISTS cloud_backup;
 USE cloud_backup;
 
 -- store the information of tables with following schema
@@ -20,10 +20,10 @@ CREATE TABLE template_table(
 	passwd VARCHAR(255) NOT NULL,
 	md5value char(32) NOT NULL,
 	note VARCHAR(255), -- some comments about the file, if any
-	filesize BIGINT NOT NULL
+	filesize BIGINT NOT NULL -- file size in bytes
 )ENGINE=INNODB;
 
 CREATE INDEX filenameIndex ON template_table(filename);
 
 -- change 'newTale' to other (table/folder) name
-CREATE TABLE newTable LIKE template_table;
+-- CREATE TABLE newTable LIKE template_table;
