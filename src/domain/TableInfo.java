@@ -8,6 +8,10 @@ public class TableInfo {
     public TableInfo() {
     }
 
+    public TableInfo(String tablename, String note) {
+        this.tablename = tablename;
+        this.note = note;
+    }
 
     public int getId() {
         return id;

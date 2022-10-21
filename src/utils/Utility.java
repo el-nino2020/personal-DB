@@ -20,6 +20,7 @@ public class Utility {
 
     //写这两个方法是因为assert并不是默认打开的，不可靠，因此不能使用。也可以使用JUnit5中的Assert包，不过
     //Junit5好像没有jar文件，我就懒得配置了
+
     /**
      * 检查o是否为null，如果是，抛出运行异常，内容为message。
      */
@@ -90,4 +91,25 @@ public class Utility {
         return TIME_FORMATTER.format(time).toString();
     }
 
+
+    /**
+     * 合法的表名：只包含大小写英文字符、数字和下划线，且必须以英文字母开头
+     */
+    public static boolean checkTableNameValidity(String name) {
+        if (name == null) return false;
+        int n = name.length();
+        if (n == 0) return false;
+
+        return name.matches("^[a-zA-Z]\\w*$");
+    }
+
 }
+
+
+
+
+
+
+
+
+

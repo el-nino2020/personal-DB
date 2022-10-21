@@ -59,13 +59,13 @@ public class View {
                     if (decompressArchive()) System.out.println("总结: 操作成功");
                     else System.out.println("总结: 操作失败");
                     break;
-                //TODO 新加入的选项3和4
                 case "3":
                     showAllTables();
                     break;
                 case "4":
+                    if (createNewDBTable()) System.out.println("总结: 操作成功");
+                    else System.out.println("总结: 操作失败");
                     break;
-
                 //TODO: 也许要写一个checkDBIntegrity()的函数，检查数据库状态，以便我作为DBA，手动修复不正确的数据库
                 case "q":
                     menuLoop = false;
@@ -125,23 +125,25 @@ public class View {
             Utility.ifNullThrow(file, "选择的文件不存在");//这个异常基本不可能发生
 
             //TODO 展示现有的表（在一个新的窗口展示，在现有cmd中展示显得有些拥挤），选择要存放的表，考虑能否在Jtable中打勾来选择
-            System.out.print("请输入文件所属的表名: ");
+            showAllTables();
+
+            System.out.print("请输入文件所属的表名(文件夹名): ");
             String tableName = scanner.next();
             Utility.assertion(dbService.tableExists(tableName), "该表不存在");
 
             //根据选择的表，找到其AUTO_INCREMENT的值，用于生成压缩文件的名字：表名_ID.rar，ID即为表中的ID字段
             String id = dbService.getAUTOINCREMENTValue(tableName);
+
             Utility.ifNullThrow(id, String.format("查找不到表%s的AUTO_INCREMENT值", tableName));//这个异常基本不可能发生
 
             String archiveName = tableName + "_" + id;
-
             // ArchiveService要生成随机的字符串作为密码，并在内存中保存该密码
             // 压缩文件
             String archivePassword = ArchiveService.compressWithRandomPassword(file, archiveName);
             Utility.ifNullThrow(archivePassword, "生成的密码有误");//这个异常基本不可能发生
 
-            //TODO 要求用户输入关于源文件的一些说明
-            System.out.println("请输入文件的说明: ");
+            // 要求用户输入关于源文件的一些说明
+            System.out.print("请输入该文件的说明: ");
             String note = scanner.next();
 
             File archiveFile = new File(file.getParent() + archiveName);
@@ -216,34 +218,21 @@ public class View {
         }
 
         List<TableInfo> list = dbService.getAllTableInfo();
-        JFrame frame = new JFrame();
+        if (list.isEmpty()) {
+            System.out.println("===================================================");
+            System.out.println("不存在任何表，请创建一张");
+            System.out.println("===================================================");
 
-        frame.setTitle("所有表");
-
-        String[][] data = new String[list.size()][3];
-
-        for (int i = 0; i < list.size(); i++) {
-            data[i][0] = list.get(i).getId() + "";
-            data[i][1] = list.get(i).getTablename();
-            data[i][2] = list.get(i).getNote();
+            return;
         }
 
-        // Column Names
-        String[] columnNames = {"序号", "表名", "注释"};
 
-        // Initializing the JTable
-        JTable table = new JTable(data, columnNames);
-
-        table.setBounds(30, 40, 1000, 1000);
-        table.setFont(new Font("黑体", Font.PLAIN, 20));
-        table.setRowHeight(20);
-        table.setColumnSelectionAllowed(true);
-
-        JScrollPane sp = new JScrollPane(table);
-        frame.add(sp);
-        frame.setSize(1000, 1000);
-        frame.setVisible(true);
-
+        System.out.println("====================展示所有表=========================");
+        for (TableInfo tableInfo : list) {
+            System.out.format("序号: %d ||*|| 表名: %s ||*|| 注释: %s \n",
+                    tableInfo.getId(), tableInfo.getTablename(), tableInfo.getNote());
+        }
+        System.out.println("====================展示完毕=========================");
     }
 
 
@@ -254,10 +243,24 @@ public class View {
         }
 
         try {
+            System.out.println("合法的表名：只包含大小写英文字符、数字和下划线，且必须以英文字母开头。");
             System.out.print("请输入要新创建的表名: ");
             String tableName = scanner.next();
-            //TODO :需要先在meta_table中存入新表信息，再创建新表
-            //TODO : 思考meta_table中的数据一致性问题, 即assert(meta_table.recordSize() == cloud_backup.tableSize() -2 )
+
+            if (dbService.tableExists(tableName)) {
+                System.out.println("该表已存在，请重试");
+                return false;
+            }
+            if (!Utility.checkTableNameValidity(tableName)) {
+                System.out.println("表名不合法，请重试");
+                return false;
+            }
+
+            System.out.print("请输入关于这张表的说明: ");
+            String note = scanner.next();
+
+            dbService.createNewTable(new TableInfo(tableName, note));
+
         } catch (Exception e) {
             //以一种温和的方式展示异常信息
             System.out.println("========== 以下是异常信息 ===============");

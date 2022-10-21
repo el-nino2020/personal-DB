@@ -3,6 +3,7 @@ package test;
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.RandomStringUtils;
 import service.ArchiveService;
+import utils.Utility;
 import view.View;
 
 import javax.swing.*;
@@ -15,12 +16,12 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-//        View view = new View();
-//        while (true) {
-//            File file = view.chooseFileInGUI(true);
-//            System.out.println(file);
-//        }
-//        System.out.println("'");
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("请输入表名: ");
+            System.out.println(Utility.checkTableNameValidity(scanner.next()));
+        }
 
     }
 
@@ -301,13 +302,11 @@ public class Test {
     }
 
     //TODO 需求：生成可以随文字自动变更大小的表格，还有一列可以勾选，程序可以获得勾选信息
-    https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html#AUTO_RESIZE_ALL_COLUMNS
-    AUTO_RESIZE_ALL_COLUMNS这个字段貌似能满足需求
     public void useTables() {
-        JFrame f = new JFrame();
+        JFrame frame = new JFrame();
 
         // Frame Title
-        f.setTitle("所有表");
+        frame.setTitle("所有表");
 
         // Data to be displayed in the JTable
         String[][] data = {
@@ -320,17 +319,23 @@ public class Test {
         String[] columnNames = {"序号", "表名", "注释"};
 
         // Initializing the JTable
-        JTable j = new JTable(data, columnNames);
-        j.setBounds(0, 0, 1000, 1000);
+        JTable table = new JTable(data, columnNames);
+        table.setBounds(0, 0, 1000, 1000);
+        table.setFont(new Font("黑体", Font.BOLD, 20));
+        table.setRowHeight(40);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        table.doLayout();
+
 
         // adding it to JScrollPane
-        JScrollPane sp = new JScrollPane(j);
-        f.add(sp);
+        JScrollPane panel = new JScrollPane(table);
+
+        frame.add(panel);
         // Frame Size
-        f.setSize(1000, 1000);
+        frame.setSize(1000, 1000);
         // Frame Visible = true
-        f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 }

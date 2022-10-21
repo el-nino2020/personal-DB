@@ -27,6 +27,9 @@ public class DBService {
     }
 
 
+    /**
+     * 从meta_table中获取所有表的信息
+     */
     public List<TableInfo> getAllTableInfo() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
 
@@ -48,7 +51,7 @@ public class DBService {
     public List<String> getAllTableNames() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
         Connection connection = accountService.getConnection();
-        
+
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
@@ -170,18 +173,32 @@ public class DBService {
     }
 
     /**
-     * 在Param.DATABASE_NAME数据库中创建一张新表，表的模式与template_table相同
+     * 在数据库中创建一张新表，表的模式与template_table相同，并将新表的信息存入meta_table中。
+     * 如果以上步骤都成功，则进行数据库备份
      */
-    public void createNewTable(String tableName) {
+    public void createNewTable(TableInfo tableInfo) {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
-        Preconditions.checkArgument(!tableExists(tableName), String.format("%s表已存在，无法再次创建", tableName));
+        Preconditions.checkNotNull(tableInfo);
+        Preconditions.checkArgument(!tableExists(tableInfo.getTablename()),
+                String.format("%s表已存在，无法再次创建", tableInfo.getTablename()));
+
+        //TODO : 思考meta_table中的数据一致性问题, 即assert(meta_table.recordSize() == cloud_backup.tableSize() -2 )
+        //先写入meta_table，再创建新表
+        tableInfoDAO.update(accountService.getConnection(),
+                "INSERT INTO meta_table(tablename, note) VALUES (?, ?)",
+                tableInfo.getTablename(), tableInfo.getNote());
+
 
         //用这个方法好像不太对，update指DML，但CREATE属于DDL
         //需要注意，事务对于DDL无效
         tableInfoDAO.update(accountService.getConnection(),
-                "CREATE TABLE ? LIKE template_table;", tableName);
+                "CREATE TABLE ? LIKE template_table;", tableInfo.getTablename());
 
-        Utility.assertion(tableExists(tableName), String.format("%s表创建失败", tableName));
+        Utility.assertion(tableExists(tableInfo.getTablename()), String.format("%s表创建失败", tableInfo.getTablename()));
+
+        System.out.format("%s表创建成功\n", tableInfo.getTablename());
+
+        databaseDump();
     }
 
 

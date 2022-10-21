@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CompileAndRun.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompileAndRun.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/TableInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/TableInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +80,7 @@
       <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.View">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Test" />
       <module name="personal-DB" />
@@ -105,15 +107,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,11 +175,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.Test.useTables" />
         <item itemvalue="Application.View" />
         <item itemvalue="JUnit.Test.useFile" />
         <item itemvalue="JUnit.Test.getAUTOINCREMENTValue" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="JUnit.Test.useTables" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +226,9 @@
       <workItem from="1666135720265" duration="7000" />
       <workItem from="1666136602260" duration="112000" />
       <workItem from="1666155272828" duration="7631000" />
-      <workItem from="1666182486772" duration="2149000" />
+      <workItem from="1666182486772" duration="2348000" />
+      <workItem from="1666228051066" duration="9000" />
+      <workItem from="1666328496005" duration="6174000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -529,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666182820081</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="研究Jtable中">
+      <created>1666184761004</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1666184761004</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,9 +557,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="研究了一番rar命令行" />
-    <MESSAGE value="Utility需要增加几个与命令行交互的方法" />
-    <MESSAGE value="更新Utility" />
     <MESSAGE value="测试如何打开Windows选择文件框" />
     <MESSAGE value="add two service classes" />
     <MESSAGE value="update comment" />
@@ -573,7 +579,10 @@
     <MESSAGE value="更新程序路径" />
     <MESSAGE value="开发中。。。思考如何创建新表" />
     <MESSAGE value="small update" />
-    <option name="LAST_COMMIT_MESSAGE" value="small update" />
+    <MESSAGE value="研究Jtable中" />
+    <MESSAGE value="开发完毕?" />
+    <MESSAGE value="开发完毕?待测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="开发完毕?待测试" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -584,30 +593,30 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665986454174" />
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1666006171386">
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1666333510443">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1666006171386" />
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1666333510443" />
     <state x="752" y="200" key="FileChooserDialogImpl" timestamp="1665139500539">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="534" key="GridCell.Tab.0.bottom" timestamp="1666184308369">
+    <state width="1995" height="266" key="GridCell.Tab.0.bottom" timestamp="1666335141877">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="534" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666184308369" />
-    <state width="1995" height="534" key="GridCell.Tab.0.center" timestamp="1666184308369">
+    <state width="1995" height="266" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1666335141877" />
+    <state width="1995" height="266" key="GridCell.Tab.0.center" timestamp="1666335141877">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="534" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666184308369" />
-    <state width="1995" height="534" key="GridCell.Tab.0.left" timestamp="1666184308368">
+    <state width="1995" height="266" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1666335141877" />
+    <state width="1995" height="266" key="GridCell.Tab.0.left" timestamp="1666335141877">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="534" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666184308368" />
-    <state width="1995" height="534" key="GridCell.Tab.0.right" timestamp="1666184308369">
+    <state width="1995" height="266" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1666335141877" />
+    <state width="1995" height="266" key="GridCell.Tab.0.right" timestamp="1666335141877">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="534" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666184308369" />
+    <state width="1995" height="266" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1666335141877" />
     <state width="1995" height="865" key="GridCell.Tab.1.bottom" timestamp="1666162910190">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -632,10 +641,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666162792536">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666184768528">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666162792536" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666184768528" />
     <state x="249" y="65" key="new project wizard" timestamp="1665139189490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -650,7 +659,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/Test.java</url>
-          <line>159</line>
+          <line>160</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
