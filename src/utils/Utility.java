@@ -93,14 +93,14 @@ public class Utility {
 
 
     /**
-     * 合法的表名：只包含大小写英文字符、数字和下划线，且必须以英文字母开头
+     * 合法的表名：只包含小写英文字符、数字和下划线，且必须以英文字母开头
      */
     public static boolean checkTableNameValidity(String name) {
         if (name == null) return false;
         int n = name.length();
         if (n == 0) return false;
-
-        return name.matches("^[a-zA-Z]\\w*$");
+        //JDBC好像不允许用大写字母
+        return name.matches("^[a-z][a-z0-9_]*$");
     }
 
 }

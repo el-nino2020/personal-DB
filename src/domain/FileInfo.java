@@ -28,29 +28,33 @@ public class FileInfo {
         Preconditions.checkArgument(file.isFile());
 
         String string = Utility.getFileMD5(file);
+
+        System.out.println("================文件摘要===================");
         if (md5value.equals(string)) {
-            System.out.println("压缩文件MD5值与记录的一致");
+            System.out.println("1. 压缩文件MD5值与记录的一致");
         } else {
-            System.out.println("压缩文件MD5值与记录的不一致，请注意");
-            System.out.format("记录的MD5值: %s", md5value);
-            System.out.format("文件的MD5值: %s", string);
+            System.out.println("1. 压缩文件MD5值与记录的不一致，请注意!!!");
+            System.out.format("\t记录的MD5值: %s\n", md5value);
+            System.out.format("\t文件的MD5值: %s\n", string);
         }
 
 
         long length = file.length();//返回文件的字节数
         if (length == filesize) {
-            System.out.println("压缩文件大小与记录的一致");
+            System.out.println("2. 压缩文件大小与记录的一致");
         } else {
-            System.out.println("压缩文件MD5值与记录的不一致，请注意!!!");
-            System.out.format("记录的文件大小: %s bytes", md5value + "");
-            System.out.format("当前的文件大小: %s bytes", length + "");
+            System.out.println("2. 压缩文件MD5值与记录的不一致，请注意!!!");
+            System.out.format("\t记录的文件大小: %s bytes\n", md5value + "");
+            System.out.format("\t当前的文件大小: %s bytes\n", length + "");
         }
 
-        System.out.format("文件的真实名称为: %s", filename);
-        System.out.format("最后一次修改的时间为: %s", Utility.getFormattedTime(lastmodified));
+        System.out.format("3. 文件的真实名称为: 『 %s 』\n", filename);
+        System.out.format("4. 最后一次修改的时间为: %s\n", Utility.getFormattedTime(lastmodified));
 
-        System.out.println("关于文件的注释：");
+        System.out.print("5. 关于文件的注释：  ");
         System.out.println(note);
+
+        System.out.println("================摘要结束===================");
 
     }
 

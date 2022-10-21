@@ -99,10 +99,11 @@ public class DBService {
         String ans = null;
         try {
             preparedStatement = connection.prepareStatement(
-                    "SHOW TABLE STATUS FROM cloud_backup WHERE `name` LIKE '?' ");
+                    "SHOW TABLE STATUS FROM cloud_backup WHERE `name` LIKE ? ");
             preparedStatement.setString(1, tableName);
 
             resultSet = preparedStatement.executeQuery();
+            resultSet.next();
             ResultSetMetaData metaData = resultSet.getMetaData();
 
             //resultSet肯定只有一行结果
@@ -189,10 +190,18 @@ public class DBService {
                 tableInfo.getTablename(), tableInfo.getNote());
 
 
-        //用这个方法好像不太对，update指DML，但CREATE属于DDL
-        //需要注意，事务对于DDL无效
-        tableInfoDAO.update(accountService.getConnection(),
-                "CREATE TABLE ? LIKE template_table;", tableInfo.getTablename());
+//        //用这个方法好像不太对，update指DML，但CREATE属于DDL
+//        //需要注意，事务对于DDL无效
+//        tableInfoDAO.update(accountService.getConnection(),
+//                "CREATE TABLE ? LIKE template_table;", tableInfo.getTablename());
+        try {
+            Connection connection = accountService.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "CREATE TABLE " + tableInfo.getTablename() + " LIKE template_table;");
+            preparedStatement.execute();
+        } catch (SQLException e) {
+
+        }
 
         Utility.assertion(tableExists(tableInfo.getTablename()), String.format("%s表创建失败", tableInfo.getTablename()));
 

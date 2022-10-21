@@ -54,30 +54,29 @@ public class ArchiveService {
     }
 
     /**
-     * 生成长度为PASSWORD_LENGTH的ASCII字符串，该字符串中不包含双引号"，
-     * 以便于在命令行输入
-     *
-     * @return
+     * 生成长度为PASSWORD_LENGTH的包含英文字母和数字字符串，
      */
     public static String makePassword() {
-        StringBuilder ans = new StringBuilder(RandomStringUtils.randomAscii(PASSWORD_LENGTH));
-        //需要将ans中的双引号替换为其他字符
-        String alternative = RandomStringUtils.randomAlphanumeric(PASSWORD_LENGTH);
-        for (int i = 0, j = 0; i < PASSWORD_LENGTH; i++) {
-            char c = ans.charAt(i);
-            if (c == '"') {
-                ans.setCharAt(i, alternative.charAt(j));
-                j++;
-            }
-        }
-
-        for (int i = 0; i < PASSWORD_LENGTH; i++) {
-            if (ans.charAt(i) == '"') {
-                throw new RuntimeException("生成密码的方法有问题");
-            }
-        }
-        System.out.println("随机密码生成成功");
-        return ans.toString();
+//        StringBuilder ans = new StringBuilder(RandomStringUtils.randomAscii(PASSWORD_LENGTH));
+//        StringBuilder ans = new StringBuilder(RandomStringUtils.randomAlphanumeric(PASSWORD_LENGTH));
+//        //需要将ans中的双引号替换为其他字符
+//        String alternative = RandomStringUtils.randomAlphanumeric(PASSWORD_LENGTH);
+//        for (int i = 0, j = 0; i < PASSWORD_LENGTH; i++) {
+//            char c = ans.charAt(i);
+//            if (c == '"') {
+//                ans.setCharAt(i, alternative.charAt(j));
+//                j++;
+//            }
+//        }
+//
+//        for (int i = 0; i < PASSWORD_LENGTH; i++) {
+//            if (ans.charAt(i) == '"') {
+//                throw new RuntimeException("生成密码的方法有问题");
+//            }
+//        }
+//        System.out.println("随机密码生成成功");
+//        return ans.toString();
+        return RandomStringUtils.randomAscii(PASSWORD_LENGTH);
     }
 
 

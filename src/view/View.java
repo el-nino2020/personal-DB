@@ -136,7 +136,14 @@ public class View {
 
             Utility.ifNullThrow(id, String.format("查找不到表%s的AUTO_INCREMENT值", tableName));//这个异常基本不可能发生
 
-            String archiveName = tableName + "_" + id;
+            String archiveName = tableName + "_" + id + ".rar";
+            File archiveFile = new File(file.getParent() + "\\" + archiveName);
+
+            // 查询同目录下是否存在与压缩包相同的文件名，如果有，提示
+            Utility.assertion(!archiveFile.exists(),
+                    String.format("%s目录下存在名为%s的文件，与将要生成的压缩包同名，请移动该文件，或者将要压缩的文件移动到别的文件夹",
+                            file.getParent(), archiveName));
+
             // ArchiveService要生成随机的字符串作为密码，并在内存中保存该密码
             // 压缩文件
             String archivePassword = ArchiveService.compressWithRandomPassword(file, archiveName);
@@ -146,7 +153,6 @@ public class View {
             System.out.print("请输入该文件的说明: ");
             String note = scanner.next();
 
-            File archiveFile = new File(file.getParent() + archiveName);
 
             //根据压缩文件的信息和保存的密码，生成FileInfo对象
             FileInfo fileInfo = fileInfoService.makeFileInfo(archiveFile,
@@ -243,7 +249,7 @@ public class View {
         }
 
         try {
-            System.out.println("合法的表名：只包含大小写英文字符、数字和下划线，且必须以英文字母开头。");
+            System.out.println("合法的表名：只包含小写英文字符、数字和下划线，且必须以英文字母开头。");
             System.out.print("请输入要新创建的表名: ");
             String tableName = scanner.next();
 
@@ -289,7 +295,7 @@ public class View {
 
         while (true) {
             System.out.print("你的输入：");
-            line = scanner.nextLine();
+            line = scanner.next();
 
             if ("desktop".equals(line)) {
                 parentDirectory = new File(Param.DESKTOP_PATH);

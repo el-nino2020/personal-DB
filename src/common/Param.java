@@ -15,7 +15,7 @@ public class Param {
     /**
      * 要将数据库备份到哪个目录下，推荐设置为某一云盘的自动备份目录，具体值视主机而定
      */
-    public static final String DUMP_DESTINATION = "C:\\Users\\Morgan\\Desktop\\mega同步\\";
+    public static final String DUMP_DESTINATION = "C:\\Users\\Morgan\\Desktop\\temp\\";
 
     /**
      * 当前主机cmd(command prompt)程序的绝对路径，具体值视主机而定

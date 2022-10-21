@@ -29,11 +29,12 @@ public class FileInfoService {
         Preconditions.checkNotNull(info);
         Preconditions.checkNotNull(tableName);
 
-        String sql = "INSERT INTO ? (id, filename, lastmodified, passwd, md5value, note, filesize) " +
-                "VALUES (NULL, ?, now(), ?, ?, ?, ?)";
+        //如果在sql中使用 ? 代替表名，则实际生成的表名周围带有单引号，不是合法的SQL语句
+        String sql = "INSERT INTO " + tableName +
+                " (filename, lastmodified, passwd, md5value, note, filesize) " +
+                "VALUES (?, now(), ?, ?, ?, ?);";
 
         fileInfoDAO.update(accountService.getConnection(), sql,
-                tableName,
                 info.getFilename(),
                 info.getPasswd(),
                 info.getMd5value(),
@@ -60,11 +61,12 @@ public class FileInfoService {
 
         Preconditions.checkState(new DBService(accountService).tableExists(tableName), "文件所属的表不存在");
 
-        String sql = "select * from ? where id = ?;";
+        //如果在sql中使用 ? 代替表名，则实际生成的表名周围带有单引号，不是合法的SQL语句
+        String sql = "select * from " + tableName + " where id = ?;";
         FileInfo ans = fileInfoDAO.querySingleRow(accountService.getConnection(),
                 sql,
                 FileInfo.class,
-                tableName, id);
+                id);
         return ans;
     }
 

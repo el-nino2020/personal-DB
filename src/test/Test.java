@@ -31,7 +31,7 @@ public class Test {
 
         try {
             //查询文件的md5码
-            String command = "certutil -hashfile D:\\CODES(daima)\\personal-DB\\src\\createTables.sql md5";
+            String command = "certutil -hashfile D:\\CODES(daima)\\personal-DB\\src\\init2_create_table.sql md5";
             Process process = runtime.exec(command);
             InputStream inputStream = process.getInputStream();
             // windows命令行使用gbk编码，需要转换
@@ -76,7 +76,7 @@ public class Test {
 
     @org.junit.Test
     public void useProcessBuilder() {
-        String filePath = "D:\\CODES(daima)\\personal-DB\\src\\createTables.sql";
+        String filePath = "D:\\CODES(daima)\\personal-DB\\src\\init2_create_table.sql";
         String[] command = {"certutil",
                 "-hashfile",
                 filePath,
@@ -113,7 +113,7 @@ public class Test {
             process.waitFor();
             //change cmd character set/encoding to UTF 8;
 
-            String filePath = "D:\\CODES(daima)\\personal-DB\\src\\createTables.sql";
+            String filePath = "D:\\CODES(daima)\\personal-DB\\src\\init2_create_table.sql";
             String[] command = {"certutil",
                     "-hashfile",
                     filePath,
