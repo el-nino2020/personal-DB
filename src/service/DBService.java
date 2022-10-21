@@ -139,7 +139,7 @@ public class DBService {
     public void databaseDump() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
 
-        String backupFileName = AccountService.DATABASE +
+        String backupFileName = AccountService.DATABASE + "_" +
                 Utility.getFormattedTime(LocalDateTime.now());
 
         String mysqlDumpFilePath = DUMP_DESTINATION + backupFileName + ".sql";

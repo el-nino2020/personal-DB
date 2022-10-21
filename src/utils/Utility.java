@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Utility {
     private static final DateTimeFormatter TIME_FORMATTER =
-            DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+            DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
 
 
     private Utility() {
