@@ -2,6 +2,7 @@ package utils;
 
 
 import com.google.common.base.Preconditions;
+import common.Param;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -77,7 +78,7 @@ public class Utility {
         Preconditions.checkArgument(file.isFile());
 
         List<String> results = runSystemCommand(null,
-                "C:\\Windows\\System32\\certutil.exe",
+                Param.CERTUTIL_PATH,
                 "-hashfile",
                 file.getAbsolutePath(),
                 "md5");
@@ -88,7 +89,7 @@ public class Utility {
     }
 
     public static String getFormattedTime(LocalDateTime time) {
-        return TIME_FORMATTER.format(time).toString();
+        return TIME_FORMATTER.format(time);
     }
 
 
@@ -99,7 +100,7 @@ public class Utility {
         if (name == null) return false;
         int n = name.length();
         if (n == 0) return false;
-        //JDBC好像不允许用大写字母
+        //JDBC好像不允许在表名中使用大写字母
         return name.matches("^[a-z][a-z0-9_]*$");
     }
 

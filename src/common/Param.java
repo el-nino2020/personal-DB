@@ -24,6 +24,12 @@ public class Param {
 
 
     /**
+     * 当前主机certutil程序的绝对路径，具体值视主机而定
+     */
+    public static final String CERTUTIL_PATH = "C:\\Windows\\System32\\certutil.exe";
+
+
+    /**
      * 当前主机mysqldump程序的绝对路径，具体值视主机而定
      */
     public static final String MYSQLDUMP_PATH = "D:\\mysql5.7.19\\bin\\mysqldump.exe";

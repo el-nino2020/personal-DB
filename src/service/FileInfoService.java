@@ -40,7 +40,6 @@ public class FileInfoService {
                 info.getMd5value(),
                 info.getNote(),
                 info.getFilesize());
-
     }
 
     /**
@@ -111,7 +110,7 @@ public class FileInfoService {
 
             Preconditions.checkArgument(Integer.parseInt(ans[1]) > 0);
         } catch (Exception e) {
-            throw new RuntimeException("invaild file name");
+            throw new RuntimeException("要解压的文件名非法");
         }
 
         return ans;

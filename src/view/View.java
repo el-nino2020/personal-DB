@@ -36,7 +36,6 @@ public class View {
     public void menu() {
         System.out.println("======================================================================");
 
-
         String choice;
         while (menuLoop) {
             System.out.println("=========================================");
@@ -133,8 +132,8 @@ public class View {
 
             //根据选择的表，找到其AUTO_INCREMENT的值，用于生成压缩文件的名字：表名_ID.rar，ID即为表中的ID字段
             String id = dbService.getAUTOINCREMENTValue(tableName);
-
-            Utility.ifNullThrow(id, String.format("查找不到表%s的AUTO_INCREMENT值", tableName));//这个异常基本不可能发生
+            Utility.ifNullThrow(id,
+                    String.format("查找不到表%s的AUTO_INCREMENT值", tableName));//这个异常基本不可能发生
 
             String archiveName = tableName + "_" + id + ".rar";
             File archiveFile = new File(file.getParent() + "\\" + archiveName);
@@ -150,7 +149,7 @@ public class View {
             Utility.ifNullThrow(archivePassword, "生成的密码有误");//这个异常基本不可能发生
 
             // 要求用户输入关于源文件的一些说明
-            System.out.print("请输入该文件的说明: ");
+            System.out.print("请输入该文件的说明(没有的话请输入『无』): ");
             String note = scanner.next();
 
 
@@ -207,7 +206,6 @@ public class View {
 
             System.out.println("解压完成");
         } catch (Exception e) {
-            //以一种温和的方式展示异常信息
             System.out.println("========== 以下是异常信息 ===============");
             e.printStackTrace();
             System.out.println("========== 异常信息结束 ===============");
@@ -217,21 +215,21 @@ public class View {
     }
 
 
-    //TODO 调用了这个方法后，程序无法正常退出，不知道为什么
+    //TODO: 考虑使用Jtable实现
+
     public void showAllTables() {
         if (!loginDBMS(LOGIN_TRY_TIMES)) {
             System.out.println("该操作失败，需要先登录数据库账户");
         }
 
         List<TableInfo> list = dbService.getAllTableInfo();
+
         if (list.isEmpty()) {
             System.out.println("===================================================");
             System.out.println("不存在任何表，请创建一张");
             System.out.println("===================================================");
-
             return;
         }
-
 
         System.out.println("====================展示所有表=========================");
         for (TableInfo tableInfo : list) {
@@ -268,7 +266,6 @@ public class View {
             dbService.createNewTable(new TableInfo(tableName, note));
 
         } catch (Exception e) {
-            //以一种温和的方式展示异常信息
             System.out.println("========== 以下是异常信息 ===============");
             e.printStackTrace();
             System.out.println("========== 异常信息结束 ===============");
@@ -317,6 +314,7 @@ public class View {
                 JFileChooser.FILES_ONLY);
 
         chooser.showDialog(null, null);
+
         return chooser.getSelectedFile();
     }
 
@@ -340,9 +338,10 @@ public class View {
         //TODO 设置字体似乎没用
 //        chooser.setFont(new Font("Arial", Font.PLAIN, 15));
 //        setFileChooserFont(chooser.getComponents(), new Font("Arial", Font.BOLD, 15));
-
+//TODO: 参考以下两个链接：
+        //https://coderanch.com/t/342116/java/set-font-JFileChooser
+        //https://stackoverflow.com/questions/45791492/java-how-can-i-increase-the-font-of-the-folder-names-in-jfilechooser
     }
-
 
     private void quitSystem() {
         accountService.quitAccount();

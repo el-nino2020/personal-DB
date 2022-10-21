@@ -20,7 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/service/ArchiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ArchiveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/Param.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Param.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +228,7 @@
       <workItem from="1666155272828" duration="7631000" />
       <workItem from="1666182486772" duration="2348000" />
       <workItem from="1666228051066" duration="9000" />
-      <workItem from="1666328496005" duration="11667000" />
+      <workItem from="1666328496005" duration="13597000" />
     </task>
     <task id="LOCAL-00001" summary="set up java module in IDEA">
       <created>1665139668689</created>
@@ -554,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666340359211</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="修改了一个bug，压缩文件夹也没问题了。之后的测试关注之前写的TODO">
+      <created>1666340972882</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1666340972882</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +585,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更新readme" />
     <MESSAGE value="在使用DML前开启事务" />
     <MESSAGE value="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑" />
     <MESSAGE value="开发中。。。值得一提的是修改了表的定义和增添了一张新的表`meta_table`" />
@@ -598,7 +609,8 @@
     <MESSAGE value="按照顺序执行数据库初始哈" />
     <MESSAGE value="按照顺序执行数据库初始化" />
     <MESSAGE value="基础测试完毕，在中文Windows cmd环境下中英文都可以" />
-    <option name="LAST_COMMIT_MESSAGE" value="基础测试完毕，在中文Windows cmd环境下中英文都可以" />
+    <MESSAGE value="修改了一个bug，压缩文件夹也没问题了。之后的测试关注之前写的TODO" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了一个bug，压缩文件夹也没问题了。之后的测试关注之前写的TODO" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -657,10 +669,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666184768528">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666340978959">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666184768528" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666340978959" />
     <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1666339303264">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -669,10 +681,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1666339046544">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1666342154369">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1666339046544" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1666342154369" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -684,13 +696,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/service/DBService.java</url>
-          <line>198</line>
+          <line>195</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/service/FileInfoService.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/dao/BasicDAO.java</url>

@@ -103,10 +103,10 @@ public class DBService {
             preparedStatement.setString(1, tableName);
 
             resultSet = preparedStatement.executeQuery();
+            //resultSet肯定只有一行结果，但一开始游标在第一个结果之前，所以需要调用next()方法
             resultSet.next();
-            ResultSetMetaData metaData = resultSet.getMetaData();
+            ResultSetMetaData metaData = resultSet.getMetaData();//可以看出metaData也是基于游标的
 
-            //resultSet肯定只有一行结果
             for (int i = 0; i < metaData.getColumnCount(); i++) {
                 //注意到: resultSet中字段的顺序并不是固定的，应该根据列名选出AUTO_INCREMENT的值
                 if ("AUTO_INCREMENT".equals(metaData.getColumnName(i + 1))) {
@@ -190,12 +190,9 @@ public class DBService {
                 tableInfo.getTablename(), tableInfo.getNote());
 
 
-//        //用这个方法好像不太对，update指DML，但CREATE属于DDL
-//        //需要注意，事务对于DDL无效
-//        tableInfoDAO.update(accountService.getConnection(),
-//                "CREATE TABLE ? LIKE template_table;", tableInfo.getTablename());
         try {
             Connection connection = accountService.getConnection();
+            //如果在sql中使用 ? 代替表名，则实际生成的表名周围带有单引号，不是合法的SQL语句
             PreparedStatement preparedStatement = connection.prepareStatement(
                     "CREATE TABLE " + tableInfo.getTablename() + " LIKE template_table;");
             preparedStatement.execute();
@@ -203,7 +200,8 @@ public class DBService {
 
         }
 
-        Utility.assertion(tableExists(tableInfo.getTablename()), String.format("%s表创建失败", tableInfo.getTablename()));
+        Utility.assertion(tableExists(tableInfo.getTablename()),
+                String.format("%s表创建失败", tableInfo.getTablename()));
 
         System.out.format("%s表创建成功\n", tableInfo.getTablename());
 
