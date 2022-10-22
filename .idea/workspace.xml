@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/Param.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Param.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,14 +227,7 @@
       <workItem from="1666349932606" duration="331000" />
       <workItem from="1666396406446" duration="35000" />
       <workItem from="1666429069834" duration="225000" />
-      <workItem from="1666430851493" duration="2314000" />
-    </task>
-    <task id="LOCAL-00003" summary="move .sql files to /src/">
-      <created>1665139875466</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1665139875466</updated>
+      <workItem from="1666430851493" duration="2386000" />
     </task>
     <task id="LOCAL-00004" summary="java与命令行交互，我似乎没必要写一个.bat文件作为整个项目的开始了">
       <created>1665148948203</created>
@@ -573,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666432285591</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="一些更新，感觉使用jTable好麻烦">
+      <created>1666433208670</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1666433208670</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +591,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="开发中。。。主要写了ArchiveService，现在存在编码抓换的问题" />
     <MESSAGE value="压缩时包含中文路径的问题解决，只要在命令行编译并运行就没问题了，&#10;用命令行运行`testCMDEncoding.java`，&#10;现在的问题是如何在命令行包括.jar文件" />
     <MESSAGE value="包含jar包的编译搞定了" />
     <MESSAGE value="以后直接在cmd中运行这个文件就可以测试了" />
@@ -617,7 +615,8 @@
     <MESSAGE value="修改了备份文件的命名方式，更加人性化" />
     <MESSAGE value="10GB文件夹压缩测试完成，看来用processBuilder调用winrar命令和普通地在命令行调用没啥区别" />
     <MESSAGE value="一些更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="一些更新" />
+    <MESSAGE value="一些更新，感觉使用jTable好麻烦" />
+    <option name="LAST_COMMIT_MESSAGE" value="一些更新，感觉使用jTable好麻烦" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -676,10 +675,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666432291731">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666433215042">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666432291731" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666433215042" />
     <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1666339303264">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
