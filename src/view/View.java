@@ -44,6 +44,7 @@ public class View {
             System.out.println("\t\t2.  解压文件");
             System.out.println("\t\t3.  查询现有表");
             System.out.println("\t\t4.  新建表");
+            System.out.println("\t\t5.  备份数据库(仅在必要时选择该项，别没事备份状态相同的数据库)");
             System.out.println("\t\tq.  退出系统");
             System.out.println("=========================================");
             System.out.print("输入你的选择: ");
@@ -65,6 +66,10 @@ public class View {
                     else System.out.println("总结: 操作失败");
                     break;
                 //TODO: 也许要写一个checkDBIntegrity()的函数，检查数据库状态，以便我作为DBA，手动修复不正确的数据库
+                case "5":
+                    if (DBBackup()) System.out.println("总结: 操作成功");
+                    else System.out.println("总结: 操作失败");
+                    break;
                 case "q":
                     menuLoop = false;
                     break;
@@ -165,9 +170,10 @@ public class View {
             dbService.databaseDump();
 
             //TODO 用保存的密码测试压缩文件。如果测试失败，有点尴尬，上面哪一步肯定出现问题了，考虑重做整个过程
+            //TODO 思考：如何重做数据库? 事实上，插入一个实际上没有意义的记录是安全的，但日后(通过比对文件大小或md5)查找时会有点麻烦
+
             System.out.println("最终测试：再次测试压缩包的密码");
             ArchiveService.testRar(archiveFile, archivePassword);
-
         } catch (Exception e) {
             System.out.println("========== 以下是异常信息 ===============");
             e.printStackTrace();
@@ -264,6 +270,23 @@ public class View {
 
             dbService.createNewTable(new TableInfo(tableName, note));
 
+        } catch (Exception e) {
+            System.out.println("========== 以下是异常信息 ===============");
+            e.printStackTrace();
+            System.out.println("========== 异常信息结束 ===============");
+            return false;
+        }
+        return true;
+    }
+
+
+    private boolean DBBackup() {
+        if (!loginDBMS(LOGIN_TRY_TIMES)) {
+            System.out.println("该操作失败，需要先登录数据库账户");
+            return false;
+        }
+        try {
+            dbService.databaseDump();
         } catch (Exception e) {
             System.out.println("========== 以下是异常信息 ===============");
             e.printStackTrace();

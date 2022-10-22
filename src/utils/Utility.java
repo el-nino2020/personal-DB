@@ -58,6 +58,7 @@ public class Utility {
             process.waitFor();
             InputStream inputStream = process.getInputStream();
             // windows命令行使用gbk编码，需要转换
+            //TODO: 思考： 如果在cmd中运行java程序，真的需要转换字符编码吗
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "gbk"));
 
             String line;

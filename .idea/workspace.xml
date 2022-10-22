@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,14 +227,10 @@
       <workItem from="1666182486772" duration="2348000" />
       <workItem from="1666228051066" duration="9000" />
       <workItem from="1666328496005" duration="13597000" />
-      <workItem from="1666349932606" duration="219000" />
-    </task>
-    <task id="LOCAL-00001" summary="set up java module in IDEA">
-      <created>1665139668689</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1665139668689</updated>
+      <workItem from="1666349932606" duration="331000" />
+      <workItem from="1666396406446" duration="35000" />
+      <workItem from="1666429069834" duration="225000" />
+      <workItem from="1666430851493" duration="1331000" />
     </task>
     <task id="LOCAL-00002" summary="add gitignore">
       <created>1665139784444</created>
@@ -564,7 +561,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666340972882</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="修改了备份文件的命名方式，更加人性化">
+      <created>1666350259576</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1666350259576</updated>
+    </task>
+    <task id="LOCAL-00050" summary="10GB文件夹压缩测试完成，看来用processBuilder调用winrar命令和普通地在命令行调用没啥区别">
+      <created>1666431014619</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1666431014621</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,8 +594,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="在使用DML前开启事务" />
-    <MESSAGE value="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑" />
     <MESSAGE value="开发中。。。值得一提的是修改了表的定义和增添了一张新的表`meta_table`" />
     <MESSAGE value="开发中。。。主要写了ArchiveService，现在存在编码抓换的问题" />
     <MESSAGE value="压缩时包含中文路径的问题解决，只要在命令行编译并运行就没问题了，&#10;用命令行运行`testCMDEncoding.java`，&#10;现在的问题是如何在命令行包括.jar文件" />
@@ -608,7 +617,9 @@
     <MESSAGE value="按照顺序执行数据库初始化" />
     <MESSAGE value="基础测试完毕，在中文Windows cmd环境下中英文都可以" />
     <MESSAGE value="修改了一个bug，压缩文件夹也没问题了。之后的测试关注之前写的TODO" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了一个bug，压缩文件夹也没问题了。之后的测试关注之前写的TODO" />
+    <MESSAGE value="修改了备份文件的命名方式，更加人性化" />
+    <MESSAGE value="10GB文件夹压缩测试完成，看来用processBuilder调用winrar命令和普通地在命令行调用没啥区别" />
+    <option name="LAST_COMMIT_MESSAGE" value="10GB文件夹压缩测试完成，看来用processBuilder调用winrar命令和普通地在命令行调用没啥区别" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -667,10 +678,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666340978959">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666429092032">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666340978959" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666429092032" />
     <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1666339303264">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -679,10 +690,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="249" y="65" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1665139189490" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1666342154369">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1666431814716">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1666342154369" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1666431814716" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
