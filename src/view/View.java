@@ -49,7 +49,6 @@ public class View {
             System.out.print("输入你的选择: ");
             choice = scanner.next();
             switch (choice) {
-                //TODO 测试压缩和解压大文件(10G)
                 case "1":
                     if (makeArchiveAndRecord()) System.out.println("总结: 操作成功");
                     else System.out.println("总结: 操作失败");
