@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,14 +228,7 @@
       <workItem from="1666349932606" duration="331000" />
       <workItem from="1666396406446" duration="35000" />
       <workItem from="1666429069834" duration="225000" />
-      <workItem from="1666430851493" duration="1331000" />
-    </task>
-    <task id="LOCAL-00002" summary="add gitignore">
-      <created>1665139784444</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1665139784444</updated>
+      <workItem from="1666430851493" duration="2314000" />
     </task>
     <task id="LOCAL-00003" summary="move .sql files to /src/">
       <created>1665139875466</created>
@@ -575,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666431014621</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="一些更新">
+      <created>1666432285591</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1666432285591</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +592,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="开发中。。。值得一提的是修改了表的定义和增添了一张新的表`meta_table`" />
     <MESSAGE value="开发中。。。主要写了ArchiveService，现在存在编码抓换的问题" />
     <MESSAGE value="压缩时包含中文路径的问题解决，只要在命令行编译并运行就没问题了，&#10;用命令行运行`testCMDEncoding.java`，&#10;现在的问题是如何在命令行包括.jar文件" />
     <MESSAGE value="包含jar包的编译搞定了" />
@@ -619,7 +616,8 @@
     <MESSAGE value="修改了一个bug，压缩文件夹也没问题了。之后的测试关注之前写的TODO" />
     <MESSAGE value="修改了备份文件的命名方式，更加人性化" />
     <MESSAGE value="10GB文件夹压缩测试完成，看来用processBuilder调用winrar命令和普通地在命令行调用没啥区别" />
-    <option name="LAST_COMMIT_MESSAGE" value="10GB文件夹压缩测试完成，看来用processBuilder调用winrar命令和普通地在命令行调用没啥区别" />
+    <MESSAGE value="一些更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="一些更新" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -678,10 +676,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1665719109884" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666429092032">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666432291731">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666429092032" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666432291731" />
     <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1666339303264">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

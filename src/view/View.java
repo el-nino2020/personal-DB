@@ -40,12 +40,12 @@ public class View {
         while (menuLoop) {
             System.out.println("=========================================");
             System.out.println("========== Personal DB =============");
-            System.out.println("\t\t1.  压缩并记录文件(夹)");
-            System.out.println("\t\t2.  解压文件");
-            System.out.println("\t\t3.  查询现有表");
-            System.out.println("\t\t4.  新建表");
-            System.out.println("\t\t5.  备份数据库(仅在必要时选择该项，别没事备份状态相同的数据库)");
-            System.out.println("\t\tq.  退出系统");
+            System.out.println("\t1.  压缩并记录文件(夹)");
+            System.out.println("\t2.  解压文件");
+            System.out.println("\t3.  查询现有表");
+            System.out.println("\t4.  新建表");
+            System.out.println("\t5.  备份数据库(仅在必要时选择该项，别没事备份状态相同的数据库)");
+            System.out.println("\tq.  退出系统");
             System.out.println("=========================================");
             System.out.print("输入你的选择: ");
             choice = scanner.next();
@@ -128,7 +128,8 @@ public class View {
             Utility.ifNullThrow(file, "选择的文件不存在");//这个异常基本不可能发生
 
             //TODO 展示现有的表（在一个新的窗口展示，在现有cmd中展示显得有些拥挤），选择要存放的表，考虑能否在Jtable中打勾来选择
-            showAllTables();
+            //TODO 如果不使用Jtable，也许可以通过选择序号的方式
+            List<TableInfo> list = showAllTables();
 
             System.out.print("请输入文件所属的表名(文件夹名): ");
             String tableName = scanner.next();
@@ -222,26 +223,27 @@ public class View {
 
     //TODO: 考虑使用Jtable实现
 
-    public void showAllTables() {
+    public List<TableInfo> showAllTables() {
         if (!loginDBMS(LOGIN_TRY_TIMES)) {
             System.out.println("该操作失败，需要先登录数据库账户");
         }
 
-        List<TableInfo> list = dbService.getAllTableInfo();
+        List<TableInfo> ans = dbService.getAllTableInfo();
 
-        if (list.isEmpty()) {
+        if (ans.isEmpty()) {
             System.out.println("===================================================");
             System.out.println("不存在任何表，请创建一张");
             System.out.println("===================================================");
-            return;
+            return ans;
         }
 
-        System.out.println("====================展示所有表=========================");
-        for (TableInfo tableInfo : list) {
+        System.out.println("====================展示所有表=========================\n");
+        for (TableInfo tableInfo : ans) {
             System.out.format("序号: %d ||*|| 表名: %s ||*|| 注释: %s \n",
                     tableInfo.getId(), tableInfo.getTablename(), tableInfo.getNote());
         }
-        System.out.println("====================展示完毕=========================");
+        System.out.println("\n====================展示完毕=========================");
+        return ans;
     }
 
 
