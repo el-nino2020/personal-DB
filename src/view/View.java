@@ -2,7 +2,7 @@ package view;
 
 import common.Param;
 import domain.FileInfo;
-import domain.TableInfo;
+import domain.DirectoryInfo;
 import service.AccountService;
 import service.ArchiveService;
 import service.DBService;
@@ -129,18 +129,18 @@ public class View {
 
             //TODO 展示现有的表（在一个新的窗口展示，在现有cmd中展示显得有些拥挤），选择要存放的表，考虑能否在Jtable中打勾来选择
             //TODO 如果不使用Jtable，也许可以通过选择序号的方式
-            List<TableInfo> list = showAllTables();
+            List<DirectoryInfo> list = showAllTables();
 
             System.out.print("请输入文件所属的表名(文件夹名): ");
             String tableName = scanner.next();
-            Utility.assertion(dbService.tableExists(tableName), "该表不存在");
+            Utility.assertion(dbService.directoryExists(tableName), "该表不存在");
 
             //根据选择的表，找到其AUTO_INCREMENT的值，用于生成压缩文件的名字：表名_ID.rar，ID即为表中的ID字段
-            String id = dbService.getAUTOINCREMENTValue(tableName);
+            String id = dbService.getAUTOINCREMENTValue();
             Utility.ifNullThrow(id,
                     String.format("查找不到表%s的AUTO_INCREMENT值", tableName));//这个异常基本不可能发生
 
-            String archiveName = tableName + "_" + id + ".rar";
+            String archiveName = "files_" + id + ".rar";
             File archiveFile = new File(file.getParent() + "\\" + archiveName);
 
             // 查询同目录下是否存在与压缩包相同的文件名，如果有，提示
@@ -157,15 +157,28 @@ public class View {
             System.out.print("请输入该文件的说明(没有的话请输入『无』): ");
             String note = scanner.next();
 
+            /////////////////////////////////////////////////////////////////////////
+            //这一段应该整合成一个方法的
+            int dirID = -1;
+
+            for (DirectoryInfo directoryInfo : list) {
+                if (directoryInfo.getDirname().equals(tableName)) {
+                    dirID = directoryInfo.getId();
+                    break;
+                }
+            }
+
+            Utility.assertion(dirID != -1, "内存损坏"); //这个异常基本不可能发生，除非内存有问题
+            /////////////////////////////////////////////////////////////////////////
 
             //根据压缩文件的信息和保存的密码，生成FileInfo对象
             FileInfo fileInfo = fileInfoService.makeFileInfo(archiveFile,
                     file.getName(),
                     archivePassword,
-                    note);
+                    note, dirID);
 
             //将FileInfo对象写入数据库
-            fileInfoService.insertFileInfo(fileInfo, tableName);
+            fileInfoService.insertFileInfo(fileInfo);
 
             //数据库备份——没错，每次调用makeArchiveAndRecord，都要备份一次数据库
             dbService.databaseDump();
@@ -175,6 +188,7 @@ public class View {
 
             System.out.println("最终测试：再次测试压缩包的密码");
             ArchiveService.testRar(archiveFile, archivePassword);
+            System.out.println("生成的压缩包为" + archiveFile.getAbsolutePath());
         } catch (Exception e) {
             System.out.println("========== 以下是异常信息 ===============");
             e.printStackTrace();
@@ -223,12 +237,12 @@ public class View {
 
     //TODO: 考虑使用Jtable实现
 
-    public List<TableInfo> showAllTables() {
+    public List<DirectoryInfo> showAllTables() {
         if (!loginDBMS(LOGIN_TRY_TIMES)) {
             System.out.println("该操作失败，需要先登录数据库账户");
         }
 
-        List<TableInfo> ans = dbService.getAllTableInfo();
+        List<DirectoryInfo> ans = dbService.getAllDirectoryInfo();
 
         if (ans.isEmpty()) {
             System.out.println("===================================================");
@@ -238,9 +252,9 @@ public class View {
         }
 
         System.out.println("====================展示所有表=========================\n");
-        for (TableInfo tableInfo : ans) {
+        for (DirectoryInfo directoryInfo : ans) {
             System.out.format("序号: %d ||*|| 表名: %s ||*|| 注释: %s \n",
-                    tableInfo.getId(), tableInfo.getTablename(), tableInfo.getNote());
+                    directoryInfo.getId(), directoryInfo.getDirname(), directoryInfo.getNote());
         }
         System.out.println("\n====================展示完毕=========================");
         return ans;
@@ -258,7 +272,7 @@ public class View {
             System.out.print("请输入要新创建的表名: ");
             String tableName = scanner.next();
 
-            if (dbService.tableExists(tableName)) {
+            if (dbService.directoryExists(tableName)) {
                 System.out.println("该表已存在，请重试");
                 return false;
             }
@@ -270,7 +284,7 @@ public class View {
             System.out.print("请输入关于这张表的说明: ");
             String note = scanner.next();
 
-            dbService.createNewTable(new TableInfo(tableName, note));
+            dbService.createNewDirectory(new DirectoryInfo(tableName, note));
 
         } catch (Exception e) {
             System.out.println("========== 以下是异常信息 ===============");

@@ -7,13 +7,16 @@ import java.io.File;
 import java.time.LocalDateTime;
 
 public class FileInfo {
-    private int id;
     private String filename;
+    private String note;
+    private long filesize;
+
     private LocalDateTime lastmodified;
     private String passwd;
     private String md5value;
-    private String note;
-    private long filesize;
+
+    private int id;
+    private int dirid;
 
 
     /**
@@ -65,13 +68,14 @@ public class FileInfo {
     @Override
     public String toString() {
         return "FileInfo{" +
-                "id=" + id +
-                ", filename='" + filename + '\'' +
+                "filename='" + filename + '\'' +
+                ", note='" + note + '\'' +
+                ", filesize=" + filesize +
                 ", lastmodified=" + lastmodified +
                 ", passwd='" + passwd + '\'' +
                 ", md5value='" + md5value + '\'' +
-                ", note='" + note + '\'' +
-                ", filesize=" + filesize +
+                ", id=" + id +
+                ", dirid=" + dirid +
                 '}';
     }
 
@@ -129,5 +133,14 @@ public class FileInfo {
 
     public void setFilesize(long filesize) {
         this.filesize = filesize;
+    }
+
+
+    public int getDirid() {
+        return dirid;
+    }
+
+    public void setDirid(int dirid) {
+        this.dirid = dirid;
     }
 }

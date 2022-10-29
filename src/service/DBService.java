@@ -2,8 +2,9 @@ package service;
 
 import com.google.common.base.Preconditions;
 import common.Param;
-import dao.TableInfoDAO;
-import domain.TableInfo;
+import dao.BasicDAO;
+import dao.DirectoryInfoDAO;
+import domain.DirectoryInfo;
 import utils.Utility;
 
 import java.io.File;
@@ -20,7 +21,7 @@ public class DBService {
     private static final String DUMP_DESTINATION = Param.DUMP_DESTINATION;
 
     private AccountService accountService;
-    private TableInfoDAO tableInfoDAO = new TableInfoDAO();
+    private DirectoryInfoDAO directoryInfoDAO = new DirectoryInfoDAO();
 
     public DBService(AccountService accountService) {
         this.accountService = accountService;
@@ -28,70 +29,48 @@ public class DBService {
 
 
     /**
-     * 从meta_table中获取所有表的信息
+     * 从directories中获取所有表的信息
      */
-    public List<TableInfo> getAllTableInfo() {
+    public List<DirectoryInfo> getAllDirectoryInfo() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
 
-        List<TableInfo> ans = tableInfoDAO.queryMultiRow(accountService.getConnection(),
-                "select * from meta_table;",
-                TableInfo.class);
+        List<DirectoryInfo> ans = directoryInfoDAO.queryMultiRow(accountService.getConnection(),
+                "select * from directories;",
+                DirectoryInfo.class);
         return ans;
     }
 
 
-    public boolean tableExists(String tableName) {
+    public boolean directoryExists(String dirName) {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
-        Preconditions.checkNotNull(tableName);
+        Preconditions.checkNotNull(dirName);
 
-        List<String> tables = getAllTableNames();
-        return tables.contains(tableName);
+        List<String> dirNames = getAllDirectoryNames();
+        return dirNames.contains(dirName);
     }
 
-    public List<String> getAllTableNames() {
+    public List<String> getAllDirectoryNames() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
-        Connection connection = accountService.getConnection();
-
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-
-        ArrayList<String> ans = new ArrayList<>();
-
-        try {
-            preparedStatement = connection.prepareStatement("SHOW TABLES;");
-            resultSet = preparedStatement.executeQuery();
-
-            while (resultSet.next()) {
-                String tableName = resultSet.getString(1);
-                ans.add(tableName);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                resultSet.close();
-                preparedStatement.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+//TODO 这个方法需要优化
+        List<DirectoryInfo> list = getAllDirectoryInfo();
+        ArrayList<String> ans = new ArrayList<>(list.size());
+        for (DirectoryInfo directoryInfo : list) {
+            ans.add(directoryInfo.getDirname());
         }
 
         return ans;
+
     }
 
 
     /**
-     * 找到tableName表的AUTO_INCREMENT的下一个值。参考：
+     * 找到files表的AUTO_INCREMENT的下一个值。参考：
      * https://stackoverflow.com/questions/15821532/get-current-auto-increment-value-for-any-table
      *
-     * @param tableName 要查询的表名
      * @return value(AUTO_INCREMENT) + ""，把这个值以字符串形式返回
      */
-    public String getAUTOINCREMENTValue(String tableName) {
+    public String getAUTOINCREMENTValue() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
-        Preconditions.checkNotNull(tableName);
-        Preconditions.checkArgument(tableExists(tableName));//保险起见
-
 
         Connection connection = accountService.getConnection();
         PreparedStatement preparedStatement = null;
@@ -100,7 +79,7 @@ public class DBService {
         try {
             preparedStatement = connection.prepareStatement(
                     "SHOW TABLE STATUS FROM cloud_backup WHERE `name` LIKE ? ");
-            preparedStatement.setString(1, tableName);
+            preparedStatement.setString(1, "files");
 
             resultSet = preparedStatement.executeQuery();
             //resultSet肯定只有一行结果，但一开始游标在第一个结果之前，所以需要调用next()方法
@@ -174,36 +153,38 @@ public class DBService {
     }
 
     /**
-     * 在数据库中创建一张新表，表的模式与template_table相同，并将新表的信息存入meta_table中。
-     * 如果以上步骤都成功，则进行数据库备份
+     * 在directories中插入一条新记录
      */
-    public void createNewTable(TableInfo tableInfo) {
+    public void createNewDirectory(DirectoryInfo directoryInfo) {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
-        Preconditions.checkNotNull(tableInfo);
-        Preconditions.checkArgument(!tableExists(tableInfo.getTablename()),
-                String.format("%s表已存在，无法再次创建", tableInfo.getTablename()));
+        Preconditions.checkNotNull(directoryInfo);
+        Preconditions.checkArgument(!directoryExists(directoryInfo.getDirname()),
+                String.format("%s表已存在，无法再次创建", directoryInfo.getDirname()));
 
-        //TODO : 思考meta_table中的数据一致性问题, 即assert(meta_table.recordSize() == cloud_backup.tableSize() -2 )
-        //先写入meta_table，再创建新表
-        tableInfoDAO.update(accountService.getConnection(),
-                "INSERT INTO meta_table(tablename, note) VALUES (?, ?)",
-                tableInfo.getTablename(), tableInfo.getNote());
-
+        Connection connection = accountService.getConnection();
 
         try {
-            Connection connection = accountService.getConnection();
-            //如果在sql中使用 ? 代替表名，则实际生成的表名周围带有单引号，不是合法的SQL语句
-            PreparedStatement preparedStatement = connection.prepareStatement(
-                    "CREATE TABLE " + tableInfo.getTablename() + " LIKE template_table;");
-            preparedStatement.execute();
-        } catch (SQLException e) {
+            connection.setAutoCommit(false); //start transaction
 
+            directoryInfoDAO.update(connection,
+                    "INSERT INTO directories(dirname, note) VALUES (?, ?)",
+                    directoryInfo.getDirname(), directoryInfo.getNote());
+
+            Utility.assertion(directoryExists(directoryInfo.getDirname()),
+                    String.format("%s表创建失败", directoryInfo.getDirname()));
+
+            System.out.format("%s表创建成功\n", directoryInfo.getDirname());
+
+            connection.commit();
+        } catch (Exception e) {
+            try {
+                connection.rollback();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            e.printStackTrace();
         }
 
-        Utility.assertion(tableExists(tableInfo.getTablename()),
-                String.format("%s表创建失败", tableInfo.getTablename()));
-
-        System.out.format("%s表创建成功\n", tableInfo.getTablename());
 
         databaseDump();
     }

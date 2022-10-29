@@ -17,29 +17,18 @@ public class BasicDAO<T> {
     private QueryRunner qr = new QueryRunner();
 
     /**
-     * DML语句，使用事务保证数据一致性
+     * DML语句
+     *
      * @param sql        DML语句
      * @param parameters 替换sql中的 ? 占位符
      * @return 受影响的行数
      */
     public int update(Connection connection, String sql, Object... parameters) {
-        //https://commons.apache.org/proper/commons-dbutils/apidocs
-        //This Connection must be in auto-commit mode or the update will not be saved.
-        int ans;
         try {
-            connection.setAutoCommit(false);
-            ans = qr.update(connection, sql, parameters);
+            return qr.update(connection, sql, parameters);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        try {
-            connection.commit();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        return ans;
     }
 
     /**
