@@ -1,2 +1,4 @@
 /out/
 *.class
+/src/useSwing/NetBeansProjects/target/
+/src/useSwing/designGUI/target/

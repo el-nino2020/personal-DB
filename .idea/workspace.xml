@@ -20,18 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dao/DirectoryInfoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CreateNewDBTablePanel.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CreateNewDBTablePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/DecompressPanel.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/DecompressPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/flatlaf-demo-2.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/设计思路.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/BasicDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BasicDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/TableInfoDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/TableInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/DirectoryInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/init2_create_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/init2_create_table.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,12 +57,15 @@
     </option>
   </component>
   <component name="ProjectId" id="2FnqcUYUtiRc6MUd7cgGrDnoxyb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
-    <option name="flattenPackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="275" />
@@ -77,18 +81,26 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\CODES(daima)\personal-DB\src" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="dao" />
       <recent name="utils" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CODES(daima)\personal-DB\lib" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODES(daima)\personal-DB\src\test" />
+      <recent name="D:\CODES(daima)\personal-DB\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.View">
+  <component name="RunManager" selected="Application.DesignGUI">
+    <configuration name="DesignGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DesignGUI" />
+      <module name="personal-DB" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GUIDesign" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.GUIDesign" />
       <module name="personal-DB" />
@@ -102,8 +114,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.Test" />
+    <configuration name="GUIView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.GUIView" />
       <module name="personal-DB" />
       <extension name="coverage">
         <pattern>
@@ -128,52 +140,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.useFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ViewGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ViewGUI" />
       <module name="personal-DB" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="useFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test.useTables" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="personal-DB" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="METHOD_NAME" value="useTables" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Test" />
       <item itemvalue="Application.View" />
       <item itemvalue="Application.GUIDesign" />
-      <item itemvalue="JUnit.Test.useTables" />
-      <item itemvalue="JUnit.Test.useFile" />
+      <item itemvalue="Application.GUIView" />
+      <item itemvalue="Application.ViewGUI" />
+      <item itemvalue="Application.DesignGUI" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DesignGUI" />
+        <item itemvalue="Application.ViewGUI" />
+        <item itemvalue="Application.GUIView" />
         <item itemvalue="Application.View" />
         <item itemvalue="Application.GUIDesign" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="JUnit.Test.useTables" />
-        <item itemvalue="JUnit.Test.useFile" />
       </list>
     </recent_temporary>
   </component>
@@ -234,14 +221,17 @@
       <workItem from="1666673191496" duration="111000" />
       <workItem from="1666677259477" duration="46000" />
       <workItem from="1667018061467" duration="3891000" />
-      <workItem from="1667022072593" duration="784000" />
-    </task>
-    <task id="LOCAL-00005" summary="add view">
-      <created>1665184934866</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1665184934867</updated>
+      <workItem from="1667022072593" duration="3415000" />
+      <workItem from="1667034732328" duration="6213000" />
+      <workItem from="1667084401126" duration="49000" />
+      <workItem from="1667098607380" duration="116000" />
+      <workItem from="1667102890052" duration="956000" />
+      <workItem from="1667115714786" duration="168000" />
+      <workItem from="1667522324630" duration="1823000" />
+      <workItem from="1667535175112" duration="345000" />
+      <workItem from="1667535551789" duration="1401000" />
+      <workItem from="1667537763466" duration="186000" />
+      <workItem from="1667599787787" duration="2924000" />
     </task>
     <task id="LOCAL-00006" summary="add some test case">
       <created>1665184947885</created>
@@ -579,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666433279033</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="重新设计数据库，并调整代码。测试完毕">
+      <created>1667023016002</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1667023016002</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,8 +595,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="包含jar包的编译搞定了" />
-    <MESSAGE value="以后直接在cmd中运行这个文件就可以测试了" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="用于删除生成的.class文件" />
     <MESSAGE value="update" />
     <MESSAGE value="开发中。。。要测试chooseFileInGUI这一方法，测试完毕后开始写makeArchiveAndRecord" />
@@ -623,7 +619,9 @@
     <MESSAGE value="一些更新" />
     <MESSAGE value="一些更新，感觉使用jTable好麻烦" />
     <MESSAGE value="更新common.Param中的注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新common.Param中的注释" />
+    <MESSAGE value="重新设计数据库" />
+    <MESSAGE value="重新设计数据库，并调整代码。测试完毕" />
+    <option name="LAST_COMMIT_MESSAGE" value="重新设计数据库，并调整代码。测试完毕" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -658,22 +656,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="477" key="GridCell.Tab.0.bottom" timestamp="1667021955742">
+    <state width="1995" height="477" key="GridCell.Tab.0.bottom" timestamp="1667041329851">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="477" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667021955742" />
-    <state width="1995" height="477" key="GridCell.Tab.0.center" timestamp="1667021955742">
+    <state width="1995" height="477" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667041329851" />
+    <state width="1995" height="477" key="GridCell.Tab.0.center" timestamp="1667041329851">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="477" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667021955742" />
-    <state width="1995" height="477" key="GridCell.Tab.0.left" timestamp="1667021955742">
+    <state width="1995" height="477" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667041329851" />
+    <state width="1995" height="477" key="GridCell.Tab.0.left" timestamp="1667041329850">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="477" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667021955742" />
-    <state width="1995" height="477" key="GridCell.Tab.0.right" timestamp="1667021955742">
+    <state width="1995" height="477" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667041329850" />
+    <state width="1995" height="477" key="GridCell.Tab.0.right" timestamp="1667041329851">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="477" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667021955742" />
+    <state width="1995" height="477" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667041329851" />
     <state width="1995" height="405" key="GridCell.Tab.1.bottom" timestamp="1667021955738">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -698,10 +696,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1666565689978" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1666433282765">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1667023021975">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1666433282765" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1667023021975" />
     <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1667021837134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -722,10 +720,11 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="697" y="253" key="refactoring.ChangeSignatureDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667020637541" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1666431814716">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="378" y="54" width="672" height="707" key="search.everywhere.popup" timestamp="1667537778190">
+      <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1666431814716" />
+    <state x="378" y="54" width="672" height="707" key="search.everywhere.popup/0.0.1280.760@0.0.1280.760" timestamp="1667537778190" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1667039791816" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -739,11 +738,6 @@
           <url>file://$PROJECT_DIR$/src/service/DBService.java</url>
           <line>166</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/view/View.java</url>
-          <line>161</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

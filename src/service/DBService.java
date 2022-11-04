@@ -30,12 +30,13 @@ public class DBService {
 
     /**
      * 从directories中获取所有表的信息
+     * @return 包含所有表的信息的List，按照表名升序排列
      */
     public List<DirectoryInfo> getAllDirectoryInfo() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
 
         List<DirectoryInfo> ans = directoryInfoDAO.queryMultiRow(accountService.getConnection(),
-                "select * from directories;",
+                "SELECT * FROM directories ORDER BY dirname;",
                 DirectoryInfo.class);
         return ans;
     }
@@ -57,7 +58,6 @@ public class DBService {
         for (DirectoryInfo directoryInfo : list) {
             ans.add(directoryInfo.getDirname());
         }
-
         return ans;
 
     }
