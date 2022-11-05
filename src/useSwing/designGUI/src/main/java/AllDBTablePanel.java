@@ -4,6 +4,8 @@
  */
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.*;
@@ -21,6 +23,7 @@ public class AllDBTablePanel extends javax.swing.JPanel {
     public AllDBTablePanel() {
         initComponents();
         initTableSetting();
+        addFilterTextFieldEvent();
     }
 
     /**
@@ -40,6 +43,8 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         tableNoteLabel = new javax.swing.JLabel();
         noteScrollPane = new javax.swing.JScrollPane();
         noteTextArea = new javax.swing.JTextArea();
+        filterLabel = new javax.swing.JLabel();
+        filterTextField = new javax.swing.JTextField();
 
         setToolTipText("");
 
@@ -74,6 +79,17 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         noteTextArea.setText("文件摘要");
         noteScrollPane.setViewportView(noteTextArea);
 
+        filterLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
+        filterLabel.setText("正则过滤：");
+        filterLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        filterTextField.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
+        filterTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filterTextFieldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,16 +102,23 @@ public class AllDBTablePanel extends javax.swing.JPanel {
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addGap(31, 31, 31)
                                                 .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(42, 42, 42)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(tableNameLabel)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(42, 42, 42)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(tableNameLabel)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(tableNoteLabel)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(tableNoteLabel)
+                                                .addGap(34, 34, 34)
+                                                .addComponent(filterLabel)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -113,7 +136,11 @@ public class AllDBTablePanel extends javax.swing.JPanel {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(tableNoteLabel)
-                                                        .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                        .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(37, 37, 37)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(filterLabel)
+                                                        .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addContainerGap(16, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -122,8 +149,14 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tableNameTextFieldActionPerformed
 
+    private void filterTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filterTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_filterTextFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel filterLabel;
+    private javax.swing.JTextField filterTextField;
     private javax.swing.JScrollPane noteScrollPane;
     private javax.swing.JTextArea noteTextArea;
     private javax.swing.JTable table;
@@ -134,18 +167,27 @@ public class AllDBTablePanel extends javax.swing.JPanel {
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    //my code starts here
 
     //定义trueTable只是为了重写JTable中的getToolTipText方法，trueTable和table指向同一个对象
     private JTable trueTable = new JTable() {
         @Override
         public String getToolTipText(MouseEvent event) {
             Point point = event.getPoint();
-
-            int rowIndex = convertRowIndexToModel(rowAtPoint(point));
-            int columnIndex = convertColumnIndexToModel(columnAtPoint(point));
-
-
             TableModel model = getModel();
+
+
+            int rowIndex = rowAtPoint(point);
+            int columnIndex = columnAtPoint(point);
+            //TODO 要check两遍，考虑将check的代码封装成方法
+            if (!(0 <= rowIndex && rowIndex < model.getRowCount() &&
+                    0 <= columnIndex && columnIndex < model.getColumnCount()))
+                return null;
+
+            rowIndex = convertRowIndexToModel(rowIndex);
+            columnIndex = convertColumnIndexToModel(columnIndex);
+
             if (0 <= rowIndex && rowIndex < model.getRowCount() &&
                     0 <= columnIndex && columnIndex < model.getColumnCount())
                 return model.getValueAt(rowIndex, columnIndex).toString();
@@ -164,6 +206,7 @@ public class AllDBTablePanel extends javax.swing.JPanel {
 
 
     private AllDBTableModel allDBTableModel = new AllDBTableModel(getAllDBTableInfo());
+
 
     private class AllDBTableModel extends AbstractTableModel {
         private String[] columnNames = {"ID", "DIR_NAME", "NOTE"};
@@ -213,10 +256,10 @@ public class AllDBTablePanel extends javax.swing.JPanel {
 
         //行的宽度
         table.setRowHeight(30);
-        table.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
+        table.setFont(new java.awt.Font("Microsoft YaHei UI", Font.PLAIN, 21)); // NOI18N
 
         JTableHeader tableHeader = table.getTableHeader();
-        tableHeader.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21));
+        tableHeader.setFont(new java.awt.Font("Microsoft YaHei UI", Font.PLAIN, 21));
 
         //关于选择单元格
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -225,10 +268,57 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                int row = table.getSelectedRow();
-                tableNameTextField.setText(allDBTableModel.getValueAt(row, 1).toString());
-                noteTextArea.setText(allDBTableModel.getValueAt(row, 2).toString());
+                int rowIndex = table.getSelectedRow();
+                TableModel model = table.getModel();
+                if (!(0 <= rowIndex && rowIndex < model.getRowCount())) return;
+
+                int row = table.convertRowIndexToModel(rowIndex);
+                tableNameTextField.setText(model.getValueAt(row, 1).toString());
+                noteTextArea.setText(model.getValueAt(row, 2).toString());
             }
         });
     }
+
+    private TableRowSorter<AllDBTableModel> sorter;
+
+
+    private void addFilterTextFieldEvent() {
+        sorter = new TableRowSorter<>((AllDBTableModel) table.getModel());
+        table.setRowSorter(sorter);
+
+        filterTextField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                newFilter();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                newFilter();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                newFilter();
+            }
+        });
+    }
+
+    private void newFilter() {
+        RowFilter<AllDBTableModel, Object> filter = null;
+        try {
+            filter = RowFilter.regexFilter(filterTextField.getText());
+        } catch (java.util.regex.PatternSyntaxException e) {
+            return;
+        }
+        sorter.setRowFilter(filter);
+    }
+
 }
+
+
+
+
+
+
+

@@ -226,14 +226,7 @@
       <workItem from="1667535175112" duration="345000" />
       <workItem from="1667535551789" duration="1401000" />
       <workItem from="1667537763466" duration="186000" />
-      <workItem from="1667599787787" duration="9731000" />
-    </task>
-    <task id="LOCAL-00008" summary="配置文件">
-      <created>1665564867132</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1665564867132</updated>
+      <workItem from="1667599787787" duration="12078000" />
     </task>
     <task id="LOCAL-00009" summary="View层基本代码">
       <created>1665564886747</created>
@@ -571,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667609776440</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="只剩下Filter要实现了">
+      <created>1667610643071</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1667610643071</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +591,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="开发中。。。要测试chooseFileInGUI这一方法，测试完毕后开始写makeArchiveAndRecord" />
     <MESSAGE value="找到了获得任意一张表的AUTO_INCREMENT值的方法" />
     <MESSAGE value="TODO: 考虑能否在Jtable中打勾来选择已有的表" />
     <MESSAGE value="mysqldump就是无法运行，不知道为啥" />
@@ -616,7 +615,8 @@
     <MESSAGE value="重新设计数据库，并调整代码。测试完毕" />
     <MESSAGE value="基本设计好了3个功能对应的JPanel" />
     <MESSAGE value="开发中，JTable需要花费很多功夫" />
-    <option name="LAST_COMMIT_MESSAGE" value="开发中，JTable需要花费很多功夫" />
+    <MESSAGE value="只剩下Filter要实现了" />
+    <option name="LAST_COMMIT_MESSAGE" value="只剩下Filter要实现了" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -655,22 +655,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="192" key="GridCell.Tab.0.bottom" timestamp="1667610447602">
+    <state width="1995" height="514" key="GridCell.Tab.0.bottom" timestamp="1667613687999">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="192" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667610447602" />
-    <state width="1995" height="192" key="GridCell.Tab.0.center" timestamp="1667610447602">
+    <state width="1995" height="514" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667613687999" />
+    <state width="1995" height="514" key="GridCell.Tab.0.center" timestamp="1667613687999">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="192" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667610447602" />
-    <state width="1995" height="192" key="GridCell.Tab.0.left" timestamp="1667610447602">
+    <state width="1995" height="514" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667613687999" />
+    <state width="1995" height="514" key="GridCell.Tab.0.left" timestamp="1667613687999">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="192" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667610447602" />
-    <state width="1995" height="192" key="GridCell.Tab.0.right" timestamp="1667610447602">
+    <state width="1995" height="514" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667613687999" />
+    <state width="1995" height="514" key="GridCell.Tab.0.right" timestamp="1667613687999">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="192" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667610447602" />
+    <state width="1995" height="514" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667613687999" />
     <state width="1995" height="724" key="GridCell.Tab.1.bottom" timestamp="1667607785746">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -719,11 +719,11 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="697" y="253" key="refactoring.ChangeSignatureDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667020637541" />
-    <state x="378" y="54" width="672" height="707" key="search.everywhere.popup" timestamp="1667537778190">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1667610671096">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="378" y="54" width="672" height="707" key="search.everywhere.popup/0.0.1280.760@0.0.1280.760" timestamp="1667537778190" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1667039791816" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1667610671096" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
