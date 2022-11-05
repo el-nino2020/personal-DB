@@ -4,6 +4,8 @@
  */
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -30,11 +32,20 @@ public class AllDBTablePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tableNameLabel = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
         tablePanel = new javax.swing.JScrollPane();
         table = trueTable;
+        tableNameTextField = new javax.swing.JTextField();
+        tableNoteLabel = new javax.swing.JLabel();
+        noteScrollPane = new javax.swing.JScrollPane();
+        noteTextArea = new javax.swing.JTextArea();
 
         setToolTipText("");
+
+        tableNameLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
+        tableNameLabel.setText("表名：");
+        tableNameLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         titleLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 22)); // NOI18N
         titleLabel.setText("所有表");
@@ -43,39 +54,88 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         table.setToolTipText("");
         tablePanel.setViewportView(table);
 
+        tableNameTextField.setEditable(false);
+        tableNameTextField.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
+        tableNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableNameTextFieldActionPerformed(evt);
+            }
+        });
+
+        tableNoteLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
+        tableNoteLabel.setText("说明：");
+        tableNoteLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        noteTextArea.setEditable(false);
+        noteTextArea.setColumns(20);
+        noteTextArea.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
+        noteTextArea.setLineWrap(true);
+        noteTextArea.setRows(5);
+        noteTextArea.setText("文件摘要");
+        noteScrollPane.setViewportView(noteTextArea);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(534, 534, 534)
-                        .addComponent(titleLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(568, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(534, 534, 534)
+                                                .addComponent(titleLabel))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGap(31, 31, 31)
+                                                .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(42, 42, 42)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(tableNameLabel)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(tableNoteLabel)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(titleLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(tableNameLabel)
+                                                        .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(tableNoteLabel)
+                                                        .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addContainerGap(16, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tableNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableNameTextFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane noteScrollPane;
+    private javax.swing.JTextArea noteTextArea;
     private javax.swing.JTable table;
+    private javax.swing.JLabel tableNameLabel;
+    private javax.swing.JTextField tableNameTextField;
+    private javax.swing.JLabel tableNoteLabel;
     private javax.swing.JScrollPane tablePanel;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 
 
+    //定义trueTable只是为了重写JTable中的getToolTipText方法，trueTable和table指向同一个对象
     private JTable trueTable = new JTable() {
         @Override
         public String getToolTipText(MouseEvent event) {
@@ -145,17 +205,30 @@ public class AllDBTablePanel extends javax.swing.JPanel {
     private void initTableSetting() {
         table.setFillsViewportHeight(true);
 
+        //列的宽度
         TableColumnModel columnModel = table.getColumnModel();
         columnModel.getColumn(0).setPreferredWidth(10);
         columnModel.getColumn(1).setPreferredWidth(100);
         columnModel.getColumn(2).setPreferredWidth(300);
 
-        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-
+        //行的宽度
         table.setRowHeight(30);
         table.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
 
         JTableHeader tableHeader = table.getTableHeader();
         tableHeader.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21));
+
+        //关于选择单元格
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+
+        table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                int row = table.getSelectedRow();
+                tableNameTextField.setText(allDBTableModel.getValueAt(row, 1).toString());
+                noteTextArea.setText(allDBTableModel.getValueAt(row, 2).toString());
+            }
+        });
     }
 }
