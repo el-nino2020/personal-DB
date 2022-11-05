@@ -20,19 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CreateNewDBTablePanel.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CreateNewDBTablePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/DecompressPanel.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/DecompressPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/useSwing/flatlaf-demo-2.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/设计思路.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/AllDBTablePanel.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/AllDBTablePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,23 +84,10 @@
       <recent name="D:\CODES(daima)\personal-DB\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DesignGUI">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="DesignGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DesignGUI" />
       <module name="personal-DB" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GUIDesign" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.GUIDesign" />
-      <module name="personal-DB" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,6 +101,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="personal-DB" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,20 +132,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.View" />
-      <item itemvalue="Application.GUIDesign" />
       <item itemvalue="Application.GUIView" />
       <item itemvalue="Application.ViewGUI" />
       <item itemvalue="Application.DesignGUI" />
+      <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.DesignGUI" />
         <item itemvalue="Application.ViewGUI" />
         <item itemvalue="Application.GUIView" />
         <item itemvalue="Application.View" />
-        <item itemvalue="Application.GUIDesign" />
       </list>
     </recent_temporary>
   </component>
@@ -231,14 +227,7 @@
       <workItem from="1667535175112" duration="345000" />
       <workItem from="1667535551789" duration="1401000" />
       <workItem from="1667537763466" duration="186000" />
-      <workItem from="1667599787787" duration="2924000" />
-    </task>
-    <task id="LOCAL-00006" summary="add some test case">
-      <created>1665184947885</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1665184947885</updated>
+      <workItem from="1667599787787" duration="8951000" />
     </task>
     <task id="LOCAL-00007" summary="add an apache package to generate random string">
       <created>1665530879372</created>
@@ -576,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667023016002</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="基本设计好了3个功能对应的JPanel">
+      <created>1667602934996</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1667602934996</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +592,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="用于删除生成的.class文件" />
     <MESSAGE value="update" />
     <MESSAGE value="开发中。。。要测试chooseFileInGUI这一方法，测试完毕后开始写makeArchiveAndRecord" />
     <MESSAGE value="找到了获得任意一张表的AUTO_INCREMENT值的方法" />
@@ -621,7 +616,8 @@
     <MESSAGE value="更新common.Param中的注释" />
     <MESSAGE value="重新设计数据库" />
     <MESSAGE value="重新设计数据库，并调整代码。测试完毕" />
-    <option name="LAST_COMMIT_MESSAGE" value="重新设计数据库，并调整代码。测试完毕" />
+    <MESSAGE value="基本设计好了3个功能对应的JPanel" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本设计好了3个功能对应的JPanel" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -636,10 +632,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665986454174" />
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1667019007092">
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1667607934354">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1667019007092" />
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1667607934354" />
     <state x="220" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1667019788406">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -648,46 +644,50 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="748" y="243" key="ConfigureClientPropertiesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1666565477334" />
-    <state width="508" height="582" key="DebuggerActiveHint" timestamp="1667021435384">
+    <state width="532" height="582" key="DebuggerActiveHint" timestamp="1667607477071">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="508" height="582" key="DebuggerActiveHint/0.0.2048.1112@0.0.2048.1112" timestamp="1667021435384" />
+    <state width="532" height="582" key="DebuggerActiveHint/0.0.2048.1112@0.0.2048.1112" timestamp="1667607477071" />
+    <state x="93" y="93" width="1862" height="926" key="DiffContextDialog" timestamp="1667604672657">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="93" y="93" width="1862" height="926" key="DiffContextDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667604672657" />
     <state x="752" y="200" key="FileChooserDialogImpl" timestamp="1665139500539">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="477" key="GridCell.Tab.0.bottom" timestamp="1667041329851">
+    <state width="1995" height="283" key="GridCell.Tab.0.bottom" timestamp="1667609660674">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="477" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667041329851" />
-    <state width="1995" height="477" key="GridCell.Tab.0.center" timestamp="1667041329851">
+    <state width="1995" height="283" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667609660674" />
+    <state width="1995" height="283" key="GridCell.Tab.0.center" timestamp="1667609660674">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="477" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667041329851" />
-    <state width="1995" height="477" key="GridCell.Tab.0.left" timestamp="1667041329850">
+    <state width="1995" height="283" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667609660674" />
+    <state width="1995" height="283" key="GridCell.Tab.0.left" timestamp="1667609660674">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="477" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667041329850" />
-    <state width="1995" height="477" key="GridCell.Tab.0.right" timestamp="1667041329851">
+    <state width="1995" height="283" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667609660674" />
+    <state width="1995" height="283" key="GridCell.Tab.0.right" timestamp="1667609660674">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="477" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667041329851" />
-    <state width="1995" height="405" key="GridCell.Tab.1.bottom" timestamp="1667021955738">
+    <state width="1995" height="283" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667609660674" />
+    <state width="1995" height="724" key="GridCell.Tab.1.bottom" timestamp="1667607785746">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="405" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667021955738" />
-    <state width="1995" height="405" key="GridCell.Tab.1.center" timestamp="1667021955738">
+    <state width="1995" height="724" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667607785746" />
+    <state width="1995" height="724" key="GridCell.Tab.1.center" timestamp="1667607785746">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="405" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667021955738" />
-    <state width="1995" height="405" key="GridCell.Tab.1.left" timestamp="1667021955738">
+    <state width="1995" height="724" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667607785746" />
+    <state width="1995" height="724" key="GridCell.Tab.1.left" timestamp="1667607785745">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="405" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667021955738" />
-    <state width="1995" height="405" key="GridCell.Tab.1.right" timestamp="1667021955738">
+    <state width="1995" height="724" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667607785745" />
+    <state width="1995" height="724" key="GridCell.Tab.1.right" timestamp="1667607785746">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="405" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667021955738" />
+    <state width="1995" height="724" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667607785746" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -696,10 +696,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1666565689978" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1667023021975">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1667603066240">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1667023021975" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1667603066240" />
     <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1667021837134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

@@ -14,7 +14,7 @@ public class Test {
         
         JFrame frame = new JFrame();
         frame.setSize(2000, 1000);
-        frame.add(new CreateNewDBTablePanel());
+        frame.add(new AllDBTablePanel());
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         System.out.println("===============DONE==================");
