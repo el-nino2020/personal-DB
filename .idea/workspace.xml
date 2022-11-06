@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/view/ListDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/MainMenu.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +84,7 @@
       <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.MainMenu">
     <configuration name="DesignGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DesignGUI" />
       <module name="personal-DB" />
@@ -105,22 +105,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test" />
+    <configuration name="MainMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainMenu" />
       <module name="personal-DB" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.View" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="personal-DB" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,19 +140,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.View" />
       <item itemvalue="Application.GUIView" />
       <item itemvalue="Application.ViewGUI" />
       <item itemvalue="Application.DesignGUI" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Application.MainMenu" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainMenu" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.DesignGUI" />
         <item itemvalue="Application.ViewGUI" />
         <item itemvalue="Application.GUIView" />
-        <item itemvalue="Application.View" />
       </list>
     </recent_temporary>
   </component>
@@ -230,14 +224,7 @@
       <workItem from="1667535551789" duration="1401000" />
       <workItem from="1667537763466" duration="186000" />
       <workItem from="1667599787787" duration="13113000" />
-      <workItem from="1667710110250" duration="1816000" />
-    </task>
-    <task id="LOCAL-00010" summary="添加了一个Service类，用来处理数据库登录">
-      <created>1665568618691</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1665568618691</updated>
+      <workItem from="1667710110250" duration="5005000" />
     </task>
     <task id="LOCAL-00011" summary="解决命令行编码导致的编译和运行的问题">
       <created>1665570999252</created>
@@ -575,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667613882622</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="使用Oracle的教程提供的`ListDialog`完成了CompressPanel，下面就是设计最后的JFrame了">
+      <created>1667712084105</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1667712084105</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +589,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="TODO: 考虑能否在Jtable中打勾来选择已有的表" />
     <MESSAGE value="mysqldump就是无法运行，不知道为啥" />
     <MESSAGE value="统一项目参数于common.Param" />
     <MESSAGE value="数据库备份的方法终于写成功了" />
@@ -620,7 +613,8 @@
     <MESSAGE value="开发中，JTable需要花费很多功夫" />
     <MESSAGE value="只剩下Filter要实现了" />
     <MESSAGE value="貌似搞定了，但三个功能的交互可能出现bug。也许还要再测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="貌似搞定了，但三个功能的交互可能出现bug。也许还要再测试" />
+    <MESSAGE value="使用Oracle的教程提供的`ListDialog`完成了CompressPanel，下面就是设计最后的JFrame了" />
+    <option name="LAST_COMMIT_MESSAGE" value="使用Oracle的教程提供的`ListDialog`完成了CompressPanel，下面就是设计最后的JFrame了" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -659,38 +653,38 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="514" key="GridCell.Tab.0.bottom" timestamp="1667711680186">
+    <state width="1995" height="221" key="GridCell.Tab.0.bottom" timestamp="1667714703521">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="514" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667711680186" />
-    <state width="1995" height="514" key="GridCell.Tab.0.center" timestamp="1667711680186">
+    <state width="1995" height="221" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667714703521" />
+    <state width="1995" height="221" key="GridCell.Tab.0.center" timestamp="1667714703520">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="514" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667711680186" />
-    <state width="1995" height="514" key="GridCell.Tab.0.left" timestamp="1667711680185">
+    <state width="1995" height="221" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667714703520" />
+    <state width="1995" height="221" key="GridCell.Tab.0.left" timestamp="1667714703519">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="514" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667711680185" />
-    <state width="1995" height="514" key="GridCell.Tab.0.right" timestamp="1667711680186">
+    <state width="1995" height="221" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667714703519" />
+    <state width="1995" height="221" key="GridCell.Tab.0.right" timestamp="1667714703521">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="514" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667711680186" />
-    <state width="1995" height="724" key="GridCell.Tab.1.bottom" timestamp="1667615066137">
+    <state width="1995" height="221" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667714703521" />
+    <state width="1995" height="494" key="GridCell.Tab.1.bottom" timestamp="1667714078953">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="724" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667615066137" />
-    <state width="1995" height="724" key="GridCell.Tab.1.center" timestamp="1667615066137">
+    <state width="1995" height="494" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667714078953" />
+    <state width="1995" height="494" key="GridCell.Tab.1.center" timestamp="1667714078953">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="724" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667615066137" />
-    <state width="1995" height="724" key="GridCell.Tab.1.left" timestamp="1667615066137">
+    <state width="1995" height="494" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667714078953" />
+    <state width="1995" height="494" key="GridCell.Tab.1.left" timestamp="1667714078953">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="724" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667615066137" />
-    <state width="1995" height="724" key="GridCell.Tab.1.right" timestamp="1667615066137">
+    <state width="1995" height="494" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667714078953" />
+    <state width="1995" height="494" key="GridCell.Tab.1.right" timestamp="1667714078953">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="724" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667615066137" />
+    <state width="1995" height="494" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667714078953" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -699,10 +693,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1666565689978" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1667603066240">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1667712088388">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1667603066240" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1667712088388" />
     <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1667021837134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -741,6 +735,11 @@
           <url>file://$PROJECT_DIR$/src/service/DBService.java</url>
           <line>166</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/MainMenu.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
