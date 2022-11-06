@@ -20,9 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/MainMenu.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/AllDBTablePanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/AllDBTablePanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/AllDBTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/AllDBTablePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CreateNewDBTablePanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CreateNewDBTablePanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CreateNewDBTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CreateNewDBTablePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/DecompressPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/DecompressPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/DecompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/DecompressPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/MainMenu.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/MainMenu.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,14 +233,7 @@
       <workItem from="1667535551789" duration="1401000" />
       <workItem from="1667537763466" duration="186000" />
       <workItem from="1667599787787" duration="13113000" />
-      <workItem from="1667710110250" duration="5005000" />
-    </task>
-    <task id="LOCAL-00011" summary="解决命令行编码导致的编译和运行的问题">
-      <created>1665570999252</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1665570999252</updated>
+      <workItem from="1667710110250" duration="7636000" />
     </task>
     <task id="LOCAL-00012" summary="java bean for record">
       <created>1665572204207</created>
@@ -569,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667712084105</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="为什么layeredPane不起作用?">
+      <created>1667715322653</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1667715322653</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +598,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="mysqldump就是无法运行，不知道为啥" />
     <MESSAGE value="统一项目参数于common.Param" />
     <MESSAGE value="数据库备份的方法终于写成功了" />
     <MESSAGE value="更新程序路径" />
@@ -614,7 +622,8 @@
     <MESSAGE value="只剩下Filter要实现了" />
     <MESSAGE value="貌似搞定了，但三个功能的交互可能出现bug。也许还要再测试" />
     <MESSAGE value="使用Oracle的教程提供的`ListDialog`完成了CompressPanel，下面就是设计最后的JFrame了" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用Oracle的教程提供的`ListDialog`完成了CompressPanel，下面就是设计最后的JFrame了" />
+    <MESSAGE value="为什么layeredPane不起作用?" />
+    <option name="LAST_COMMIT_MESSAGE" value="为什么layeredPane不起作用?" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -653,22 +662,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="221" key="GridCell.Tab.0.bottom" timestamp="1667714703521">
+    <state width="1995" height="343" key="GridCell.Tab.0.bottom" timestamp="1667717742011">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="221" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667714703521" />
-    <state width="1995" height="221" key="GridCell.Tab.0.center" timestamp="1667714703520">
+    <state width="1995" height="343" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667717742011" />
+    <state width="1995" height="343" key="GridCell.Tab.0.center" timestamp="1667717742011">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="221" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667714703520" />
-    <state width="1995" height="221" key="GridCell.Tab.0.left" timestamp="1667714703519">
+    <state width="1995" height="343" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667717742011" />
+    <state width="1995" height="343" key="GridCell.Tab.0.left" timestamp="1667717742011">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="221" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667714703519" />
-    <state width="1995" height="221" key="GridCell.Tab.0.right" timestamp="1667714703521">
+    <state width="1995" height="343" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667717742011" />
+    <state width="1995" height="343" key="GridCell.Tab.0.right" timestamp="1667717742011">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="221" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667714703521" />
+    <state width="1995" height="343" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667717742011" />
     <state width="1995" height="494" key="GridCell.Tab.1.bottom" timestamp="1667714078953">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -685,10 +694,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1995" height="494" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667714078953" />
-    <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
+    <state x="743" y="185" key="RollbackChangesDialog" timestamp="1667717762471">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="743" y="185" key="RollbackChangesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665706072450" />
+    <state x="743" y="185" key="RollbackChangesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667717762471" />
     <state x="377" y="26" key="SettingsEditor" timestamp="1666565689978">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -735,11 +744,6 @@
           <url>file://$PROJECT_DIR$/src/service/DBService.java</url>
           <line>166</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/MainMenu.java</url>
-          <line>125</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

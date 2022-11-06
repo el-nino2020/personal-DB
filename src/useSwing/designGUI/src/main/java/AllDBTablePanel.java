@@ -46,6 +46,7 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         filterLabel = new javax.swing.JLabel();
         filterTextField = new javax.swing.JTextField();
 
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setToolTipText("");
 
         tableNameLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
@@ -119,7 +120,7 @@ public class AllDBTablePanel extends javax.swing.JPanel {
                         .addComponent(filterLabel)
                         .addGap(18, 18, 18)
                         .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +142,7 @@ public class AllDBTablePanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(filterLabel)
                             .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

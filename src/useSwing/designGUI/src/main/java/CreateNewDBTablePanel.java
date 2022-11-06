@@ -41,6 +41,8 @@ public class CreateNewDBTablePanel extends javax.swing.JPanel {
         finalResultLabel = new javax.swing.JLabel();
         finalDecisionButton = new javax.swing.JButton();
 
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         tableNameNoticeLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
         tableNameNoticeLabel.setText("表名非法");
         tableNameNoticeLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -122,7 +124,7 @@ public class CreateNewDBTablePanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(319, 319, 319)
                         .addComponent(finalNoticeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +148,7 @@ public class CreateNewDBTablePanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(finalDecisionButton)
                     .addComponent(finalResultLabel))
-                .addContainerGap(309, Short.MAX_VALUE))
+                .addContainerGap(307, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

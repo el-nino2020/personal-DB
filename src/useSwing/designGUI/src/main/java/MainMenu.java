@@ -18,6 +18,7 @@ public class MainMenu extends javax.swing.JFrame {
         initComponents();
         fillChoicesList();
         initPanels();
+        initFrameSetting();
     }
 
     /**
@@ -33,20 +34,27 @@ public class MainMenu extends javax.swing.JFrame {
         choicesLabel = new javax.swing.JLabel();
         listPanel = new javax.swing.JScrollPane();
         choicesList = new javax.swing.JList<>();
-        layeredPane = new javax.swing.JLayeredPane();
         textAreaPane = new javax.swing.JScrollPane();
         logTextArea = new javax.swing.JTextArea();
         logLabel = new javax.swing.JLabel();
+        bottomPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(200, 200));
+        setSize(new java.awt.Dimension(1600, 1600));
+        getContentPane().setLayout(null);
 
         titleLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 22)); // NOI18N
         titleLabel.setText("Personal DB");
+        getContentPane().add(titleLabel);
+        titleLabel.setBounds(611, 15, 134, 29);
 
         choicesLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
         choicesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         choicesLabel.setText("选择功能");
         choicesLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        getContentPane().add(choicesLabel);
+        choicesLabel.setBounds(21, 62, 203, 30);
 
         choicesList.setModel(new DefaultListModel<>());
         choicesList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -57,71 +65,39 @@ public class MainMenu extends javax.swing.JFrame {
         });
         listPanel.setViewportView(choicesList);
 
-        javax.swing.GroupLayout layeredPaneLayout = new javax.swing.GroupLayout(layeredPane);
-        layeredPane.setLayout(layeredPaneLayout);
-        layeredPaneLayout.setHorizontalGroup(
-            layeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1212, Short.MAX_VALUE)
-        );
-        layeredPaneLayout.setVerticalGroup(
-            layeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 691, Short.MAX_VALUE)
-        );
+        getContentPane().add(listPanel);
+        listPanel.setBounds(21, 110, 203, 446);
 
-        logTextArea.setEditable(false);
         logTextArea.setColumns(20);
         logTextArea.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
-        logTextArea.setLineWrap(true);
         logTextArea.setRows(5);
-        logTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         textAreaPane.setViewportView(logTextArea);
+
+        getContentPane().add(textAreaPane);
+        textAreaPane.setBounds(21, 759, 1421, 158);
 
         logLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
         logLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logLabel.setText("Log");
         logLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        getContentPane().add(logLabel);
+        logLabel.setBounds(21, 723, 92, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(611, 611, 611)
-                        .addComponent(titleLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1421, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(choicesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                                        .addComponent(listPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                    .addComponent(logLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(layeredPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(138, Short.MAX_VALUE))
+        bottomPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
+        bottomPanel.setLayout(bottomPanelLayout);
+        bottomPanelLayout.setHorizontalGroup(
+            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1194, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(titleLabel)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(layeredPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(choicesLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(listPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(logLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+        bottomPanelLayout.setVerticalGroup(
+            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 674, Short.MAX_VALUE)
         );
+
+        getContentPane().add(bottomPanel);
+        bottomPanel.setBounds(240, 60, 1200, 680);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -133,8 +109,9 @@ public class MainMenu extends javax.swing.JFrame {
         String choice = choicesList.getModel().getElementAt(index);
         JPanel panel = panels.get(choice);
 
-        layeredPane.setLayer(panel, layerCount);
-        layerCount++;
+        currentShowingPanel.setVisible(false);
+        panel.setVisible(true);
+        currentShowingPanel = panel;
 
     }//GEN-LAST:event_choicesListValueChanged
 
@@ -174,9 +151,9 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bottomPanel;
     private javax.swing.JLabel choicesLabel;
     private javax.swing.JList<String> choicesList;
-    private javax.swing.JLayeredPane layeredPane;
     private javax.swing.JScrollPane listPanel;
     private javax.swing.JLabel logLabel;
     private javax.swing.JTextArea logTextArea;
@@ -207,16 +184,24 @@ public class MainMenu extends javax.swing.JFrame {
         panels.put(choices[2], allDBTablePanel);
         panels.put(choices[3], createNewDBTablePanel);
 
-        layeredPane.add(compressPanel, new Integer(0));
-        layeredPane.add(decompressPanel, new Integer(1));
-        layeredPane.add(allDBTablePanel, new Integer(2));
-        layeredPane.add(createNewDBTablePanel, new Integer(3));
+        addPanelToLayeredPane(compressPanel);
+        addPanelToLayeredPane(decompressPanel);
+        addPanelToLayeredPane(allDBTablePanel);
+        addPanelToLayeredPane(createNewDBTablePanel);
 
         compressPanel.setVisible(true);
-        decompressPanel.setVisible(true);
-        allDBTablePanel.setVisible(true);
-        createNewDBTablePanel.setVisible(true);
+    }
 
+    private JPanel currentShowingPanel = compressPanel;
+
+    private void addPanelToLayeredPane(JPanel panel) {
+        bottomPanel.add(panel, JLayeredPane.DEFAULT_LAYER);
+        panel.setBounds(0, 0, bottomPanel.getWidth(), bottomPanel.getHeight());
+        panel.setVisible(false);
+    }
+
+    private void initFrameSetting() {
+        setSize(1600, 1000);
     }
 
 }
