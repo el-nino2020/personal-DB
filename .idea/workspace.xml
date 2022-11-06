@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/view/ListDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/AllDBTablePanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/AllDBTablePanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/AllDBTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/AllDBTablePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/useSwing/designGUI/src/main/java/CompressPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/view" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -71,16 +71,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CODES(daima)\personal-DB\lib" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODES(daima)\personal-DB\src\test" />
+      <recent name="D:\CODES(daima)\personal-DB\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="dao" />
       <recent name="utils" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\CODES(daima)\personal-DB\src\test" />
-      <recent name="D:\CODES(daima)\personal-DB\src" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CODES(daima)\personal-DB\src\view" />
+      <recent name="D:\CODES(daima)\personal-DB\lib" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Test">
@@ -131,13 +132,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -226,14 +229,8 @@
       <workItem from="1667535175112" duration="345000" />
       <workItem from="1667535551789" duration="1401000" />
       <workItem from="1667537763466" duration="186000" />
-      <workItem from="1667599787787" duration="12078000" />
-    </task>
-    <task id="LOCAL-00009" summary="View层基本代码">
-      <created>1665564886747</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1665564886747</updated>
+      <workItem from="1667599787787" duration="13113000" />
+      <workItem from="1667710110250" duration="1816000" />
     </task>
     <task id="LOCAL-00010" summary="添加了一个Service类，用来处理数据库登录">
       <created>1665568618691</created>
@@ -571,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667610643071</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="貌似搞定了，但三个功能的交互可能出现bug。也许还要再测试">
+      <created>1667613882622</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1667613882622</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +595,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="找到了获得任意一张表的AUTO_INCREMENT值的方法" />
     <MESSAGE value="TODO: 考虑能否在Jtable中打勾来选择已有的表" />
     <MESSAGE value="mysqldump就是无法运行，不知道为啥" />
     <MESSAGE value="统一项目参数于common.Param" />
@@ -616,7 +619,8 @@
     <MESSAGE value="基本设计好了3个功能对应的JPanel" />
     <MESSAGE value="开发中，JTable需要花费很多功夫" />
     <MESSAGE value="只剩下Filter要实现了" />
-    <option name="LAST_COMMIT_MESSAGE" value="只剩下Filter要实现了" />
+    <MESSAGE value="貌似搞定了，但三个功能的交互可能出现bug。也许还要再测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="貌似搞定了，但三个功能的交互可能出现bug。也许还要再测试" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -655,38 +659,38 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="514" key="GridCell.Tab.0.bottom" timestamp="1667613687999">
+    <state width="1995" height="514" key="GridCell.Tab.0.bottom" timestamp="1667711680186">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="514" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667613687999" />
-    <state width="1995" height="514" key="GridCell.Tab.0.center" timestamp="1667613687999">
+    <state width="1995" height="514" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667711680186" />
+    <state width="1995" height="514" key="GridCell.Tab.0.center" timestamp="1667711680186">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="514" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667613687999" />
-    <state width="1995" height="514" key="GridCell.Tab.0.left" timestamp="1667613687999">
+    <state width="1995" height="514" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667711680186" />
+    <state width="1995" height="514" key="GridCell.Tab.0.left" timestamp="1667711680185">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="514" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667613687999" />
-    <state width="1995" height="514" key="GridCell.Tab.0.right" timestamp="1667613687999">
+    <state width="1995" height="514" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667711680185" />
+    <state width="1995" height="514" key="GridCell.Tab.0.right" timestamp="1667711680186">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="514" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667613687999" />
-    <state width="1995" height="724" key="GridCell.Tab.1.bottom" timestamp="1667607785746">
+    <state width="1995" height="514" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667711680186" />
+    <state width="1995" height="724" key="GridCell.Tab.1.bottom" timestamp="1667615066137">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="724" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667607785746" />
-    <state width="1995" height="724" key="GridCell.Tab.1.center" timestamp="1667607785746">
+    <state width="1995" height="724" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667615066137" />
+    <state width="1995" height="724" key="GridCell.Tab.1.center" timestamp="1667615066137">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="724" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667607785746" />
-    <state width="1995" height="724" key="GridCell.Tab.1.left" timestamp="1667607785745">
+    <state width="1995" height="724" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667615066137" />
+    <state width="1995" height="724" key="GridCell.Tab.1.left" timestamp="1667615066137">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="724" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667607785745" />
-    <state width="1995" height="724" key="GridCell.Tab.1.right" timestamp="1667607785746">
+    <state width="1995" height="724" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667615066137" />
+    <state width="1995" height="724" key="GridCell.Tab.1.right" timestamp="1667615066137">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="724" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667607785746" />
+    <state width="1995" height="724" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667615066137" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1665706072450">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
