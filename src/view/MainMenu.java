@@ -1,7 +1,12 @@
-/*
+package view;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
+import view.function_panel.AllDBTablePanel;
+import view.function_panel.CompressPanel;
+import view.function_panel.CreateNewDBTablePanel;
+import view.function_panel.DecompressPanel;
 
 import javax.swing.*;
 import java.util.HashMap;
@@ -184,17 +189,17 @@ public class MainMenu extends javax.swing.JFrame {
         panels.put(choices[2], allDBTablePanel);
         panels.put(choices[3], createNewDBTablePanel);
 
-        addPanelToLayeredPane(compressPanel);
-        addPanelToLayeredPane(decompressPanel);
-        addPanelToLayeredPane(allDBTablePanel);
-        addPanelToLayeredPane(createNewDBTablePanel);
+        addPanelToBottomPanel(compressPanel);
+        addPanelToBottomPanel(decompressPanel);
+        addPanelToBottomPanel(allDBTablePanel);
+        addPanelToBottomPanel(createNewDBTablePanel);
 
         compressPanel.setVisible(true);
     }
 
     private JPanel currentShowingPanel = compressPanel;
 
-    private void addPanelToLayeredPane(JPanel panel) {
+    private void addPanelToBottomPanel(JPanel panel) {
         bottomPanel.add(panel, JLayeredPane.DEFAULT_LAYER);
         panel.setBounds(0, 0, bottomPanel.getWidth(), bottomPanel.getHeight());
         panel.setVisible(false);
