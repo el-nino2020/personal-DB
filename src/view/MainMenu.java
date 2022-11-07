@@ -61,6 +61,7 @@ public class MainMenu extends javax.swing.JFrame {
         getContentPane().add(choicesLabel);
         choicesLabel.setBounds(21, 62, 203, 30);
 
+        choicesList.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
         choicesList.setModel(new DefaultListModel<>());
         choicesList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         choicesList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
