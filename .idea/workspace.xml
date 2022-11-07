@@ -20,9 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/flatlaf_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/flatlaf_demo_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/flatlaf-2.6.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/personal-DB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/personal-DB.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/flatlaf-demo-2.6.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +67,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/view" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -71,20 +75,20 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CODES(daima)\personal-DB\lib" />
       <recent name="D:\CODES(daima)\personal-DB\src\view" />
-      <recent name="D:\CODES(daima)\personal-DB\src\view\function_panel" />
-      <recent name="D:\CODES(daima)\personal-DB\src\useSwing" />
-      <recent name="D:\CODES(daima)\personal-DB\src\test" />
-      <recent name="D:\CODES(daima)\personal-DB\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="dao" />
       <recent name="utils" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CODES(daima)\personal-DB\src\view" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\CODES(daima)\personal-DB\lib" />
+      <recent name="D:\CODES(daima)\personal-DB\src\view" />
+      <recent name="D:\CODES(daima)\personal-DB\src\view\function_panel" />
+      <recent name="D:\CODES(daima)\personal-DB\src\useSwing" />
+      <recent name="D:\CODES(daima)\personal-DB\src\test" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainMenu (1)">
@@ -241,13 +245,6 @@
       <workItem from="1667710110250" duration="9041000" />
       <workItem from="1667774066640" duration="604000" />
       <workItem from="1667857251464" duration="1839000" />
-    </task>
-    <task id="LOCAL-00014" summary="update comment">
-      <created>1665572557585</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1665572557585</updated>
     </task>
     <task id="LOCAL-00015" summary="项目配置文件更新">
       <created>1665572576399</created>
@@ -585,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667720182627</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="调教好了netbeans IDE的编码问题，装个插件就好了">
+      <created>1667860597524</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1667860597524</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,7 +609,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="更新程序路径" />
     <MESSAGE value="开发中。。。思考如何创建新表" />
     <MESSAGE value="small update" />
     <MESSAGE value="研究Jtable中" />
@@ -630,7 +633,8 @@
     <MESSAGE value="为什么layeredPane不起作用?" />
     <MESSAGE value="功能基本完成了" />
     <MESSAGE value="change package" />
-    <option name="LAST_COMMIT_MESSAGE" value="change package" />
+    <MESSAGE value="调教好了netbeans IDE的编码问题，装个插件就好了" />
+    <option name="LAST_COMMIT_MESSAGE" value="调教好了netbeans IDE的编码问题，装个插件就好了" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -669,22 +673,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="343" key="GridCell.Tab.0.bottom" timestamp="1667860304147">
+    <state width="1995" height="343" key="GridCell.Tab.0.bottom" timestamp="1667860886944">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="343" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667860304147" />
-    <state width="1995" height="343" key="GridCell.Tab.0.center" timestamp="1667860304147">
+    <state width="1995" height="343" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667860886944" />
+    <state width="1995" height="343" key="GridCell.Tab.0.center" timestamp="1667860886944">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="343" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667860304147" />
-    <state width="1995" height="343" key="GridCell.Tab.0.left" timestamp="1667860304147">
+    <state width="1995" height="343" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667860886944" />
+    <state width="1995" height="343" key="GridCell.Tab.0.left" timestamp="1667860886944">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="343" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667860304147" />
-    <state width="1995" height="343" key="GridCell.Tab.0.right" timestamp="1667860304147">
+    <state width="1995" height="343" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667860886944" />
+    <state width="1995" height="343" key="GridCell.Tab.0.right" timestamp="1667860886944">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="343" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667860304147" />
+    <state width="1995" height="343" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667860886944" />
     <state width="1995" height="494" key="GridCell.Tab.1.bottom" timestamp="1667720254399">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -701,10 +705,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1995" height="494" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667720254398" />
-    <state x="743" y="185" key="RollbackChangesDialog" timestamp="1667717762471">
+    <state x="743" y="185" key="RollbackChangesDialog" timestamp="1667860569674">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="743" y="185" key="RollbackChangesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667717762471" />
+    <state x="743" y="185" key="RollbackChangesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667860569674" />
     <state x="377" y="26" key="SettingsEditor" timestamp="1666565689978">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

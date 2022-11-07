@@ -13,5 +13,7 @@
     <orderEntry type="library" name="junit-4.13.2" level="project" />
     <orderEntry type="library" name="commons-lang3-3.12.0" level="project" />
     <orderEntry type="library" name="guava-31.1-jre" level="project" />
+    <orderEntry type="library" name="flatlaf-demo-2.6" level="project" />
+    <orderEntry type="library" name="flatlaf-2.6" level="project" />
   </component>
 </module>
