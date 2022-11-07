@@ -3,6 +3,7 @@ package view.function_panel;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
+import utils.GUIUtility;
 import utils.ListDialog;
 
 import javax.swing.*;
@@ -20,8 +21,6 @@ public class CompressPanel extends javax.swing.JPanel {
      */
     public CompressPanel() {
         initComponents();
-        initializeJFileChooser();
-
     }
 
     /**
@@ -233,11 +232,7 @@ public class CompressPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void chooseFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseFileButtonActionPerformed
-        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-
-        chooser.showDialog(null, null);
-
-        File selectedFile = chooser.getSelectedFile();
+        File selectedFile = GUIUtility.chooseFile(true);
         if (selectedFile == null) return;
         chosedFileTextField.setText(selectedFile.getAbsolutePath());
     }//GEN-LAST:event_chooseFileButtonActionPerformed
@@ -295,15 +290,6 @@ public class CompressPanel extends javax.swing.JPanel {
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 
-    private JFileChooser chooser;
-
-    private void initializeJFileChooser() {
-        chooser = new JFileChooser(FileSystemView.getFileSystemView());
-        chooser.setMultiSelectionEnabled(false); //只能选择一个文件
-
-        chooser.setDialogTitle("选择一个要压缩的文件(夹)");
-        chooser.setPreferredSize(new Dimension(1200, 800));
-    }
 
     private static String[] tableNames = {"abc", "ade", "pdf", "game", "H"};
 }

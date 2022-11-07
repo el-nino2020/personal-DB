@@ -173,8 +173,10 @@ public class MainMenu extends javax.swing.JFrame {
     private JPanel allDBTablePanel = new AllDBTablePanel();
     private JPanel createNewDBTablePanel = new CreateNewDBTablePanel();
 
+    private JPanel currentShowingPanel = compressPanel;
+
+
     private HashMap<String, JPanel> panels = new HashMap<>();
-    private int layerCount = 10;//用于将某一个Panel显示在layeredPane最上方的计数器
 
     private void fillChoicesList() {
         DefaultListModel<String> model = (DefaultListModel<String>) choicesList.getModel();
@@ -197,7 +199,6 @@ public class MainMenu extends javax.swing.JFrame {
         compressPanel.setVisible(true);
     }
 
-    private JPanel currentShowingPanel = compressPanel;
 
     private void addPanelToBottomPanel(JPanel panel) {
         bottomPanel.add(panel, JLayeredPane.DEFAULT_LAYER);
