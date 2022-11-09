@@ -3,21 +3,114 @@ package view;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatIntelliJLaf;
-import com.formdev.flatlaf.FlatLightLaf;
+import domain.DirectoryInfo;
+import service.AccountService;
+import service.DBService;
+import service.FileInfoService;
 import view.function_panel.AllDBTablePanel;
 import view.function_panel.CompressPanel;
 import view.function_panel.CreateNewDBTablePanel;
 import view.function_panel.DecompressPanel;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author Morgan
  */
 public class MainMenu extends javax.swing.JFrame {
+
+
+    private AccountService accountService = new AccountService();
+    private DBService dbService = new DBService(accountService);
+    private FileInfoService fileInfoService = new FileInfoService(accountService);
+
+
+    //将directories的记录缓存
+    private List<DirectoryInfo> directoryInfos = new ArrayList<>();
+    private String[] directoryNames = new String[1];
+    private HashMap<String, DirectoryInfo> directoryInfoMap = new HashMap<>();//键:dirname；值：对应的DirectoryInfo对象
+
+    private static String[] choices = {"压缩并记录文件(夹)", "解压文件", "查询现有表", "新建表"};
+    private CompressPanel compressPanel = new CompressPanel(dbService, fileInfoService);
+    private DecompressPanel decompressPanel = new DecompressPanel();
+    private AllDBTablePanel allDBTablePanel = new AllDBTablePanel();
+    private CreateNewDBTablePanel createNewDBTablePanel = new CreateNewDBTablePanel();
+    private JPanel currentShowingPanel = compressPanel;
+
+    //将choices和function panels联系起来
+    private HashMap<String, JPanel> panels = new HashMap<>();
+
+    /**
+     * 只有在(1)directories表被更新后(2)初始化时，才应该调用该方法
+     */
+    private void cacheDirectoryInfo() {
+        directoryInfos.clear();
+        directoryInfoMap.clear();
+
+        directoryInfos = dbService.getAllDirectoryInfo();
+        directoryNames = new String[directoryInfos.size()];
+
+        int i = 0;
+        for (DirectoryInfo info : directoryInfos) {
+            directoryInfoMap.put(info.getDirname(), info);
+            directoryNames[i] = info.getDirname();
+            i++;
+        }
+
+
+        compressPanel.setDirectoryInfoMap(directoryInfoMap);
+        compressPanel.setDirectoryNames(directoryNames);
+    }
+
+    private void loginDBMS() {
+        if (accountService.getLoginStatus()) return;
+        while (true) {
+            String password = JOptionPane.showInputDialog(this,
+                    "请输入账户" + AccountService.USER + "的密码");
+            if (accountService.loginDBMS(password)) {
+                System.out.println("数据库账户登录成功");
+                break;
+            }
+        }
+    }
+
+
+    private void fillChoicesList() {
+        DefaultListModel<String> model = (DefaultListModel<String>) choicesList.getModel();
+        for (String choice : choices) {
+            model.addElement(choice);
+        }
+    }
+
+    private void initPanels() {
+        panels.put(choices[0], compressPanel);
+        panels.put(choices[1], decompressPanel);
+        panels.put(choices[2], allDBTablePanel);
+        panels.put(choices[3], createNewDBTablePanel);
+
+        addPanelToBottomPanel(compressPanel);
+        addPanelToBottomPanel(decompressPanel);
+        addPanelToBottomPanel(allDBTablePanel);
+        addPanelToBottomPanel(createNewDBTablePanel);
+
+        compressPanel.setVisible(true);
+    }
+
+
+    private void addPanelToBottomPanel(JPanel panel) {
+        bottomPanel.add(panel, JLayeredPane.DEFAULT_LAYER);
+        panel.setBounds(0, 0, bottomPanel.getWidth(), bottomPanel.getHeight());
+        panel.setVisible(false);
+    }
+
+    private void initFrameSetting() {
+        setSize(1600, 1000);
+    }
+
 
     /**
      * Creates new form MainMenu
@@ -138,7 +231,11 @@ public class MainMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenu().setVisible(true);
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.setVisible(true);
+                mainMenu.loginDBMS();
+                mainMenu.cacheDirectoryInfo();
+
             }
         });
     }
@@ -154,48 +251,5 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 
-
-    private static String[] choices = {"压缩并记录文件(夹)", "解压文件", "查询现有表", "新建表"};
-    private JPanel compressPanel = new CompressPanel();
-    private JPanel decompressPanel = new DecompressPanel();
-    private JPanel allDBTablePanel = new AllDBTablePanel();
-    private JPanel createNewDBTablePanel = new CreateNewDBTablePanel();
-
-    private JPanel currentShowingPanel = compressPanel;
-
-
-    private HashMap<String, JPanel> panels = new HashMap<>();
-
-    private void fillChoicesList() {
-        DefaultListModel<String> model = (DefaultListModel<String>) choicesList.getModel();
-        for (String choice : choices) {
-            model.addElement(choice);
-        }
-    }
-
-    private void initPanels() {
-        panels.put(choices[0], compressPanel);
-        panels.put(choices[1], decompressPanel);
-        panels.put(choices[2], allDBTablePanel);
-        panels.put(choices[3], createNewDBTablePanel);
-
-        addPanelToBottomPanel(compressPanel);
-        addPanelToBottomPanel(decompressPanel);
-        addPanelToBottomPanel(allDBTablePanel);
-        addPanelToBottomPanel(createNewDBTablePanel);
-
-        compressPanel.setVisible(true);
-    }
-
-
-    private void addPanelToBottomPanel(JPanel panel) {
-        bottomPanel.add(panel, JLayeredPane.DEFAULT_LAYER);
-        panel.setBounds(0, 0, bottomPanel.getWidth(), bottomPanel.getHeight());
-        panel.setVisible(false);
-    }
-
-    private void initFrameSetting() {
-        setSize(1600, 1000);
-    }
 
 }

@@ -29,9 +29,13 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package utils;
+
+import domain.DirectoryInfo;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.HashMap;
 
 /*
  * ListDialog.java is meant to be used by programs such as
@@ -54,11 +58,11 @@ import java.awt.event.*;
  *         choices[0]);
  * </pre>
  */
-public class ListDialog extends JDialog
-        implements ActionListener {
-    private static ListDialog dialog;
+public class DirectoryListDialog extends JDialog implements ActionListener {
+    private static DirectoryListDialog dialog;
     private static String value = "";
     private JList list;
+    private HashMap<String, ? extends Object> toolTipMap;
 
     /**
      * Set up and show the dialog. The first Component argument
@@ -75,19 +79,20 @@ public class ListDialog extends JDialog
                                     String title,
                                     String[] possibleValues,
                                     String initialValue,
-                                    String longValue) {
+                                    String longValue,
+                                    HashMap<String, ? extends Object> toolTipMap) {
         Frame frame = JOptionPane.getFrameForComponent(frameComp);
-        dialog = new ListDialog(frame,
+        dialog = new DirectoryListDialog(frame,
                 locationComp,
                 labelText,
                 title,
                 possibleValues,
                 initialValue,
-                longValue);
+                longValue,
+                toolTipMap);
         dialog.setVisible(true);
         return value;
     }
-
 
 
     private void setValue(String newValue) {
@@ -95,14 +100,16 @@ public class ListDialog extends JDialog
         list.setSelectedValue(value, true);
     }
 
-    private ListDialog(Frame frame,
-                       Component locationComp,
-                       String labelText,
-                       String title,
-                       Object[] data,
-                       String initialValue,
-                       String longValue) {
+    private DirectoryListDialog(Frame frame,
+                                Component locationComp,
+                                String labelText,
+                                String title,
+                                Object[] data,
+                                String initialValue,
+                                String longValue,
+                                HashMap<String, ? extends Object> toolTipMap) {
         super(frame, title, true);
+        this.toolTipMap = toolTipMap;
 
         // Create and initialize the buttons.
         JButton cancelButton = new JButton("Cancel");
@@ -150,7 +157,8 @@ public class ListDialog extends JDialog
             public String getToolTipText(MouseEvent event) {
                 int index = locationToIndex(event.getPoint());
                 if (index > -1) {
-                    return String.format("%s的提示", getModel().getElementAt(index));
+                    return ((DirectoryInfo)
+                            toolTipMap.get(getModel().getElementAt(index))).getNote();
                 }
                 return null;
             }
@@ -217,8 +225,8 @@ public class ListDialog extends JDialog
     // Handle clicks on the Set and Cancel buttons.
     public void actionPerformed(ActionEvent e) {
         if ("Set".equals(e.getActionCommand())) {
-            ListDialog.value = (String) (list.getSelectedValue());
+            DirectoryListDialog.value = (String) (list.getSelectedValue());
         }
-        ListDialog.dialog.setVisible(false);
+        DirectoryListDialog.dialog.setVisible(false);
     }
 }

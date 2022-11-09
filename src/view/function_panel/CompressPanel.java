@@ -3,23 +3,119 @@ package view.function_panel;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
+import domain.DirectoryInfo;
+import domain.FileInfo;
+import service.ArchiveService;
+import service.DBService;
+import service.FileInfoService;
 import utils.GUIUtility;
-import utils.ListDialog;
+import utils.DirectoryListDialog;
+import utils.Utility;
+import view.MainMenu;
+
 
 import javax.swing.*;
-import javax.swing.filechooser.FileSystemView;
-import java.awt.*;
 import java.io.File;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
 
 /**
  * @author Morgan
  */
 public class CompressPanel extends javax.swing.JPanel {
+    //这两个字段是对MainMenu中同名字段的引用
+    private String[] directoryNames;
+    private HashMap<String, DirectoryInfo> directoryInfoMap;
+    private final DBService dbService;//这个字段是对MainMenu中的同名字段的引用
+    private final FileInfoService fileInfoService;
+
+    private MainMenu getMainMenu() {
+        return (MainMenu) SwingUtilities.getRoot(this);
+    }
+
+    public void setDirectoryNames(String[] directoryNames) {
+        this.directoryNames = directoryNames;
+    }
+
+    public void setDirectoryInfoMap(HashMap<String, DirectoryInfo> directoryInfoMap) {
+        this.directoryInfoMap = directoryInfoMap;
+    }
+
+    private void makeArchiveAndRecord() {
+        String tableName = chosedTableTextField.getText();
+        if (tableName == null || (!directoryInfoMap.containsKey(tableName))) {
+            JOptionPane.showMessageDialog(getMainMenu(),
+                    "请选择一张正确的表", "失败", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        File file = new File(chosedFileTextField.getText());
+        if (!file.exists()) {
+            JOptionPane.showMessageDialog(getMainMenu(),
+                    "请选择一个文件(夹)", "失败", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String note = noteTextArea.getText();
+        if (note == null) note = "";
+
+        String id = dbService.getAUTOINCREMENTValue();
+        Utility.ifNullThrow(id,
+                String.format("查找不到表%s的AUTO_INCREMENT值", tableName));//这个异常基本不可能发生
+
+
+        String archiveName = "files_" + id + ".rar";
+        File archiveFile = new File(file.getParent() + "\\" + archiveName);
+
+        // 查询同目录下是否存在与压缩包相同的文件名，如果有，提示
+        if (archiveFile.exists()) {
+            JOptionPane.showMessageDialog(getMainMenu(),
+                    String.format("%s目录下存在名为%s的文件，与将要生成的压缩包同名，" +
+                                    "请移动该文件，或者将要压缩的文件移动到别的文件夹",
+                            file.getParent(), archiveName), "失败", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String archivePassword = ArchiveService.compressWithRandomPassword(file, archiveName);
+        Utility.ifNullThrow(archivePassword, "生成的密码有误");//这个异常基本不可能发生
+
+
+        int dirID = directoryInfoMap.get(tableName).getId();
+
+
+        //根据压缩文件的信息和保存的密码，生成FileInfo对象
+        FileInfo fileInfo = fileInfoService.makeFileInfo(archiveFile,
+                file.getName(),
+                archivePassword,
+                note, dirID);
+
+        //将FileInfo对象写入数据库
+        fileInfoService.insertFileInfo(fileInfo);
+
+        //数据库备份——没错，每次调用makeArchiveAndRecord，都要备份一次数据库
+        dbService.databaseDump();
+
+        //TODO 用保存的密码测试压缩文件。如果测试失败，有点尴尬，上面哪一步肯定出现问题了，考虑重做整个过程
+        //TODO 思考：如何重做数据库? 事实上，插入一个实际上没有意义的记录是安全的，但日后(通过比对文件大小或md5)查找时会有点麻烦
+
+        System.out.println("最终测试：再次测试压缩包的密码");
+        ArchiveService.testRar(archiveFile, archivePassword);
+        System.out.println("生成的压缩包为" + archiveFile.getAbsolutePath());
+
+
+        JOptionPane.showMessageDialog(getMainMenu(),
+                "压缩成功\n数据库记录成功", "成功", JOptionPane.PLAIN_MESSAGE);
+
+    }
+
 
     /**
      * Creates new form CompressPanel
      */
-    public CompressPanel() {
+    public CompressPanel(DBService dbService, FileInfoService fileInfoService) {
+        this.fileInfoService = fileInfoService;
+        this.dbService = dbService;
         initComponents();
     }
 
@@ -235,6 +331,7 @@ public class CompressPanel extends javax.swing.JPanel {
         File selectedFile = GUIUtility.chooseFile(true);
         if (selectedFile == null) return;
         chosedFileTextField.setText(selectedFile.getAbsolutePath());
+        archiveDirectoryTextField.setText(selectedFile.getParent());
     }//GEN-LAST:event_chooseFileButtonActionPerformed
 
     private void chosedFileTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chosedFileTextFieldActionPerformed
@@ -242,13 +339,15 @@ public class CompressPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_chosedFileTextFieldActionPerformed
 
     private void chooseTableButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseTableButtonActionPerformed
-        String selectedTableName = ListDialog.showDialog(this,
+        String selectedTableName = DirectoryListDialog.showDialog(this,
                 chooseTableButton,
                 "所有的表名",
                 "选择一张表",
-                tableNames,
-                tableNames[0],
-                "ABCDEFG");
+                directoryNames,
+                directoryNames[0],
+                //按照最长的表名设置单元格宽度
+                Arrays.stream(directoryNames).max(Comparator.comparingInt(String::length)).get(),
+                directoryInfoMap);
         chosedTableTextField.setText(selectedTableName);
 
     }//GEN-LAST:event_chooseTableButtonActionPerformed
@@ -266,7 +365,7 @@ public class CompressPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_archiveDirectoryTextFieldActionPerformed
 
     private void finalDecisionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalDecisionButtonActionPerformed
-        // TODO add your handling code here:
+        makeArchiveAndRecord();
     }//GEN-LAST:event_finalDecisionButtonActionPerformed
 
 

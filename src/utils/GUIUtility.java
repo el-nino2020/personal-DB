@@ -1,6 +1,7 @@
 package utils;
 
 import common.GUIParam;
+import common.Param;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -69,7 +70,7 @@ public class GUIUtility {
 
         chooser.setDialogTitle("选择一个文件(夹)");
         chooser.setPreferredSize(new Dimension(1200, 800));
-
+        chooser.setCurrentDirectory(new File(Param.DESKTOP_PATH));
         GUIUtility.setFontRecursively(chooser);
     }
 }

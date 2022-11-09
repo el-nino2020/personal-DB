@@ -1,6 +1,10 @@
 package test;
 
 import com.google.common.base.Preconditions;
+import common.Param;
+import javafx.application.Platform;
+import javafx.embed.swing.JFXPanel;
+import javafx.stage.FileChooser;
 import org.apache.commons.lang3.RandomStringUtils;
 import service.ArchiveService;
 import utils.Utility;
@@ -16,12 +20,13 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            System.out.print("请输入表名: ");
-            System.out.println(Utility.checkTableNameValidity(scanner.next()));
-        }
+        new Test().testFileChooser();
+//        Scanner scanner = new Scanner(System.in);
+//
+//        while (true) {
+//            System.out.print("请输入表名: ");
+//            System.out.println(Utility.checkTableNameValidity(scanner.next()));
+//        }
 
     }
 
@@ -338,4 +343,40 @@ public class Test {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    @org.junit.Test
+    public void testJOptionPanel() {
+        int[] messageTypes = {JOptionPane.ERROR_MESSAGE,
+                JOptionPane.INFORMATION_MESSAGE,
+                JOptionPane.WARNING_MESSAGE,
+                JOptionPane.QUESTION_MESSAGE,
+                JOptionPane.PLAIN_MESSAGE};
+        JFrame frame = new JFrame();
+        JOptionPane.showMessageDialog(frame, "123", "abc", messageTypes[2]);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+
+
+    boolean loop = true; //作为字段存在感觉好傻
+
+    @org.junit.Test
+    public synchronized void testFileChooser() {
+        //https://stackoverflow.com/questions/39819319/windows-native-file-chooser-in-java
+        new JFXPanel();//这行代码是用来预热JavaFx的
+
+        Runnable runnable = () -> {
+            FileChooser fileChooser = new FileChooser();
+            File file = fileChooser.showOpenDialog(null);
+            if (file != null)
+                System.out.println(file.getAbsolutePath());
+            else
+                System.out.println("没有选择文件夹");
+            loop = false;
+        };
+        Platform.runLater(runnable);
+
+        while (loop) {
+        }
+
+        System.out.println("==========结束===================");
+    }
 }
