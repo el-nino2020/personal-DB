@@ -21,10 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/function_panel/DecompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/function_panel/DecompressPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/设计思路.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/设计思路.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,14 +273,7 @@
       <workItem from="1667869028086" duration="631000" />
       <workItem from="1667983678020" duration="8269000" />
       <workItem from="1668032663639" duration="59000" />
-      <workItem from="1670646375941" duration="2451000" />
-    </task>
-    <task id="LOCAL-00018" summary="研究了一番rar命令行">
-      <created>1665663109077</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1665663109077</updated>
+      <workItem from="1670646375941" duration="2660000" />
     </task>
     <task id="LOCAL-00019" summary="Utility需要增加几个与命令行交互的方法">
       <created>1665663788430</created>
@@ -621,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670646882796</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="DecompressPanel基本完成">
+      <created>1670648931586</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1670648931586</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -641,7 +638,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="开发完毕?" />
     <MESSAGE value="开发完毕?待测试" />
     <MESSAGE value="按照顺序执行数据库初始哈" />
     <MESSAGE value="按照顺序执行数据库初始化" />
@@ -666,7 +662,8 @@
     <MESSAGE value="使用FlatLaf的lookAndFell" />
     <MESSAGE value="开发中，compressPanel应该是完成了。开发中的问题写在了`设计思路.md`中" />
     <MESSAGE value="更新bat文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新bat文件" />
+    <MESSAGE value="DecompressPanel基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="DecompressPanel基本完成" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -705,22 +702,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="791" key="GridCell.Tab.0.bottom" timestamp="1670648682223">
+    <state width="1995" height="310" key="GridCell.Tab.0.bottom" timestamp="1670648931164">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="791" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1670648682223" />
-    <state width="1995" height="791" key="GridCell.Tab.0.center" timestamp="1670648682222">
+    <state width="1995" height="310" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1670648931164" />
+    <state width="1995" height="310" key="GridCell.Tab.0.center" timestamp="1670648931164">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="791" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1670648682222" />
-    <state width="1995" height="791" key="GridCell.Tab.0.left" timestamp="1670648682222">
+    <state width="1995" height="310" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1670648931164" />
+    <state width="1995" height="310" key="GridCell.Tab.0.left" timestamp="1670648931164">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="791" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1670648682222" />
-    <state width="1995" height="791" key="GridCell.Tab.0.right" timestamp="1670648682222">
+    <state width="1995" height="310" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1670648931164" />
+    <state width="1995" height="310" key="GridCell.Tab.0.right" timestamp="1670648931164">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="791" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1670648682222" />
+    <state width="1995" height="310" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1670648931164" />
     <state width="1995" height="181" key="GridCell.Tab.1.bottom" timestamp="1667991962574">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
