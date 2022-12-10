@@ -22,12 +22,7 @@
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CompileAndRun.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompileAndRun.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/GUIUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GUIUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/ListDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/DirectoryListDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/function_panel/CompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/function_panel/CompressPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/设计思路.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/设计思路.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deleteClassFiles.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/deleteClassFiles.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,9 +180,9 @@
     <list>
       <item itemvalue="Application.MainMenu" />
       <item itemvalue="Application.MainMenu (1)" />
+      <item itemvalue="Application.Test (1)" />
       <item itemvalue="JUnit.Test.testJOptionPanel" />
       <item itemvalue="JUnit.Test.testFileChooser" />
-      <item itemvalue="Application.Test (1)" />
     </list>
     <recent_temporary>
       <list>
@@ -271,14 +266,9 @@
       <workItem from="1667774066640" duration="604000" />
       <workItem from="1667857251464" duration="1839000" />
       <workItem from="1667869028086" duration="631000" />
-      <workItem from="1667983678020" duration="7998000" />
-    </task>
-    <task id="LOCAL-00016" summary="little update">
-      <created>1665572706609</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1665572706609</updated>
+      <workItem from="1667983678020" duration="8269000" />
+      <workItem from="1668032663639" duration="59000" />
+      <workItem from="1670646375941" duration="315000" />
     </task>
     <task id="LOCAL-00017" summary="update schema and bean">
       <created>1665656847395</created>
@@ -616,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667860987531</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="开发中，compressPanel应该是完成了。开发中的问题写在了`设计思路.md`中">
+      <created>1667991898130</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1667991898130</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +633,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="small update" />
     <MESSAGE value="研究Jtable中" />
     <MESSAGE value="开发完毕?" />
     <MESSAGE value="开发完毕?待测试" />
@@ -661,7 +657,8 @@
     <MESSAGE value="change package" />
     <MESSAGE value="调教好了netbeans IDE的编码问题，装个插件就好了" />
     <MESSAGE value="使用FlatLaf的lookAndFell" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用FlatLaf的lookAndFell" />
+    <MESSAGE value="开发中，compressPanel应该是完成了。开发中的问题写在了`设计思路.md`中" />
+    <option name="LAST_COMMIT_MESSAGE" value="开发中，compressPanel应该是完成了。开发中的问题写在了`设计思路.md`中" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -700,38 +697,38 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="336" key="GridCell.Tab.0.bottom" timestamp="1667990800147">
+    <state width="1995" height="181" key="GridCell.Tab.0.bottom" timestamp="1667991962574">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667990800147" />
-    <state width="1995" height="336" key="GridCell.Tab.0.center" timestamp="1667990800147">
+    <state width="1995" height="181" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962574" />
+    <state width="1995" height="181" key="GridCell.Tab.0.center" timestamp="1667991962574">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667990800147" />
-    <state width="1995" height="336" key="GridCell.Tab.0.left" timestamp="1667990800147">
+    <state width="1995" height="181" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962574" />
+    <state width="1995" height="181" key="GridCell.Tab.0.left" timestamp="1667991962573">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667990800147" />
-    <state width="1995" height="336" key="GridCell.Tab.0.right" timestamp="1667990800147">
+    <state width="1995" height="181" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962573" />
+    <state width="1995" height="181" key="GridCell.Tab.0.right" timestamp="1667991962574">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667990800147" />
-    <state width="1995" height="181" key="GridCell.Tab.1.bottom" timestamp="1667988658266">
+    <state width="1995" height="181" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962574" />
+    <state width="1995" height="181" key="GridCell.Tab.1.bottom" timestamp="1667991962574">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="181" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667988658266" />
-    <state width="1995" height="181" key="GridCell.Tab.1.center" timestamp="1667988658266">
+    <state width="1995" height="181" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962574" />
+    <state width="1995" height="181" key="GridCell.Tab.1.center" timestamp="1667991962574">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="181" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667988658266" />
-    <state width="1995" height="181" key="GridCell.Tab.1.left" timestamp="1667988658266">
+    <state width="1995" height="181" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962574" />
+    <state width="1995" height="181" key="GridCell.Tab.1.left" timestamp="1667991962574">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="181" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667988658266" />
-    <state width="1995" height="181" key="GridCell.Tab.1.right" timestamp="1667988658266">
+    <state width="1995" height="181" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962574" />
+    <state width="1995" height="181" key="GridCell.Tab.1.right" timestamp="1667991962574">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="181" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667988658266" />
+    <state width="1995" height="181" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962574" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1667860569674">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -740,10 +737,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1666565689978" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1667861002972">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1667991907557">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1667861002972" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1667991907557" />
     <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1667021837134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -764,11 +761,11 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="697" y="253" key="refactoring.ChangeSignatureDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667020637541" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1667991578343">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1670646639353">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="378" y="54" width="672" height="707" key="search.everywhere.popup/0.0.1280.760@0.0.1280.760" timestamp="1667537778190" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1667991578343" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1670646639353" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
