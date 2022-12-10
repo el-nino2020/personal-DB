@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CompileAndRun.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompileAndRun.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/deleteClassFiles.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/deleteClassFiles.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/function_panel/DecompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/function_panel/DecompressPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,13 +104,6 @@
       </method>
     </configuration>
     <configuration name="MainMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainMenu" />
-      <module name="personal-DB" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.MainMenu" />
       <module name="personal-DB" />
       <extension name="coverage">
@@ -127,6 +122,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.View" />
+      <module name="personal-DB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -178,19 +186,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MainMenu" />
       <item itemvalue="Application.MainMenu (1)" />
       <item itemvalue="Application.Test (1)" />
       <item itemvalue="JUnit.Test.testJOptionPanel" />
       <item itemvalue="JUnit.Test.testFileChooser" />
+      <item itemvalue="Application.View" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainMenu (1)" />
+        <item itemvalue="Application.View" />
         <item itemvalue="Application.Test (1)" />
         <item itemvalue="JUnit.Test.testFileChooser" />
         <item itemvalue="JUnit.Test.testJOptionPanel" />
-        <item itemvalue="Application.MainMenu" />
       </list>
     </recent_temporary>
   </component>
@@ -268,14 +276,7 @@
       <workItem from="1667869028086" duration="631000" />
       <workItem from="1667983678020" duration="8269000" />
       <workItem from="1668032663639" duration="59000" />
-      <workItem from="1670646375941" duration="315000" />
-    </task>
-    <task id="LOCAL-00017" summary="update schema and bean">
-      <created>1665656847395</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1665656847395</updated>
+      <workItem from="1670646375941" duration="2451000" />
     </task>
     <task id="LOCAL-00018" summary="研究了一番rar命令行">
       <created>1665663109077</created>
@@ -613,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667991898130</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="更新bat文件">
+      <created>1670646882796</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1670646882796</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +641,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="研究Jtable中" />
     <MESSAGE value="开发完毕?" />
     <MESSAGE value="开发完毕?待测试" />
     <MESSAGE value="按照顺序执行数据库初始哈" />
@@ -658,7 +665,8 @@
     <MESSAGE value="调教好了netbeans IDE的编码问题，装个插件就好了" />
     <MESSAGE value="使用FlatLaf的lookAndFell" />
     <MESSAGE value="开发中，compressPanel应该是完成了。开发中的问题写在了`设计思路.md`中" />
-    <option name="LAST_COMMIT_MESSAGE" value="开发中，compressPanel应该是完成了。开发中的问题写在了`设计思路.md`中" />
+    <MESSAGE value="更新bat文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新bat文件" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -697,22 +705,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="181" key="GridCell.Tab.0.bottom" timestamp="1667991962574">
+    <state width="1995" height="791" key="GridCell.Tab.0.bottom" timestamp="1670648682223">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="181" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962574" />
-    <state width="1995" height="181" key="GridCell.Tab.0.center" timestamp="1667991962574">
+    <state width="1995" height="791" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1670648682223" />
+    <state width="1995" height="791" key="GridCell.Tab.0.center" timestamp="1670648682222">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="181" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962574" />
-    <state width="1995" height="181" key="GridCell.Tab.0.left" timestamp="1667991962573">
+    <state width="1995" height="791" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1670648682222" />
+    <state width="1995" height="791" key="GridCell.Tab.0.left" timestamp="1670648682222">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="181" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962573" />
-    <state width="1995" height="181" key="GridCell.Tab.0.right" timestamp="1667991962574">
+    <state width="1995" height="791" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1670648682222" />
+    <state width="1995" height="791" key="GridCell.Tab.0.right" timestamp="1670648682222">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="181" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1667991962574" />
+    <state width="1995" height="791" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1670648682222" />
     <state width="1995" height="181" key="GridCell.Tab.1.bottom" timestamp="1667991962574">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -779,11 +787,6 @@
           <url>file://$PROJECT_DIR$/src/service/DBService.java</url>
           <line>166</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/view/function_panel/CompressPanel.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

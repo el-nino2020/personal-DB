@@ -214,7 +214,7 @@ public class View {
             Utility.ifNullThrow(fileInfo, "数据库不存在该文件的记录");
 
             //对比数据库中的记录与该文件的实际信息
-            fileInfo.checkAndInform(file);
+            System.out.println(fileInfo.getFileAbstract(file));
 
             //检验密码是否正确
             System.out.println("测试压缩包");

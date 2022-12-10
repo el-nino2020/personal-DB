@@ -36,7 +36,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private static String[] choices = {"压缩并记录文件(夹)", "解压文件", "查询现有表", "新建表"};
     private CompressPanel compressPanel = new CompressPanel(dbService, fileInfoService);
-    private DecompressPanel decompressPanel = new DecompressPanel();
+    private DecompressPanel decompressPanel = new DecompressPanel(fileInfoService);
     private AllDBTablePanel allDBTablePanel = new AllDBTablePanel();
     private CreateNewDBTablePanel createNewDBTablePanel = new CreateNewDBTablePanel();
     private JPanel currentShowingPanel = compressPanel;

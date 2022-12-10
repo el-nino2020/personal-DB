@@ -3,11 +3,14 @@ package view.function_panel;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
+import domain.FileInfo;
+import service.ArchiveService;
+import service.FileInfoService;
 import utils.GUIUtility;
+import utils.Utility;
+import view.MainMenu;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileSystemView;
-import java.awt.*;
 import java.io.File;
 
 /**
@@ -18,8 +21,10 @@ public class DecompressPanel extends javax.swing.JPanel {
     /**
      * Creates new form DecompressPanel
      */
-    public DecompressPanel() {
+    public DecompressPanel(FileInfoService fileInfoService) {
         initComponents();
+
+        this.fileInfoService = fileInfoService;
     }
 
     /**
@@ -150,11 +155,10 @@ public class DecompressPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_chooseFileButtonActionPerformed
 
     private void chosedFileTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chosedFileTextFieldActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_chosedFileTextFieldActionPerformed
 
     private void finalDecisionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalDecisionButtonActionPerformed
-        // TODO add your handling code here:
+        decompressArchive();
     }//GEN-LAST:event_finalDecisionButtonActionPerformed
 
 
@@ -171,4 +175,38 @@ public class DecompressPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
 
+    private FileInfoService fileInfoService;
+
+    private MainMenu getMainMenu() {
+        return (MainMenu) SwingUtilities.getRoot(this);
+    }
+
+    private void decompressArchive() {
+        //选择要解压的压缩包
+        File file = new File(chosedFileTextField.getText());
+
+        if (!file.exists()) {
+            JOptionPane.showMessageDialog(getMainMenu(),
+                    "压缩文件不存在", "失败", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        //从数据库中读取对应的记录
+        FileInfo fileInfo = fileInfoService.getFileInfo(file);
+        Utility.ifNullThrow(fileInfo, "数据库不存在该文件的记录");
+
+        //对比数据库中的记录与该文件的实际信息
+
+        noteTextArea.append(fileInfo.getFileAbstract(file));
+
+        //检验密码是否正确
+        System.out.println("测试压缩包");
+        ArchiveService.testRar(file, fileInfo.getPasswd());
+
+        //压缩到同一目录下
+        System.out.println("开始解压");
+        ArchiveService.decompress(file, fileInfo.getPasswd());
+
+        System.out.println("解压完成");
+    }
 }

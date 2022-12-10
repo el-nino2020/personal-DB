@@ -25,40 +25,45 @@ public class FileInfo {
      *
      * @param file rar压缩文件
      */
-    public void checkAndInform(File file) {
+    public String getFileAbstract(File file) {
         Preconditions.checkNotNull(file);
         Preconditions.checkArgument(file.exists());
         Preconditions.checkArgument(file.isFile());
 
-        String string = Utility.getFileMD5(file);
+        StringBuilder ans = new StringBuilder();
 
-        System.out.println("================文件摘要===================");
-        if (md5value.equals(string)) {
-            System.out.println("1. 压缩文件MD5值与记录的一致");
+
+        String md5 = Utility.getFileMD5(file);
+
+        ans.append("================文件摘要===================\n");
+        if (md5value.equals(md5)) {
+            ans.append("1. 压缩文件MD5值与记录的一致\n");
         } else {
-            System.out.println("1. 压缩文件MD5值与记录的不一致，请注意!!!");
-            System.out.format("\t记录的MD5值: %s\n", md5value);
-            System.out.format("\t文件的MD5值: %s\n", string);
+            ans.append("1. 压缩文件MD5值与记录的不一致，请注意!!!\n");
+            ans.append(String.format("\t记录的MD5值: %s\n", md5value));
+            ans.append(String.format("\t文件的MD5值: %s\n", md5));
         }
 
 
         long length = file.length();//返回文件的字节数
         if (length == filesize) {
-            System.out.println("2. 压缩文件大小与记录的一致");
+            ans.append("2. 压缩文件大小与记录的一致\n");
         } else {
-            System.out.println("2. 压缩文件MD5值与记录的不一致，请注意!!!");
-            System.out.format("\t记录的文件大小: %s bytes\n", md5value + "");
-            System.out.format("\t当前的文件大小: %s bytes\n", length + "");
+            ans.append("2. 压缩文件MD5值与记录的不一致，请注意!!!\n");
+            ans.append(String.format("\t记录的文件大小: %s bytes\n", md5value + ""));
+            ans.append(String.format("\t当前的文件大小: %s bytes\n", length + ""));
         }
 
-        System.out.format("3. 文件的真实名称为: 『 %s 』\n", filename);
-        System.out.format("4. 最后一次修改的时间为: %s\n", Utility.getFormattedTime(lastmodified));
+        ans.append(String.format("3. 文件的真实名称为: 『 %s 』\n", filename));
+        ans.append(String.format("4. 最后一次修改的时间为: %s\n", Utility.getFormattedTime(lastmodified)));
 
-        System.out.print("5. 关于文件的注释：  ");
-        System.out.println(note);
+        ans.append("5. 关于文件的注释：  ");
+        ans.append(note);
 
-        System.out.println("================摘要结束===================");
+        ans.append("\n================摘要结束===================\n");
 
+
+        return ans.toString();
     }
 
 
