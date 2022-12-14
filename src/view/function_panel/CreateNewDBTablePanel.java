@@ -3,6 +3,11 @@ package view.function_panel;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
+import domain.DirectoryInfo;
+import service.DBService;
+import view.MainMenu;
+
+import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -15,9 +20,12 @@ public class CreateNewDBTablePanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateNewDBTablePanel
      */
-    public CreateNewDBTablePanel() {
+    public CreateNewDBTablePanel(DBService dbService) {
         initComponents();
         addTableNameTextFieldEvent();
+        this.dbService = dbService;
+
+        checkTableNameValidity();
     }
 
     /**
@@ -94,61 +102,61 @@ public class CreateNewDBTablePanel extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(finalDecisionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
-                .addComponent(finalResultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(312, 312, 312))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(noteLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 913, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(499, 499, 499)
-                        .addComponent(titleLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tableNameRuleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tableNameLabel)
-                                .addGap(18, 18, 18)
-                                .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addComponent(tableNameNoticeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(319, 319, 319)
-                        .addComponent(finalNoticeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(finalDecisionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(77, 77, 77)
+                                .addComponent(finalResultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(312, 312, 312))
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(26, 26, 26)
+                                                .addComponent(noteLabel)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 913, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(499, 499, 499)
+                                                .addComponent(titleLabel))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(95, 95, 95)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(tableNameRuleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(tableNameLabel)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(51, 51, 51)
+                                                                .addComponent(tableNameNoticeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(319, 319, 319)
+                                                .addComponent(finalNoticeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(122, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(titleLabel)
-                .addGap(13, 13, 13)
-                .addComponent(tableNameRuleLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tableNameLabel)
-                    .addComponent(tableNameNoticeLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(noteLabel)
-                    .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(finalNoticeLabel)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(finalDecisionButton)
-                    .addComponent(finalResultLabel))
-                .addContainerGap(307, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(titleLabel)
+                                .addGap(13, 13, 13)
+                                .addComponent(tableNameRuleLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tableNameLabel)
+                                        .addComponent(tableNameNoticeLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(noteLabel)
+                                        .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(finalNoticeLabel)
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(finalDecisionButton)
+                                        .addComponent(finalResultLabel))
+                                .addContainerGap(307, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -158,6 +166,7 @@ public class CreateNewDBTablePanel extends javax.swing.JPanel {
 
     private void finalDecisionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalDecisionButtonActionPerformed
         // TODO add your handling code here:
+        createNewDBTable();
     }//GEN-LAST:event_finalDecisionButtonActionPerformed
 
 
@@ -179,8 +188,9 @@ public class CreateNewDBTablePanel extends javax.swing.JPanel {
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     //my code starts here
 
+    private DBService dbService;
 
-    public boolean checkTableNameValidity(String name) {
+    private boolean checkTableNameValidity(String name) {
         if (name == null) return false;
         int n = name.length();
         if (n == 0) return false;
@@ -188,29 +198,64 @@ public class CreateNewDBTablePanel extends javax.swing.JPanel {
         return name.matches("^[a-z][a-z0-9_]*$");
     }
 
+    /**
+     * 每当用户输入的表名发生变化，检查表名的合法性
+     */
     private void addTableNameTextFieldEvent() {
         tableNameTextField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                showTableNameValidity();
+                checkTableNameValidity();
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                showTableNameValidity();
+                checkTableNameValidity();
             }
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                showTableNameValidity();
+                checkTableNameValidity();
             }
         });
     }
 
-    public void showTableNameValidity() {
+    private MainMenu getMainMenu() {
+        return (MainMenu) SwingUtilities.getRoot(this);
+    }
+
+    private void createNewDBTable() {
+        String tableName = tableNameTextField.getText();
+        if (dbService.directoryExists(tableName)) {
+            JOptionPane.showMessageDialog(getMainMenu(),
+                    "该表已存在", "失败", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!checkTableNameValidity(tableName)) {
+            JOptionPane.showMessageDialog(getMainMenu(),
+                    "表名不合法", "失败", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        System.out.print("请输入关于这张表的说明: ");
+        String note = noteTextArea.getText();
+
+        dbService.createNewDirectory(new DirectoryInfo(tableName, note));
+        getMainMenu().cacheDirectoryInfo();
+    }
+
+
+    private void checkTableNameValidity() {
         boolean result = checkTableNameValidity(tableNameTextField.getText());
-        if (result) tableNameNoticeLabel.setText("表名合法");
-        else tableNameNoticeLabel.setText("表名非法");
+        if (result) {
+            tableNameNoticeLabel.setText("表名合法");
+            finalDecisionButton.setEnabled(true);
+        } else {
+            tableNameNoticeLabel.setText("表名非法");
+            finalDecisionButton.setEnabled(false);
+
+        }
     }
 
 }

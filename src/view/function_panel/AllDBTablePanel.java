@@ -250,7 +250,7 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         public Object getValueAt(int rowIndex, int columnIndex) {
             switch (columnIndex) {
                 case 0:
-                    return directoryInfos.get(rowIndex).getId();
+                    return directoryInfos.get(rowIndex).getId() +"";
                 case 1:
                     return directoryInfos.get(rowIndex).getDirname();
                 case 2:
