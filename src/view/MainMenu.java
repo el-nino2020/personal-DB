@@ -31,7 +31,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     //将directories的记录缓存
     private List<DirectoryInfo> directoryInfos = new ArrayList<>();
-    private String[] directoryNames = new String[1];
+    private String[] directoryNames;
     private HashMap<String, DirectoryInfo> directoryInfoMap = new HashMap<>();//键:dirname；值：对应的DirectoryInfo对象
 
     private static String[] choices = {"压缩并记录文件(夹)", "解压文件", "查询现有表", "新建表"};
@@ -64,6 +64,10 @@ public class MainMenu extends javax.swing.JFrame {
 
         compressPanel.setDirectoryInfoMap(directoryInfoMap);
         compressPanel.setDirectoryNames(directoryNames);
+
+
+        allDBTablePanel.setDirectoryInfos(directoryInfos);
+        allDBTablePanel.notifyTableDataChanged();
     }
 
     private void loginDBMS() {

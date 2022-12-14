@@ -3,6 +3,9 @@ package view.function_panel;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
+import domain.DirectoryInfo;
+import utils.GUIUtility;
+
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -11,20 +14,14 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Morgan
  */
 public class AllDBTablePanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form AllDBTablePanel
-     */
-    public AllDBTablePanel() {
-        initComponents();
-        initTableSetting();
-        addFilterTextFieldEvent();
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -94,55 +91,55 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(534, 534, 534)
-                        .addComponent(titleLabel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tableNameLabel)
-                                .addGap(18, 18, 18)
-                                .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tableNoteLabel)
-                                .addGap(18, 18, 18)
-                                .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(filterLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(534, 534, 534)
+                                                .addComponent(titleLabel))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGap(31, 31, 31)
+                                                .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(42, 42, 42)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(tableNameLabel)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(tableNoteLabel)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(34, 34, 34)
+                                                .addComponent(filterLabel)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tableNameLabel)
-                            .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tableNoteLabel)
-                            .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(filterLabel)
-                            .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(titleLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(tableNameLabel)
+                                                        .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(tableNoteLabel)
+                                                        .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(37, 37, 37)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(filterLabel)
+                                                        .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addContainerGap(14, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -171,7 +168,23 @@ public class AllDBTablePanel extends javax.swing.JPanel {
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     //my code starts here
 
-    //定义trueTable只是为了重写JTable中的getToolTipText方法，trueTable和table指向同一个对象
+
+    /**
+     * Creates new form AllDBTablePanel
+     */
+    public AllDBTablePanel() {
+        initComponents();
+        initTableSetting();
+        addFilterTextFieldEvent();
+    }
+
+    private List<DirectoryInfo> directoryInfos = new ArrayList<>();
+
+    public void setDirectoryInfos(List<DirectoryInfo> directoryInfos) {
+        this.directoryInfos = directoryInfos;
+    }
+
+    //定义trueTable只是为了重写JTable中的getToolTipText方法，`trueTable`和`table`指向同一个对象
     private JTable trueTable = new JTable() {
         @Override
         public String getToolTipText(MouseEvent event) {
@@ -196,26 +209,25 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         }
     };
 
-
-    private String[][] getAllDBTableInfo() {
-        return new String[][]{
-                {"1", "abc", "无"},
-                {"3", "ade", "测试软件用，返回控制技术该函数立刻感觉返回时鼓里撒擂个阿斯顿该函数离开该丰富代理商公司管理是德国首都绿化格拉斯哥士丹利是"},
-                {"4", "pdf", "存放PDF"}
-        };
+    public void notifyTableDataChanged() {
+        allDBTableModel.setDirectoryInfos(directoryInfos);
+        //参考：https://stackoverflow.com/a/7908004
+        allDBTableModel.fireTableDataChanged();
     }
 
-
-    private AllDBTableModel allDBTableModel = new AllDBTableModel(getAllDBTableInfo());
+    private AllDBTableModel allDBTableModel = new AllDBTableModel(directoryInfos);
 
 
     private class AllDBTableModel extends AbstractTableModel {
         private String[] columnNames = {"ID", "DIR_NAME", "NOTE"};
-        private String[][] data;
+        private List<DirectoryInfo> directoryInfos;
 
+        public void setDirectoryInfos(List<DirectoryInfo> directoryInfos) {
+            this.directoryInfos = directoryInfos;
+        }
 
-        public AllDBTableModel(String[][] data) {
-            this.data = data;
+        public AllDBTableModel(List<DirectoryInfo> directoryInfos) {
+            this.directoryInfos = directoryInfos;
         }
 
         @Override
@@ -226,7 +238,7 @@ public class AllDBTablePanel extends javax.swing.JPanel {
 
         @Override
         public int getRowCount() {
-            return data.length;
+            return directoryInfos.size();
         }
 
         @Override
@@ -236,7 +248,16 @@ public class AllDBTablePanel extends javax.swing.JPanel {
 
         @Override
         public Object getValueAt(int rowIndex, int columnIndex) {
-            return data[rowIndex][columnIndex];
+            switch (columnIndex) {
+                case 0:
+                    return directoryInfos.get(rowIndex).getId();
+                case 1:
+                    return directoryInfos.get(rowIndex).getDirname();
+                case 2:
+                    return directoryInfos.get(rowIndex).getNote();
+                default:
+                    return null;
+            }
         }
 
         @Override
@@ -257,12 +278,12 @@ public class AllDBTablePanel extends javax.swing.JPanel {
 
         //行的宽度
         table.setRowHeight(30);
-        table.setFont(new java.awt.Font("Microsoft YaHei UI", Font.PLAIN, 21)); // NOI18N
+        GUIUtility.setFont(table);
 
         JTableHeader tableHeader = table.getTableHeader();
-        tableHeader.setFont(new java.awt.Font("Microsoft YaHei UI", Font.PLAIN, 21));
+        GUIUtility.setFont(tableHeader);
 
-        //关于选择单元格
+        //关于选择单元格：只允许单选
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 
