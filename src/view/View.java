@@ -136,7 +136,7 @@ public class View {
             Utility.assertion(dbService.directoryExists(tableName), "该表不存在");
 
             //根据选择的表，找到其AUTO_INCREMENT的值，用于生成压缩文件的名字：表名_ID.rar，ID即为表中的ID字段
-            String id = dbService.getAUTOINCREMENTValue();
+            String id = dbService.getFilesAutoIncrementValue();
             Utility.ifNullThrow(id,
                     String.format("查找不到表%s的AUTO_INCREMENT值", tableName));//这个异常基本不可能发生
 

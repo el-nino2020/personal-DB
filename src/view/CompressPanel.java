@@ -5,17 +5,18 @@ package view;/*
 
 import domain.DirectoryInfo;
 import domain.FileInfo;
+import service.AccountService;
 import service.ArchiveService;
 import service.DBService;
 import service.FileInfoService;
 import utils.GUIUtils;
 import utils.DirectoryListDialog;
 import utils.Utility;
-import view.MainMenu;
 
 
 import javax.swing.*;
 import java.io.File;
+import java.sql.Connection;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -29,10 +30,8 @@ public class CompressPanel extends javax.swing.JPanel {
     private HashMap<String, DirectoryInfo> directoryInfoMap;
     private final DBService dbService;//这个字段是对MainMenu中的同名字段的引用
     private final FileInfoService fileInfoService;
+    private final AccountService accountService;
 
-    private MainMenu getMainMenu() {
-        return (MainMenu) SwingUtilities.getRoot(this);
-    }
 
     public void setDirectoryNames(String[] directoryNames) {
         this.directoryNames = directoryNames;
@@ -45,22 +44,19 @@ public class CompressPanel extends javax.swing.JPanel {
     private void makeArchiveAndRecord() {
         String tableName = chosedTableTextField.getText();
         if (tableName == null || (!directoryInfoMap.containsKey(tableName))) {
-            JOptionPane.showMessageDialog(getMainMenu(),
-                    "请选择一张正确的表", "失败", JOptionPane.ERROR_MESSAGE);
+            GUIUtils.showErrorMessage(this, "请选择一张正确的表", "失败");
             return;
         }
 
         File file = new File(chosedFileTextField.getText());
         if (!file.exists()) {
-            JOptionPane.showMessageDialog(getMainMenu(),
-                    "请选择一个文件(夹)", "失败", JOptionPane.ERROR_MESSAGE);
+            GUIUtils.showErrorMessage(this, "请选择一个存在的文件(夹)", "失败");
             return;
         }
 
         String note = noteTextArea.getText();
-        if (note == null) note = "";
 
-        String id = dbService.getAUTOINCREMENTValue();
+        String id = dbService.getFilesAutoIncrementValue();
         Utility.ifNullThrow(id,
                 String.format("查找不到表%s的AUTO_INCREMENT值", tableName));//这个异常基本不可能发生
 
@@ -70,13 +66,13 @@ public class CompressPanel extends javax.swing.JPanel {
 
         // 查询同目录下是否存在与压缩包相同的文件名，如果有，提示
         if (archiveFile.exists()) {
-            JOptionPane.showMessageDialog(getMainMenu(),
-                    String.format("%s目录下存在名为%s的文件，与将要生成的压缩包同名，" +
-                                    "请移动该文件，或者将要压缩的文件移动到别的文件夹",
-                            file.getParent(), archiveName), "失败", JOptionPane.ERROR_MESSAGE);
+            GUIUtils.showErrorMessage(this, String.format("%s目录下存在名为%s的文件，与将要生成的压缩包同名，" +
+                            "请移动该文件，或者将要压缩的文件移动到别的文件夹",
+                    file.getParent(), archiveName), "失败");
             return;
         }
 
+        //压缩是最消耗时间的一步
         String archivePassword = ArchiveService.compressWithRandomPassword(file, archiveName);
         Utility.ifNullThrow(archivePassword, "生成的密码有误");//这个异常基本不可能发生
 
@@ -93,19 +89,29 @@ public class CompressPanel extends javax.swing.JPanel {
         //将FileInfo对象写入数据库
         fileInfoService.insertFileInfo(fileInfo);
 
-        //数据库备份——没错，每次调用makeArchiveAndRecord，都要备份一次数据库
-        dbService.databaseDump();
-
-        //TODO 用保存的密码测试压缩文件。如果测试失败，有点尴尬，上面哪一步肯定出现问题了，考虑重做整个过程
-        //TODO 思考：如何重做数据库? 事实上，插入一个实际上没有意义的记录是安全的，但日后(通过比对文件大小或md5)查找时会有点麻烦
-
-        System.out.println("最终测试：再次测试压缩包的密码");
+        GUIUtils.showInfoMessage(this, "最终测试：再次测试压缩包的密码", "FINAL TEST");
         ArchiveService.testRar(archiveFile, archivePassword);
-        System.out.println("生成的压缩包为" + archiveFile.getAbsolutePath());
 
+        // 由用户手动确认测试压缩包的结果
+        int confirmResult = GUIUtils.showConfirmDialog(this, "你确定要将文件信息存入数据库吗", "最终确认");
 
-        JOptionPane.showMessageDialog(getMainMenu(),
-                "压缩成功\n数据库记录成功", "成功", JOptionPane.PLAIN_MESSAGE);
+        if (confirmResult == JOptionPane.YES_OPTION) {
+            dbService.commit();
+            //数据库备份——没错，每次调用makeArchiveAndRecord，都要备份一次数据库
+            dbService.databaseDump();
+            GUIUtils.showInfoMessage(this, "数据库记录成功", "成功");
+            System.out.println("生成的压缩包为" + archiveFile.getAbsolutePath());
+            GUIUtils.showInfoMessage(this, "『压缩并记录』成功", "总结");
+        } else {
+            dbService.rollback();
+            boolean deleteResult = archiveFile.delete();
+            if (deleteResult) {
+                GUIUtils.showInfoMessage(this, "生成的压缩包已被删除", "提示");
+            }else {
+                GUIUtils.showInfoMessage(this, "生成的压缩包删除失败，请手动删除", "提示");
+            }
+        }
+
 
     }
 
@@ -113,9 +119,10 @@ public class CompressPanel extends javax.swing.JPanel {
     /**
      * Creates new form CompressPanel
      */
-    public CompressPanel(DBService dbService, FileInfoService fileInfoService) {
+    public CompressPanel(DBService dbService, FileInfoService fileInfoService, AccountService accountService) {
         this.fileInfoService = fileInfoService;
         this.dbService = dbService;
+        this.accountService = accountService;
         initComponents();
     }
 

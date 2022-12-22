@@ -2,7 +2,6 @@ package service;
 
 import com.google.common.base.Preconditions;
 import common.Param;
-import dao.BasicDAO;
 import dao.DirectoryInfoDAO;
 import domain.DirectoryInfo;
 import utils.Utility;
@@ -30,6 +29,7 @@ public class DBService {
 
     /**
      * 从directories中获取所有表的信息
+     *
      * @return 包含所有表的信息的List，按照表名升序排列
      */
     public List<DirectoryInfo> getAllDirectoryInfo() {
@@ -69,7 +69,7 @@ public class DBService {
      *
      * @return value(AUTO_INCREMENT) + ""，把这个值以字符串形式返回
      */
-    public String getAUTOINCREMENTValue() {
+    public String getFilesAutoIncrementValue() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
 
         Connection connection = accountService.getConnection();
@@ -189,5 +189,21 @@ public class DBService {
         databaseDump();
     }
 
+    public void commit() {
+        try {
+            accountService.getConnection().commit();
+        } catch (SQLException e) {
+            throw new RuntimeException("数据库提交失败");
+        }
+    }
+
+
+    public void rollback() {
+        try {
+            accountService.getConnection().rollback();
+        } catch (SQLException e) {
+            throw new RuntimeException("数据库回滚失败");
+        }
+    }
 
 }

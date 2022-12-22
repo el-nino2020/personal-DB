@@ -32,7 +32,7 @@ public class MainMenu extends javax.swing.JFrame {
     private HashMap<String, DirectoryInfo> directoryInfoMap = new HashMap<>();//键:dirname；值：对应的DirectoryInfo对象
 
     private static String[] choices = {"压缩并记录文件(夹)", "解压文件", "查询现有表", "新建表"};
-    private CompressPanel compressPanel = new CompressPanel(dbService, fileInfoService);
+    private CompressPanel compressPanel = new CompressPanel(dbService, fileInfoService, accountService);
     private DecompressPanel decompressPanel = new DecompressPanel(fileInfoService);
     private AllDBTablePanel allDBTablePanel = new AllDBTablePanel();
     private CreateNewDBTablePanel createNewDBTablePanel = new CreateNewDBTablePanel(dbService);

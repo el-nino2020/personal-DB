@@ -1,6 +1,7 @@
 package service;
 
 import common.Param;
+import utils.Utility;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,6 +30,20 @@ public class AccountService {
         }
     }
 
+    private void initializeConnection(Connection connection) {
+
+        try {
+            connection.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
+            Utility.assertion(connection.getTransactionIsolation() == Connection.TRANSACTION_SERIALIZABLE,
+                    "设置连接的隔离级别为Serializable 失败!!!");
+
+            connection.setAutoCommit(false);
+            Utility.assertion(!connection.getAutoCommit(),"取消自动提交 失败!!!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean loginDBMS(String password) {
         if (loginStatus) return true;
 
@@ -36,10 +51,11 @@ public class AccountService {
             connection = DriverManager.getConnection(DBMS_URL, USER, password);
             DBMSPassword = password;
         } catch (SQLException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         if (connection != null) {
             loginStatus = true;
+            initializeConnection(connection);
         }
         return connection != null;
     }

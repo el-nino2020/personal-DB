@@ -2,6 +2,7 @@ package utils;
 
 import common.GUIParam;
 import common.Param;
+import view.MainMenu;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -25,6 +26,36 @@ public class GUIUtils {
     private GUIUtils() {
     }
 
+    private static MainMenu getMainMenu(Component thisComponent) {
+        return (MainMenu) SwingUtilities.getRoot(thisComponent);
+    }
+
+    //不同的message dialog是什么样子的，可以看：https://mkyong.com/swing/java-swing-how-to-make-a-simple-dialog/
+    public static void showErrorMessage(Component thisComponent, String message, String title) {
+        JOptionPane.showMessageDialog(getMainMenu(thisComponent),
+                message, title, JOptionPane.ERROR_MESSAGE);
+    }
+
+    public static void showInfoMessage(Component thisComponent, String message, String title) {
+        JOptionPane.showMessageDialog(getMainMenu(thisComponent),
+                message, title, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void showPlainMessage(Component thisComponent, String message, String title) {
+        JOptionPane.showMessageDialog(getMainMenu(thisComponent),
+                message, title, JOptionPane.PLAIN_MESSAGE);
+    }
+
+
+
+
+    /**
+     * @return JOptionPane.YES_OPTION = 0 if YES is chosen; otherwise NO is chosen
+     */
+    public static int showConfirmDialog(Component thisComponent, String message, String title) {
+        return JOptionPane.showConfirmDialog(getMainMenu(thisComponent),
+                message, title, JOptionPane.YES_NO_OPTION);
+    }
 
     public static void setFont(Component component) {
         component.setFont(GUI_FONT);
@@ -69,7 +100,7 @@ public class GUIUtils {
         chooser.setMultiSelectionEnabled(false); //只能选择一个文件
 
         chooser.setDialogTitle("选择一个文件(夹)");
-        chooser.setPreferredSize(new Dimension(1800 , 1000));
+        chooser.setPreferredSize(new Dimension(1800, 1000));
         chooser.setCurrentDirectory(new File(Param.DESKTOP_PATH));
         GUIUtils.setFontRecursively(chooser);
 

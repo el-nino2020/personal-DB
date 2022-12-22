@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/domain/DirectoryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/DirectoryInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/GUIUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GUIUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/CompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CompressPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,14 +262,7 @@
       <workItem from="1670993717198" duration="7516000" />
       <workItem from="1671166334137" duration="612000" />
       <workItem from="1671325370726" duration="4000" />
-      <workItem from="1671693619807" duration="443000" />
-    </task>
-    <task id="LOCAL-00023" summary="add two service classes">
-      <created>1665737902881</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1665737902881</updated>
+      <workItem from="1671693619807" duration="5929000" />
     </task>
     <task id="LOCAL-00024" summary="update comment">
       <created>1665738117259</created>
@@ -602,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671693787336</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="更新JavaBean">
+      <created>1671694100150</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1671694100150</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +627,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="修改了一个bug，压缩文件夹也没问题了。之后的测试关注之前写的TODO" />
     <MESSAGE value="修改了备份文件的命名方式，更加人性化" />
     <MESSAGE value="10GB文件夹压缩测试完成，看来用processBuilder调用winrar命令和普通地在命令行调用没啥区别" />
     <MESSAGE value="一些更新" />
@@ -647,7 +651,8 @@
     <MESSAGE value="AllDBTablePanel搞定" />
     <MESSAGE value="CreateNewDBTablePanel搞定；重定向sout到MainMenu.logTextArea" />
     <MESSAGE value="更新包结构" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新包结构" />
+    <MESSAGE value="更新JavaBean" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新JavaBean" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -686,22 +691,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="456" key="GridCell.Tab.0.bottom" timestamp="1671001240444">
+    <state width="1995" height="336" key="GridCell.Tab.0.bottom" timestamp="1671697451479">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="456" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
-    <state width="1995" height="456" key="GridCell.Tab.0.center" timestamp="1671001240444">
+    <state width="1995" height="336" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671697451479" />
+    <state width="1995" height="336" key="GridCell.Tab.0.center" timestamp="1671697451479">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="456" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
-    <state width="1995" height="456" key="GridCell.Tab.0.left" timestamp="1671001240444">
+    <state width="1995" height="336" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671697451479" />
+    <state width="1995" height="336" key="GridCell.Tab.0.left" timestamp="1671697451479">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="456" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
-    <state width="1995" height="456" key="GridCell.Tab.0.right" timestamp="1671001240444">
+    <state width="1995" height="336" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671697451479" />
+    <state width="1995" height="336" key="GridCell.Tab.0.right" timestamp="1671697451479">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="456" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
+    <state width="1995" height="336" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671697451479" />
     <state width="1995" height="456" key="GridCell.Tab.1.bottom" timestamp="1671001240444">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -726,6 +731,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1670666922971" />
+    <state width="623" height="498" key="SwitcherDM" timestamp="1671696480683">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="623" height="498" key="SwitcherDM/0.0.2048.1112@0.0.2048.1112" timestamp="1671696480683" />
     <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1670649052461">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -750,11 +759,11 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="697" y="253" key="refactoring.ChangeSignatureDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667020637541" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1670999435423">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1671694850795">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="378" y="54" width="672" height="707" key="search.everywhere.popup/0.0.1280.760@0.0.1280.760" timestamp="1667537778190" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1670999435423" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1671694850795" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
