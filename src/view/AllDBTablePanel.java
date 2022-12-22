@@ -1,10 +1,10 @@
-package view.function_panel;/*
+package view;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
 import domain.DirectoryInfo;
-import utils.GUIUtility;
+import utils.GUIUtils;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -278,10 +278,10 @@ public class AllDBTablePanel extends javax.swing.JPanel {
 
         //行的宽度
         table.setRowHeight(30);
-        GUIUtility.setFont(table);
+        GUIUtils.setFont(table);
 
         JTableHeader tableHeader = table.getTableHeader();
-        GUIUtility.setFont(tableHeader);
+        GUIUtils.setFont(tableHeader);
 
         //关于选择单元格：只允许单选
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);

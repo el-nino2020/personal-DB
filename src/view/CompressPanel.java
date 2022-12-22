@@ -1,4 +1,4 @@
-package view.function_panel;/*
+package view;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
@@ -8,7 +8,7 @@ import domain.FileInfo;
 import service.ArchiveService;
 import service.DBService;
 import service.FileInfoService;
-import utils.GUIUtility;
+import utils.GUIUtils;
 import utils.DirectoryListDialog;
 import utils.Utility;
 import view.MainMenu;
@@ -328,7 +328,7 @@ public class CompressPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void chooseFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseFileButtonActionPerformed
-        File selectedFile = GUIUtility.chooseFile(true);
+        File selectedFile = GUIUtils.chooseFile(true);
         if (selectedFile == null) return;
         chosedFileTextField.setText(selectedFile.getAbsolutePath());
         archiveDirectoryTextField.setText(selectedFile.getParent());

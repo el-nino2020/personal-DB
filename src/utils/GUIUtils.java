@@ -11,7 +11,7 @@ import java.io.File;
 /**
  * utility methods for GUI development
  */
-public class GUIUtility {
+public class GUIUtils {
     private static final Font GUI_FONT = new Font(GUIParam.FONT_NAME,
             GUIParam.FONT_STYLE, GUIParam.FONT_SIZE);
 
@@ -22,7 +22,7 @@ public class GUIUtility {
         initializeJFileChooser();
     }
 
-    private GUIUtility() {
+    private GUIUtils() {
     }
 
 
@@ -69,8 +69,11 @@ public class GUIUtility {
         chooser.setMultiSelectionEnabled(false); //只能选择一个文件
 
         chooser.setDialogTitle("选择一个文件(夹)");
-        chooser.setPreferredSize(new Dimension(1200, 800));
+        chooser.setPreferredSize(new Dimension(1800 , 1000));
         chooser.setCurrentDirectory(new File(Param.DESKTOP_PATH));
-        GUIUtility.setFontRecursively(chooser);
+        GUIUtils.setFontRecursively(chooser);
+
+        //以details，而不是list模式展示文件，参考：https://stackoverflow.com/a/16292761
+//        chooser.getActionMap().get("viewTypeDetails").actionPerformed(null);
     }
 }

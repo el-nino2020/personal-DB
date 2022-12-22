@@ -9,17 +9,9 @@ import service.AccountService;
 import service.DBService;
 import service.FileInfoService;
 import utils.MessageConsole;
-import view.function_panel.AllDBTablePanel;
-import view.function_panel.CompressPanel;
-import view.function_panel.CreateNewDBTablePanel;
-import view.function_panel.DecompressPanel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -261,37 +253,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 
-    /**
-     * input 1 int, return 4 bytes
-     */
-    private byte[] intToBytes(int b) {
-        byte[] ans = new byte[4];
-        ans[0] = (byte) ((b << 0) & 0xff);
-        ans[1] = (byte) ((b << 8) & 0xff);
-        ans[2] = (byte) ((b << 16) & 0xff);
-        ans[3] = (byte) ((b << 24) & 0xff);
-
-        return ans;
-    }
-
-    private class LogOutputStream extends OutputStream {
-        //println和print底层都调用write方法，所以只要重写这个方法就行了
-        @Override
-        public void write(int b) throws IOException {
-
-            // redirects data to the text area
-            logTextArea.append(new String(intToBytes(b), StandardCharsets.UTF_8));
-            // scrolls the text area to the end of data
-            logTextArea.setCaretPosition(logTextArea.getDocument().getLength());
-            // keeps the logTextArea up to date
-            logTextArea.update(logTextArea.getGraphics());
-        }
-    }
 
     private void redirectOutAndErrStream() {
-//        PrintStream printStream = new PrintStream(new LogOutputStream());
-//        System.setOut(printStream);
-//        System.setErr(printStream);
 
         MessageConsole mc = new MessageConsole(logTextArea);
         mc.redirectOut();

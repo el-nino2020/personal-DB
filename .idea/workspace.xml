@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/MessageConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/GUIUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GUIUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/function_panel/AllDBTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/function_panel/AllDBTablePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/function_panel/CreateNewDBTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/function_panel/CreateNewDBTablePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Test" />
       <module name="personal-DB" />
       <extension name="coverage">
@@ -130,28 +128,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.View" />
+    <configuration name="Test.testFileChooser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="personal-DB" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.*" />
+          <option name="PATTERN" value="test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.Test" />
+      <option name="METHOD_NAME" value="testFileChooser" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,17 +163,17 @@
     <list>
       <item itemvalue="Application.MainMenu" />
       <item itemvalue="Application.MainMenu (1)" />
-      <item itemvalue="Application.Test (1)" />
-      <item itemvalue="Application.View" />
+      <item itemvalue="Application.Test" />
       <item itemvalue="JUnit.Test.testWriteOfOutputStream" />
+      <item itemvalue="JUnit.Test.testFileChooser" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainMenu" />
+        <item itemvalue="JUnit.Test.testFileChooser" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="JUnit.Test.testWriteOfOutputStream" />
         <item itemvalue="Application.MainMenu (1)" />
-        <item itemvalue="Application.View" />
-        <item itemvalue="Application.Test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -267,14 +255,9 @@
       <workItem from="1670666898271" duration="145000" />
       <workItem from="1670716660624" duration="8000" />
       <workItem from="1670986050215" duration="1844000" />
-      <workItem from="1670993717198" duration="5553000" />
-    </task>
-    <task id="LOCAL-00021" summary="测试如何打开Windows选择文件框">
-      <created>1665707784745</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1665707784745</updated>
+      <workItem from="1670993717198" duration="7516000" />
+      <workItem from="1671166334137" duration="612000" />
+      <workItem from="1671325370726" duration="4000" />
     </task>
     <task id="LOCAL-00022" summary="update">
       <created>1665734000715</created>
@@ -612,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670995471624</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="CreateNewDBTablePanel搞定；重定向sout到MainMenu.logTextArea">
+      <created>1670999476121</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1670999476121</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +622,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="按照顺序执行数据库初始化" />
     <MESSAGE value="基础测试完毕，在中文Windows cmd环境下中英文都可以" />
     <MESSAGE value="修改了一个bug，压缩文件夹也没问题了。之后的测试关注之前写的TODO" />
     <MESSAGE value="修改了备份文件的命名方式，更加人性化" />
@@ -657,7 +646,8 @@
     <MESSAGE value="DecompressPanel基本完成" />
     <MESSAGE value="DecompressPanel的问题" />
     <MESSAGE value="AllDBTablePanel搞定" />
-    <option name="LAST_COMMIT_MESSAGE" value="AllDBTablePanel搞定" />
+    <MESSAGE value="CreateNewDBTablePanel搞定；重定向sout到MainMenu.logTextArea" />
+    <option name="LAST_COMMIT_MESSAGE" value="CreateNewDBTablePanel搞定；重定向sout到MainMenu.logTextArea" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -696,38 +686,38 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="374" key="GridCell.Tab.0.bottom" timestamp="1670999056885">
+    <state width="1995" height="456" key="GridCell.Tab.0.bottom" timestamp="1671001240444">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="374" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1670999056885" />
-    <state width="1995" height="374" key="GridCell.Tab.0.center" timestamp="1670999056884">
+    <state width="1995" height="456" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
+    <state width="1995" height="456" key="GridCell.Tab.0.center" timestamp="1671001240444">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="374" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1670999056884" />
-    <state width="1995" height="374" key="GridCell.Tab.0.left" timestamp="1670999056884">
+    <state width="1995" height="456" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
+    <state width="1995" height="456" key="GridCell.Tab.0.left" timestamp="1671001240444">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="374" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1670999056884" />
-    <state width="1995" height="374" key="GridCell.Tab.0.right" timestamp="1670999056885">
+    <state width="1995" height="456" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
+    <state width="1995" height="456" key="GridCell.Tab.0.right" timestamp="1671001240444">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="374" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1670999056885" />
-    <state width="1995" height="456" key="GridCell.Tab.1.bottom" timestamp="1670998361434">
+    <state width="1995" height="456" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
+    <state width="1995" height="456" key="GridCell.Tab.1.bottom" timestamp="1671001240444">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="456" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1670998361434" />
-    <state width="1995" height="456" key="GridCell.Tab.1.center" timestamp="1670998361434">
+    <state width="1995" height="456" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
+    <state width="1995" height="456" key="GridCell.Tab.1.center" timestamp="1671001240444">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="456" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1670998361434" />
-    <state width="1995" height="456" key="GridCell.Tab.1.left" timestamp="1670998361434">
+    <state width="1995" height="456" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
+    <state width="1995" height="456" key="GridCell.Tab.1.left" timestamp="1671001240444">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="456" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1670998361434" />
-    <state width="1995" height="456" key="GridCell.Tab.1.right" timestamp="1670998361434">
+    <state width="1995" height="456" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
+    <state width="1995" height="456" key="GridCell.Tab.1.right" timestamp="1671001240444">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="456" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1670998361434" />
+    <state width="1995" height="456" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
     <state x="743" y="185" key="RollbackChangesDialog" timestamp="1667860569674">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -760,11 +750,11 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="697" y="253" key="refactoring.ChangeSignatureDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667020637541" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1670994724815">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1670999435423">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="378" y="54" width="672" height="707" key="search.everywhere.popup/0.0.1280.760@0.0.1280.760" timestamp="1667537778190" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1670994724815" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1670999435423" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

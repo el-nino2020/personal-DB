@@ -1,4 +1,4 @@
-package view.function_panel;/*
+package view;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
@@ -6,7 +6,7 @@ package view.function_panel;/*
 import domain.FileInfo;
 import service.ArchiveService;
 import service.FileInfoService;
-import utils.GUIUtility;
+import utils.GUIUtils;
 import utils.Utility;
 import view.MainMenu;
 
@@ -149,7 +149,7 @@ public class DecompressPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void chooseFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseFileButtonActionPerformed
-        File selectedFile = GUIUtility.chooseFile(false);
+        File selectedFile = GUIUtils.chooseFile(false);
         if (selectedFile == null) return;
         chosedFileTextField.setText(selectedFile.getAbsolutePath());
     }//GEN-LAST:event_chooseFileButtonActionPerformed

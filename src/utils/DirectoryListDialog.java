@@ -114,13 +114,13 @@ public class DirectoryListDialog extends JDialog implements ActionListener {
         // Create and initialize the buttons.
         JButton cancelButton = new JButton("Cancel");
         cancelButton.addActionListener(this);
-        GUIUtility.setFont(cancelButton);
+        GUIUtils.setFont(cancelButton);
         //
         final JButton setButton = new JButton("Set");
         setButton.setActionCommand("Set");
         setButton.addActionListener(this);
         getRootPane().setDefaultButton(setButton);
-        GUIUtility.setFont(setButton);
+        GUIUtils.setFont(setButton);
 
         // main part of the dialog
         list = new JList(data) {
@@ -163,7 +163,7 @@ public class DirectoryListDialog extends JDialog implements ActionListener {
                 return null;
             }
         };
-        GUIUtility.setFont(list);
+        GUIUtils.setFont(list);
 
         list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         if (longValue != null) {
@@ -181,19 +181,19 @@ public class DirectoryListDialog extends JDialog implements ActionListener {
         JScrollPane listScroller = new JScrollPane(list);
         listScroller.setPreferredSize(new Dimension(600, 600));
         listScroller.setAlignmentX(LEFT_ALIGNMENT);
-        GUIUtility.setFont(listScroller);
+        GUIUtils.setFont(listScroller);
 
         // Create a container so that we can add a title around
         // the scroll pane. Can't add a title directly to the
         // scroll pane because its background would be white.
         // Lay out the label and scroll pane from top to bottom.
         JPanel listPane = new JPanel();
-        GUIUtility.setFont(listPane);
+        GUIUtils.setFont(listPane);
         listPane.setLayout(new BoxLayout(listPane, BoxLayout.PAGE_AXIS));
 
         JLabel label = new JLabel(labelText);
         label.setLabelFor(list);
-        GUIUtility.setFont(label);
+        GUIUtils.setFont(label);
 
         listPane.add(label);
         listPane.add(Box.createRigidArea(new Dimension(0, 5)));
@@ -202,7 +202,7 @@ public class DirectoryListDialog extends JDialog implements ActionListener {
 
         // Lay out the buttons from left to right.
         JPanel buttonPane = new JPanel();
-        GUIUtility.setFont(buttonPane);
+        GUIUtils.setFont(buttonPane);
         buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
         buttonPane.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
         buttonPane.add(Box.createHorizontalGlue());
