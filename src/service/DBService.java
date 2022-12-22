@@ -164,7 +164,6 @@ public class DBService {
         Connection connection = accountService.getConnection();
 
         try {
-            connection.setAutoCommit(false); //start transaction
 
             directoryInfoDAO.update(connection,
                     "INSERT INTO directories(dirname, note) VALUES (?, ?)",
