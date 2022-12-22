@@ -9,14 +9,14 @@ import java.time.LocalDateTime;
 public class FileInfo {
     private String filename;
     private String note;
-    private long filesize;
+    private Long filesize;
 
     private LocalDateTime lastmodified;
     private String passwd;
     private String md5value;
 
-    private int id;
-    private int dirid;
+    private Integer id;
+    private Integer dirid;
 
 
     /**
@@ -45,7 +45,7 @@ public class FileInfo {
         }
 
 
-        long length = file.length();//返回文件的字节数
+        Long length = file.length();//返回文件的字节数
         if (length == filesize) {
             ans.append("2. 压缩文件大小与记录的一致\n");
         } else {
@@ -84,11 +84,11 @@ public class FileInfo {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -132,20 +132,20 @@ public class FileInfo {
         this.note = note;
     }
 
-    public long getFilesize() {
+    public Long getFilesize() {
         return filesize;
     }
 
-    public void setFilesize(long filesize) {
+    public void setFilesize(Long filesize) {
         this.filesize = filesize;
     }
 
 
-    public int getDirid() {
+    public Integer getDirid() {
         return dirid;
     }
 
-    public void setDirid(int dirid) {
+    public void setDirid(Integer dirid) {
         this.dirid = dirid;
     }
 }

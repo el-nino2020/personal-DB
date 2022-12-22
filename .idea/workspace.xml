@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/GUIUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GUIUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/DirectoryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/DirectoryInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,21 +70,21 @@
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CODES(daima)\personal-DB\src\utils" />
       <recent name="D:\CODES(daima)\personal-DB\lib" />
       <recent name="D:\CODES(daima)\personal-DB\src\view" />
-      <recent name="D:\CODES(daima)\personal-DB\src\view\function_panel" />
-      <recent name="D:\CODES(daima)\personal-DB\src\useSwing" />
-      <recent name="D:\CODES(daima)\personal-DB\src\test" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="dao" />
       <recent name="utils" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CODES(daima)\personal-DB\src\utils" />
-      <recent name="D:\CODES(daima)\personal-DB\lib" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\CODES(daima)\personal-DB\src\view" />
+      <recent name="D:\CODES(daima)\personal-DB\lib" />
+      <recent name="D:\CODES(daima)\personal-DB\src\view\function_panel" />
+      <recent name="D:\CODES(daima)\personal-DB\src\useSwing" />
+      <recent name="D:\CODES(daima)\personal-DB\src\test" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainMenu">
@@ -258,13 +257,7 @@
       <workItem from="1670993717198" duration="7516000" />
       <workItem from="1671166334137" duration="612000" />
       <workItem from="1671325370726" duration="4000" />
-    </task>
-    <task id="LOCAL-00022" summary="update">
-      <created>1665734000715</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1665734000715</updated>
+      <workItem from="1671693619807" duration="443000" />
     </task>
     <task id="LOCAL-00023" summary="add two service classes">
       <created>1665737902881</created>
@@ -602,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670999476121</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="更新包结构">
+      <created>1671693787336</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1671693787336</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +622,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="基础测试完毕，在中文Windows cmd环境下中英文都可以" />
     <MESSAGE value="修改了一个bug，压缩文件夹也没问题了。之后的测试关注之前写的TODO" />
     <MESSAGE value="修改了备份文件的命名方式，更加人性化" />
     <MESSAGE value="10GB文件夹压缩测试完成，看来用processBuilder调用winrar命令和普通地在命令行调用没啥区别" />
@@ -647,7 +646,8 @@
     <MESSAGE value="DecompressPanel的问题" />
     <MESSAGE value="AllDBTablePanel搞定" />
     <MESSAGE value="CreateNewDBTablePanel搞定；重定向sout到MainMenu.logTextArea" />
-    <option name="LAST_COMMIT_MESSAGE" value="CreateNewDBTablePanel搞定；重定向sout到MainMenu.logTextArea" />
+    <MESSAGE value="更新包结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新包结构" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -765,7 +765,7 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/view/function_panel/CreateNewDBTablePanel.java</url>
+          <url>file://$PROJECT_DIR$/src/view/CreateNewDBTablePanel.java</url>
           <line>227</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>

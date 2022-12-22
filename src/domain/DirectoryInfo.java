@@ -3,7 +3,7 @@ package domain;
 public class DirectoryInfo {
     private String dirname;
     private String note;
-    private int id;
+    private Integer id;
 
 
     public DirectoryInfo() {
@@ -14,11 +14,11 @@ public class DirectoryInfo {
         this.note = note;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
