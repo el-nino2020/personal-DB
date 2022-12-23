@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/init2_create_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/init2_create_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/testIncludingJar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/testIncludingJar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +124,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -258,14 +270,9 @@
       <workItem from="1671166334137" duration="612000" />
       <workItem from="1671325370726" duration="4000" />
       <workItem from="1671693619807" duration="6295000" />
-      <workItem from="1671706363830" duration="62000" />
-    </task>
-    <task id="LOCAL-00025" summary="更新readme">
-      <created>1665743175522</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1665743175522</updated>
+      <workItem from="1671706363830" duration="1393000" />
+      <workItem from="1671747583621" duration="11000" />
+      <workItem from="1671786381164" duration="2454000" />
     </task>
     <task id="LOCAL-00026" summary="在使用DML前开启事务">
       <created>1665743901636</created>
@@ -603,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671699838469</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="update">
+      <created>1671706469320</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1671706469321</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,7 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="10GB文件夹压缩测试完成，看来用processBuilder调用winrar命令和普通地在命令行调用没啥区别" />
     <MESSAGE value="一些更新" />
     <MESSAGE value="一些更新，感觉使用jTable好麻烦" />
     <MESSAGE value="更新common.Param中的注释" />
@@ -648,7 +661,8 @@
     <MESSAGE value="更新包结构" />
     <MESSAGE value="更新JavaBean" />
     <MESSAGE value="优化CompressPanel的代码，现在的当务之急是设计正确的数据库表和正确的『压缩并记录』的方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化CompressPanel的代码，现在的当务之急是设计正确的数据库表和正确的『压缩并记录』的方法" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -747,6 +761,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="450" y="219" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2048.1112@0.0.2048.1112" timestamp="1667021370142" />
+    <state x="193" y="107" width="1672" height="816" key="find.popup" timestamp="1671706456400">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="193" y="107" width="1672" height="816" key="find.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1671706456400" />
     <state x="249" y="65" width="1550" height="982" key="new project wizard" timestamp="1667869655383">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
