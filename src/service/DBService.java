@@ -56,7 +56,7 @@ public class DBService {
         List<DirInfo> list = getAllDirectoryInfo();
         ArrayList<String> ans = new ArrayList<>(list.size());
         for (DirInfo dirInfo : list) {
-            ans.add(dirInfo.getDirname());
+            ans.add(dirInfo.getName());
         }
         return ans;
 
@@ -158,8 +158,8 @@ public class DBService {
     public void createNewDirectory(DirInfo dirInfo) {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
         Preconditions.checkNotNull(dirInfo);
-        Preconditions.checkArgument(!directoryExists(dirInfo.getDirname()),
-                String.format("%s表已存在，无法再次创建", dirInfo.getDirname()));
+        Preconditions.checkArgument(!directoryExists(dirInfo.getName()),
+                String.format("%s表已存在，无法再次创建", dirInfo.getName()));
 
         Connection connection = accountService.getConnection();
 
@@ -167,12 +167,12 @@ public class DBService {
 
             directoryInfoDAO.update(connection,
                     "INSERT INTO directories(dirname, note) VALUES (?, ?)",
-                    dirInfo.getDirname(), dirInfo.getNote());
+                    dirInfo.getName(), dirInfo.getNote());
 
-            Utility.assertion(directoryExists(dirInfo.getDirname()),
-                    String.format("%s表创建失败", dirInfo.getDirname()));
+            Utility.assertion(directoryExists(dirInfo.getName()),
+                    String.format("%s表创建失败", dirInfo.getName()));
 
-            System.out.format("%s表创建成功\n", dirInfo.getDirname());
+            System.out.format("%s表创建成功\n", dirInfo.getName());
 
             connection.commit();
         } catch (Exception e) {

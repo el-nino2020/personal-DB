@@ -252,7 +252,7 @@ public class AllDBTablePanel extends javax.swing.JPanel {
                 case 0:
                     return dirInfos.get(rowIndex).getId() +"";
                 case 1:
-                    return dirInfos.get(rowIndex).getDirname();
+                    return dirInfos.get(rowIndex).getName();
                 case 2:
                     return dirInfos.get(rowIndex).getNote();
                 default:

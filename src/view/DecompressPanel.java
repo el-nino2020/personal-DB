@@ -201,11 +201,11 @@ public class DecompressPanel extends javax.swing.JPanel {
 
         //检验密码是否正确
         System.out.println("测试压缩包");
-        ArchiveService.testRar(file, fileInfo.getPasswd());
+        ArchiveService.testRar(file, fileInfo.getPassword());
 
         //压缩到同一目录下
         System.out.println("开始解压");
-        ArchiveService.decompress(file, fileInfo.getPasswd());
+        ArchiveService.decompress(file, fileInfo.getPassword());
 
         System.out.println("解压完成");
     }

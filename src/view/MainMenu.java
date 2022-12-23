@@ -53,8 +53,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         int i = 0;
         for (DirInfo info : dirInfos) {
-            directoryInfoMap.put(info.getDirname(), info);
-            directoryNames[i] = info.getDirname();
+            directoryInfoMap.put(info.getName(), info);
+            directoryNames[i] = info.getName();
             i++;
         }
 

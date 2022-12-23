@@ -20,14 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/dao/DirectoryInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DirectoryInfoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/DirectoryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/DirInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/DirectoryListDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/DirectoryListDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AllDBTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AllDBTablePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/CompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CompressPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/CreateNewDBTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreateNewDBTablePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -278,14 +270,7 @@
       <workItem from="1671693619807" duration="6295000" />
       <workItem from="1671706363830" duration="1393000" />
       <workItem from="1671747583621" duration="11000" />
-      <workItem from="1671786381164" duration="2777000" />
-    </task>
-    <task id="LOCAL-00027" summary="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑">
-      <created>1665748919166</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1665748919166</updated>
+      <workItem from="1671786381164" duration="3159000" />
     </task>
     <task id="LOCAL-00028" summary="开发中。。。值得一提的是修改了表的定义和增添了一张新的表`meta_table`">
       <created>1665816356783</created>
@@ -623,7 +608,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671794247576</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="修改JavaBean">
+      <created>1671794825365</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1671794825365</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,7 +635,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="一些更新，感觉使用jTable好麻烦" />
     <MESSAGE value="更新common.Param中的注释" />
     <MESSAGE value="重新设计数据库" />
     <MESSAGE value="重新设计数据库，并调整代码。测试完毕" />
@@ -668,7 +659,8 @@
     <MESSAGE value="优化CompressPanel的代码，现在的当务之急是设计正确的数据库表和正确的『压缩并记录』的方法" />
     <MESSAGE value="update" />
     <MESSAGE value="使用sqlyog创建表时的SQL preview功能生成的规范的Create table语句" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用sqlyog创建表时的SQL preview功能生成的规范的Create table语句" />
+    <MESSAGE value="修改JavaBean" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改JavaBean" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -683,10 +675,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665986454174" />
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1671794424862">
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1671794733052">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1671794424862" />
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1671794733052" />
     <state x="220" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1671794370988">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
