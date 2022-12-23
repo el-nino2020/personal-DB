@@ -33,7 +33,7 @@ public class FileInfo {
     /**
      * md5(archive)
      */
-    private String md5value;
+    private String md5Value;
 
     /**
      * file_id
@@ -63,11 +63,11 @@ public class FileInfo {
         String md5 = Utility.getFileMD5(file);
 
         ans.append("================文件摘要===================\n");
-        if (md5value.equals(md5)) {
+        if (md5Value.equals(md5)) {
             ans.append("1. 压缩文件MD5值与记录的一致\n");
         } else {
             ans.append("1. 压缩文件MD5值与记录的不一致，请注意!!!\n");
-            ans.append(String.format("\t记录的MD5值: %s\n", md5value));
+            ans.append(String.format("\t记录的MD5值: %s\n", md5Value));
             ans.append(String.format("\t文件的MD5值: %s\n", md5));
         }
 
@@ -77,7 +77,7 @@ public class FileInfo {
             ans.append("2. 压缩文件大小与记录的一致\n");
         } else {
             ans.append("2. 压缩文件MD5值与记录的不一致，请注意!!!\n");
-            ans.append(String.format("\t记录的文件大小: %s bytes\n", md5value + ""));
+            ans.append(String.format("\t记录的文件大小: %s bytes\n", md5Value + ""));
             ans.append(String.format("\t当前的文件大小: %s bytes\n", length + ""));
         }
 
@@ -105,7 +105,7 @@ public class FileInfo {
                 ", size=" + size +
                 ", time=" + time +
                 ", password='" + password + '\'' +
-                ", md5value='" + md5value + '\'' +
+                ", md5value='" + md5Value + '\'' +
                 ", id=" + id +
                 ", dirId=" + dirId +
                 '}';
@@ -151,12 +151,12 @@ public class FileInfo {
         this.password = password;
     }
 
-    public String getMd5value() {
-        return md5value;
+    public String getMd5Value() {
+        return md5Value;
     }
 
-    public void setMd5value(String md5value) {
-        this.md5value = md5value;
+    public void setMd5Value(String md5Value) {
+        this.md5Value = md5Value;
     }
 
     public Integer getId() {

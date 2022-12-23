@@ -29,14 +29,14 @@ public class FileInfoService {
         Preconditions.checkNotNull(info);
 
         //如果在sql中使用 ? 代替表名，则实际生成的表名周围带有单引号，不是合法的SQL语句
-        String sql = "INSERT INTO files" +
-                " (filename, lastmodified, passwd, md5value, note, filesize, dirid) " +
+        String sql = "INSERT INTO `files`" +
+                " (`file_name`, `last_modified`, `password`, `md5_value`, `file_note`, `size`, `dir_id`) " +
                 "VALUES (?, now(), ?, ?, ?, ?, ?);";
 
         fileInfoDAO.update(accountService.getConnection(), sql,
                 info.getName(),
                 info.getPassword(),
-                info.getMd5value(),
+                info.getMd5Value(),
                 info.getNote(),
                 info.getSize(),
                 info.getDirId());
@@ -58,7 +58,10 @@ public class FileInfoService {
 
 
         //如果在sql中使用 ? 代替表名，则实际生成的表名周围带有单引号，不是合法的SQL语句
-        String sql = "select * from files where id = ?;";
+        String sql = "SELECT `file_name` 'name', `file_note` 'note', `size`, " +
+                " `last_modified` 'time', `password`, `md5_value` 'md5Value', `file_id` 'id', `dir_id` 'dirId' " +
+                " FROM `files` " +
+                " WHERE `file_id` = ? ;";
         FileInfo ans = fileInfoDAO.querySingleRow(accountService.getConnection(),
                 sql,
                 FileInfo.class,
@@ -82,7 +85,7 @@ public class FileInfoService {
 
         ans.setName(originalName);
         ans.setSize(file.length());
-        ans.setMd5value(Utility.getFileMD5(file));
+        ans.setMd5Value(Utility.getFileMD5(file));
         ans.setPassword(archivePassword);
         ans.setNote(note);
         ans.setDirId(directoryID);

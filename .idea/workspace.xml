@@ -20,7 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,14 +273,7 @@
       <workItem from="1671693619807" duration="6295000" />
       <workItem from="1671706363830" duration="1393000" />
       <workItem from="1671747583621" duration="11000" />
-      <workItem from="1671786381164" duration="3159000" />
-    </task>
-    <task id="LOCAL-00028" summary="开发中。。。值得一提的是修改了表的定义和增添了一张新的表`meta_table`">
-      <created>1665816356783</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1665816356783</updated>
+      <workItem from="1671786381164" duration="3891000" />
     </task>
     <task id="LOCAL-00029" summary="开发中。。。主要写了ArchiveService，现在存在编码抓换的问题">
       <created>1665903134684</created>
@@ -615,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671794825365</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="修复修改JavaBean后的错误">
+      <created>1671795020478</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1671795020478</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +638,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="更新common.Param中的注释" />
     <MESSAGE value="重新设计数据库" />
     <MESSAGE value="重新设计数据库，并调整代码。测试完毕" />
     <MESSAGE value="基本设计好了3个功能对应的JPanel" />
@@ -660,7 +662,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="使用sqlyog创建表时的SQL preview功能生成的规范的Create table语句" />
     <MESSAGE value="修改JavaBean" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改JavaBean" />
+    <MESSAGE value="修复修改JavaBean后的错误" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复修改JavaBean后的错误" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -679,10 +682,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1671794733052" />
-    <state x="220" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1671794370988">
+    <state x="220" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1671795455198">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="220" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1671794370988" />
+    <state x="220" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1671795455198" />
     <state x="748" y="243" key="ConfigureClientPropertiesDialog" timestamp="1666565477334">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -759,10 +762,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="450" y="219" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2048.1112@0.0.2048.1112" timestamp="1667021370142" />
-    <state x="193" y="107" width="1672" height="816" key="find.popup" timestamp="1671706456400">
+    <state x="193" y="107" width="1672" height="816" key="find.popup" timestamp="1671795500952">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="193" y="107" width="1672" height="816" key="find.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1671706456400" />
+    <state x="193" y="107" width="1672" height="816" key="find.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1671795500952" />
     <state x="249" y="65" width="1550" height="982" key="new project wizard" timestamp="1667869655383">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

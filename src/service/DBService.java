@@ -166,7 +166,7 @@ public class DBService {
         try {
 
             directoryInfoDAO.update(connection,
-                    "INSERT INTO directories(dirname, note) VALUES (?, ?)",
+                    "INSERT INTO `directories` (`dir_name`, `dir_note`) VALUES (?, ?)",
                     dirInfo.getName(), dirInfo.getNote());
 
             Utility.assertion(directoryExists(dirInfo.getName()),
