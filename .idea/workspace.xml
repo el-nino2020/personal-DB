@@ -21,9 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/FileInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/init2_create_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/init2_create_table.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FileInfoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,14 +272,7 @@
       <workItem from="1671693619807" duration="6295000" />
       <workItem from="1671706363830" duration="1393000" />
       <workItem from="1671747583621" duration="11000" />
-      <workItem from="1671786381164" duration="3891000" />
-    </task>
-    <task id="LOCAL-00029" summary="开发中。。。主要写了ArchiveService，现在存在编码抓换的问题">
-      <created>1665903134684</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1665903134684</updated>
+      <workItem from="1671786381164" duration="4521000" />
     </task>
     <task id="LOCAL-00030" summary="压缩时包含中文路径的问题解决，只要在命令行编译并运行就没问题了，&#10;用命令行运行`testCMDEncoding.java`，&#10;现在的问题是如何在命令行包括.jar文件">
       <created>1665921854145</created>
@@ -618,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671795020478</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="修改对应的SQL语句">
+      <created>1671795795592</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1671795795592</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,7 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="重新设计数据库" />
     <MESSAGE value="重新设计数据库，并调整代码。测试完毕" />
     <MESSAGE value="基本设计好了3个功能对应的JPanel" />
     <MESSAGE value="开发中，JTable需要花费很多功夫" />
@@ -663,7 +661,8 @@
     <MESSAGE value="使用sqlyog创建表时的SQL preview功能生成的规范的Create table语句" />
     <MESSAGE value="修改JavaBean" />
     <MESSAGE value="修复修改JavaBean后的错误" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复修改JavaBean后的错误" />
+    <MESSAGE value="修改对应的SQL语句" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改对应的SQL语句" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -702,22 +701,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="336" key="GridCell.Tab.0.bottom" timestamp="1671699934185">
+    <state width="1995" height="336" key="GridCell.Tab.0.bottom" timestamp="1671796161517">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671699934185" />
-    <state width="1995" height="336" key="GridCell.Tab.0.center" timestamp="1671699934185">
+    <state width="1995" height="336" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671796161517" />
+    <state width="1995" height="336" key="GridCell.Tab.0.center" timestamp="1671796161517">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671699934185" />
-    <state width="1995" height="336" key="GridCell.Tab.0.left" timestamp="1671699934185">
+    <state width="1995" height="336" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671796161517" />
+    <state width="1995" height="336" key="GridCell.Tab.0.left" timestamp="1671796161517">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671699934185" />
-    <state width="1995" height="336" key="GridCell.Tab.0.right" timestamp="1671699934185">
+    <state width="1995" height="336" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671796161517" />
+    <state width="1995" height="336" key="GridCell.Tab.0.right" timestamp="1671796161517">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671699934185" />
+    <state width="1995" height="336" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671796161517" />
     <state width="1995" height="456" key="GridCell.Tab.1.bottom" timestamp="1671001240444">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -746,10 +745,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.2048.1112@0.0.2048.1112" timestamp="1671696480683" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1671699844972">
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1671795809345">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1671699844972" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1671795809345" />
     <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1667021837134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

@@ -36,7 +36,9 @@ public class DBService {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
 
         List<DirInfo> ans = directoryInfoDAO.queryMultiRow(accountService.getConnection(),
-                "SELECT * FROM directories ORDER BY dirname;",
+                "SELECT `dir_name` 'name', `dir_note` 'note', `dir_id` 'id' " +
+                        " FROM `directories` " +
+                        " ORDER BY `dir_name`;",
                 DirInfo.class);
         return ans;
     }

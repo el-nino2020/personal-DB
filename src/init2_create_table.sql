@@ -1,5 +1,5 @@
-CREATE DATABASE cloud_backup;
-USE cloud_backup;
+CREATE DATABASE `cloud_backup`;
+USE `cloud_backup`;
 
 -- store the information of directories/folders
 CREATE TABLE `cloud_backup`.`directories` (
