@@ -3,9 +3,8 @@ package view;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
-import domain.DirectoryInfo;
+import domain.DirInfo;
 import service.DBService;
-import view.MainMenu;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -241,7 +240,7 @@ public class CreateNewDBTablePanel extends javax.swing.JPanel {
         System.out.print("请输入关于这张表的说明: ");
         String note = noteTextArea.getText();
 
-        dbService.createNewDirectory(new DirectoryInfo(tableName, note));
+        dbService.createNewDirectory(new DirInfo(tableName, note, null));
         getMainMenu().cacheDirectoryInfo();
     }
 

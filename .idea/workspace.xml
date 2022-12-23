@@ -20,9 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/init2_create_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/init2_create_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/testIncludingJar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/testIncludingJar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DirectoryInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DirectoryInfoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/DirectoryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/DirInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/DirectoryListDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/DirectoryListDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AllDBTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AllDBTablePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/CompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CompressPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/CreateNewDBTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreateNewDBTablePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,14 +278,7 @@
       <workItem from="1671693619807" duration="6295000" />
       <workItem from="1671706363830" duration="1393000" />
       <workItem from="1671747583621" duration="11000" />
-      <workItem from="1671786381164" duration="2454000" />
-    </task>
-    <task id="LOCAL-00026" summary="在使用DML前开启事务">
-      <created>1665743901636</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1665743901636</updated>
+      <workItem from="1671786381164" duration="2777000" />
     </task>
     <task id="LOCAL-00027" summary="开发中。。。View中写的几行TODO描述了两个方法的基本逻辑">
       <created>1665748919166</created>
@@ -617,7 +616,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671706469321</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="使用sqlyog创建表时的SQL preview功能生成的规范的Create table语句">
+      <created>1671794247575</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1671794247576</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +643,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="一些更新" />
     <MESSAGE value="一些更新，感觉使用jTable好麻烦" />
     <MESSAGE value="更新common.Param中的注释" />
     <MESSAGE value="重新设计数据库" />
@@ -662,7 +667,8 @@
     <MESSAGE value="更新JavaBean" />
     <MESSAGE value="优化CompressPanel的代码，现在的当务之急是设计正确的数据库表和正确的『压缩并记录』的方法" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="使用sqlyog创建表时的SQL preview功能生成的规范的Create table语句" />
+    <option name="LAST_COMMIT_MESSAGE" value="使用sqlyog创建表时的SQL preview功能生成的规范的Create table语句" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -677,14 +683,14 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="475" y="201" width="1103" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1665986454174" />
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1670997786233">
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1671794424862">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1670997786233" />
-    <state x="220" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1667019788406">
+    <state x="783" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1671794424862" />
+    <state x="220" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1671794370988">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="220" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667019788406" />
+    <state x="220" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1671794370988" />
     <state x="748" y="243" key="ConfigureClientPropertiesDialog" timestamp="1666565477334">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -733,10 +739,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1995" height="456" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671001240444" />
-    <state x="743" y="185" key="RollbackChangesDialog" timestamp="1667860569674">
+    <state x="743" y="185" key="RollbackChangesDialog" timestamp="1671794232463">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="743" y="185" key="RollbackChangesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667860569674" />
+    <state x="743" y="185" key="RollbackChangesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1671794232463" />
     <state x="377" y="26" key="SettingsEditor" timestamp="1670666922971">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -773,11 +779,11 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="697" y="253" key="refactoring.ChangeSignatureDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667020637541" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1671694850795">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1671794189301">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="378" y="54" width="672" height="707" key="search.everywhere.popup/0.0.1280.760@0.0.1280.760" timestamp="1667537778190" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1671694850795" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1671794189301" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -789,7 +795,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/view/CreateNewDBTablePanel.java</url>
-          <line>227</line>
+          <line>226</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>

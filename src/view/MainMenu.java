@@ -4,7 +4,7 @@ package view;/*
  */
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
-import domain.DirectoryInfo;
+import domain.DirInfo;
 import service.AccountService;
 import service.DBService;
 import service.FileInfoService;
@@ -27,9 +27,9 @@ public class MainMenu extends javax.swing.JFrame {
 
 
     //将directories的记录缓存
-    private List<DirectoryInfo> directoryInfos = new ArrayList<>();
+    private List<DirInfo> dirInfos = new ArrayList<>();
     private String[] directoryNames;
-    private HashMap<String, DirectoryInfo> directoryInfoMap = new HashMap<>();//键:dirname；值：对应的DirectoryInfo对象
+    private HashMap<String, DirInfo> directoryInfoMap = new HashMap<>();//键:dirname；值：对应的DirectoryInfo对象
 
     private static String[] choices = {"压缩并记录文件(夹)", "解压文件", "查询现有表", "新建表"};
     private CompressPanel compressPanel = new CompressPanel(dbService, fileInfoService, accountService);
@@ -45,14 +45,14 @@ public class MainMenu extends javax.swing.JFrame {
      * 只有在(1)directories表被更新后(2)初始化时，才应该调用该方法
      */
     public void cacheDirectoryInfo() {
-        directoryInfos.clear();
+        dirInfos.clear();
         directoryInfoMap.clear();
 
-        directoryInfos = dbService.getAllDirectoryInfo();
-        directoryNames = new String[directoryInfos.size()];
+        dirInfos = dbService.getAllDirectoryInfo();
+        directoryNames = new String[dirInfos.size()];
 
         int i = 0;
-        for (DirectoryInfo info : directoryInfos) {
+        for (DirInfo info : dirInfos) {
             directoryInfoMap.put(info.getDirname(), info);
             directoryNames[i] = info.getDirname();
             i++;
@@ -63,7 +63,7 @@ public class MainMenu extends javax.swing.JFrame {
         compressPanel.setDirectoryNames(directoryNames);
 
 
-        allDBTablePanel.setDirectoryInfos(directoryInfos);
+        allDBTablePanel.setDirectoryInfos(dirInfos);
         allDBTablePanel.notifyTableDataChanged();
     }
 

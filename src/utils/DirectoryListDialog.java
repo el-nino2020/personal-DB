@@ -30,7 +30,7 @@
  */
 package utils;
 
-import domain.DirectoryInfo;
+import domain.DirInfo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -157,7 +157,7 @@ public class DirectoryListDialog extends JDialog implements ActionListener {
             public String getToolTipText(MouseEvent event) {
                 int index = locationToIndex(event.getPoint());
                 if (index > -1) {
-                    return ((DirectoryInfo)
+                    return ((DirInfo)
                             toolTipMap.get(getModel().getElementAt(index))).getNote();
                 }
                 return null;

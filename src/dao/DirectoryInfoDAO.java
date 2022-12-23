@@ -1,6 +1,6 @@
 package dao;
 
-import domain.DirectoryInfo;
+import domain.DirInfo;
 
-public class DirectoryInfoDAO extends BasicDAO<DirectoryInfo> {
+public class DirectoryInfoDAO extends BasicDAO<DirInfo> {
 }

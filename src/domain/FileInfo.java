@@ -7,16 +7,43 @@ import java.io.File;
 import java.time.LocalDateTime;
 
 public class FileInfo {
-    private String filename;
-    private String note;
-    private Long filesize;
+    private String name;
 
-    private LocalDateTime lastmodified;
-    private String passwd;
+    /**
+     * file note/comment
+     */
+    private String note;
+
+    /**
+     * file size in bytes
+     */
+    private Long size;
+
+    /**
+     * last modified time
+     */
+    private LocalDateTime time;
+
+
+    /**
+     * archive password
+     */
+    private String password;
+
+    /**
+     * md5(archive)
+     */
     private String md5value;
 
+    /**
+     * file_id
+     */
     private Integer id;
-    private Integer dirid;
+
+    /**
+     * foreign key on DirInfo.id
+     */
+    private Integer dirId;
 
 
     /**
@@ -46,7 +73,7 @@ public class FileInfo {
 
 
         Long length = file.length();//返回文件的字节数
-        if (length == filesize) {
+        if (length == size) {
             ans.append("2. 压缩文件大小与记录的一致\n");
         } else {
             ans.append("2. 压缩文件MD5值与记录的不一致，请注意!!!\n");
@@ -54,8 +81,8 @@ public class FileInfo {
             ans.append(String.format("\t当前的文件大小: %s bytes\n", length + ""));
         }
 
-        ans.append(String.format("3. 文件的真实名称为: 『 %s 』\n", filename));
-        ans.append(String.format("4. 最后一次修改的时间为: %s\n", Utility.getFormattedTime(lastmodified)));
+        ans.append(String.format("3. 文件的真实名称为: 『 %s 』\n", name));
+        ans.append(String.format("4. 最后一次修改的时间为: %s\n", Utility.getFormattedTime(time)));
 
         ans.append("5. 关于文件的注释：  ");
         ans.append(note);
@@ -73,55 +100,23 @@ public class FileInfo {
     @Override
     public String toString() {
         return "FileInfo{" +
-                "filename='" + filename + '\'' +
+                "name='" + name + '\'' +
                 ", note='" + note + '\'' +
-                ", filesize=" + filesize +
-                ", lastmodified=" + lastmodified +
-                ", passwd='" + passwd + '\'' +
+                ", size=" + size +
+                ", time=" + time +
+                ", password='" + password + '\'' +
                 ", md5value='" + md5value + '\'' +
                 ", id=" + id +
-                ", dirid=" + dirid +
+                ", dirId=" + dirId +
                 '}';
     }
 
-    public Integer getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
-    public LocalDateTime getLastmodified() {
-        return lastmodified;
-    }
-
-    public void setLastmodified(LocalDateTime lastmodified) {
-        this.lastmodified = lastmodified;
-    }
-
-    public String getPasswd() {
-        return passwd;
-    }
-
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
-    }
-
-    public String getMd5value() {
-        return md5value;
-    }
-
-    public void setMd5value(String md5value) {
-        this.md5value = md5value;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getNote() {
@@ -132,20 +127,51 @@ public class FileInfo {
         this.note = note;
     }
 
-    public Long getFilesize() {
-        return filesize;
+    public Long getSize() {
+        return size;
     }
 
-    public void setFilesize(Long filesize) {
-        this.filesize = filesize;
+    public void setSize(Long size) {
+        this.size = size;
     }
 
-
-    public Integer getDirid() {
-        return dirid;
+    public LocalDateTime getTime() {
+        return time;
     }
 
-    public void setDirid(Integer dirid) {
-        this.dirid = dirid;
+    public void setTime(LocalDateTime time) {
+        this.time = time;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getMd5value() {
+        return md5value;
+    }
+
+    public void setMd5value(String md5value) {
+        this.md5value = md5value;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getDirId() {
+        return dirId;
+    }
+
+    public void setDirId(Integer dirId) {
+        this.dirId = dirId;
     }
 }

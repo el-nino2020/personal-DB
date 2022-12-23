@@ -3,7 +3,7 @@ package view;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
-import domain.DirectoryInfo;
+import domain.DirInfo;
 import domain.FileInfo;
 import service.AccountService;
 import service.ArchiveService;
@@ -16,7 +16,6 @@ import utils.Utility;
 
 import javax.swing.*;
 import java.io.File;
-import java.sql.Connection;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -27,7 +26,7 @@ import java.util.HashMap;
 public class CompressPanel extends javax.swing.JPanel {
     //这两个字段是对MainMenu中同名字段的引用
     private String[] directoryNames;
-    private HashMap<String, DirectoryInfo> directoryInfoMap;
+    private HashMap<String, DirInfo> directoryInfoMap;
     private final DBService dbService;//这个字段是对MainMenu中的同名字段的引用
     private final FileInfoService fileInfoService;
     private final AccountService accountService;
@@ -37,7 +36,7 @@ public class CompressPanel extends javax.swing.JPanel {
         this.directoryNames = directoryNames;
     }
 
-    public void setDirectoryInfoMap(HashMap<String, DirectoryInfo> directoryInfoMap) {
+    public void setDirectoryInfoMap(HashMap<String, DirInfo> directoryInfoMap) {
         this.directoryInfoMap = directoryInfoMap;
     }
 

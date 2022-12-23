@@ -2,7 +2,7 @@ package view;
 
 import common.Param;
 import domain.FileInfo;
-import domain.DirectoryInfo;
+import domain.DirInfo;
 import service.AccountService;
 import service.ArchiveService;
 import service.DBService;
@@ -129,7 +129,7 @@ public class View {
 
             //TODO 展示现有的表（在一个新的窗口展示，在现有cmd中展示显得有些拥挤），选择要存放的表，考虑能否在Jtable中打勾来选择
             //TODO 如果不使用Jtable，也许可以通过选择序号的方式
-            List<DirectoryInfo> list = showAllTables();
+            List<DirInfo> list = showAllTables();
 
             System.out.print("请输入文件所属的表名(文件夹名): ");
             String tableName = scanner.next();
@@ -161,9 +161,9 @@ public class View {
             //这一段应该整合成一个方法的
             int dirID = -1;
 
-            for (DirectoryInfo directoryInfo : list) {
-                if (directoryInfo.getDirname().equals(tableName)) {
-                    dirID = directoryInfo.getId();
+            for (DirInfo dirInfo : list) {
+                if (dirInfo.getName().equals(tableName)) {
+                    dirID = dirInfo.getId();
                     break;
                 }
             }
@@ -237,12 +237,12 @@ public class View {
 
     //TODO: 考虑使用Jtable实现
 
-    public List<DirectoryInfo> showAllTables() {
+    public List<DirInfo> showAllTables() {
         if (!loginDBMS(LOGIN_TRY_TIMES)) {
             System.out.println("该操作失败，需要先登录数据库账户");
         }
 
-        List<DirectoryInfo> ans = dbService.getAllDirectoryInfo();
+        List<DirInfo> ans = dbService.getAllDirectoryInfo();
 
         if (ans.isEmpty()) {
             System.out.println("===================================================");
@@ -252,9 +252,9 @@ public class View {
         }
 
         System.out.println("====================展示所有表=========================\n");
-        for (DirectoryInfo directoryInfo : ans) {
+        for (DirInfo dirInfo : ans) {
             System.out.format("序号: %d ||*|| 表名: %s ||*|| 注释: %s \n",
-                    directoryInfo.getId(), directoryInfo.getDirname(), directoryInfo.getNote());
+                    dirInfo.getId(), dirInfo.getName(), dirInfo.getNote());
         }
         System.out.println("\n====================展示完毕=========================");
         return ans;
@@ -284,7 +284,7 @@ public class View {
             System.out.print("请输入关于这张表的说明: ");
             String note = scanner.next();
 
-            dbService.createNewDirectory(new DirectoryInfo(tableName, note));
+            dbService.createNewDirectory(new DirInfo(tableName, note, null));
 
         } catch (Exception e) {
             System.out.println("========== 以下是异常信息 ===============");

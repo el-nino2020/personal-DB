@@ -3,7 +3,7 @@ package view;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
-import domain.DirectoryInfo;
+import domain.DirInfo;
 import utils.GUIUtils;
 
 import javax.swing.*;
@@ -178,10 +178,10 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         addFilterTextFieldEvent();
     }
 
-    private List<DirectoryInfo> directoryInfos = new ArrayList<>();
+    private List<DirInfo> dirInfos = new ArrayList<>();
 
-    public void setDirectoryInfos(List<DirectoryInfo> directoryInfos) {
-        this.directoryInfos = directoryInfos;
+    public void setDirectoryInfos(List<DirInfo> dirInfos) {
+        this.dirInfos = dirInfos;
     }
 
     //定义trueTable只是为了重写JTable中的getToolTipText方法，`trueTable`和`table`指向同一个对象
@@ -210,24 +210,24 @@ public class AllDBTablePanel extends javax.swing.JPanel {
     };
 
     public void notifyTableDataChanged() {
-        allDBTableModel.setDirectoryInfos(directoryInfos);
+        allDBTableModel.setDirectoryInfos(dirInfos);
         //参考：https://stackoverflow.com/a/7908004
         allDBTableModel.fireTableDataChanged();
     }
 
-    private AllDBTableModel allDBTableModel = new AllDBTableModel(directoryInfos);
+    private AllDBTableModel allDBTableModel = new AllDBTableModel(dirInfos);
 
 
     private class AllDBTableModel extends AbstractTableModel {
         private String[] columnNames = {"ID", "DIR_NAME", "NOTE"};
-        private List<DirectoryInfo> directoryInfos;
+        private List<DirInfo> dirInfos;
 
-        public void setDirectoryInfos(List<DirectoryInfo> directoryInfos) {
-            this.directoryInfos = directoryInfos;
+        public void setDirectoryInfos(List<DirInfo> dirInfos) {
+            this.dirInfos = dirInfos;
         }
 
-        public AllDBTableModel(List<DirectoryInfo> directoryInfos) {
-            this.directoryInfos = directoryInfos;
+        public AllDBTableModel(List<DirInfo> dirInfos) {
+            this.dirInfos = dirInfos;
         }
 
         @Override
@@ -238,7 +238,7 @@ public class AllDBTablePanel extends javax.swing.JPanel {
 
         @Override
         public int getRowCount() {
-            return directoryInfos.size();
+            return dirInfos.size();
         }
 
         @Override
@@ -250,11 +250,11 @@ public class AllDBTablePanel extends javax.swing.JPanel {
         public Object getValueAt(int rowIndex, int columnIndex) {
             switch (columnIndex) {
                 case 0:
-                    return directoryInfos.get(rowIndex).getId() +"";
+                    return dirInfos.get(rowIndex).getId() +"";
                 case 1:
-                    return directoryInfos.get(rowIndex).getDirname();
+                    return dirInfos.get(rowIndex).getDirname();
                 case 2:
-                    return directoryInfos.get(rowIndex).getNote();
+                    return dirInfos.get(rowIndex).getNote();
                 default:
                     return null;
             }

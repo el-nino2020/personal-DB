@@ -3,7 +3,7 @@ package service;
 import com.google.common.base.Preconditions;
 import common.Param;
 import dao.DirectoryInfoDAO;
-import domain.DirectoryInfo;
+import domain.DirInfo;
 import utils.Utility;
 
 import java.io.File;
@@ -32,12 +32,12 @@ public class DBService {
      *
      * @return 包含所有表的信息的List，按照表名升序排列
      */
-    public List<DirectoryInfo> getAllDirectoryInfo() {
+    public List<DirInfo> getAllDirectoryInfo() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
 
-        List<DirectoryInfo> ans = directoryInfoDAO.queryMultiRow(accountService.getConnection(),
+        List<DirInfo> ans = directoryInfoDAO.queryMultiRow(accountService.getConnection(),
                 "SELECT * FROM directories ORDER BY dirname;",
-                DirectoryInfo.class);
+                DirInfo.class);
         return ans;
     }
 
@@ -53,10 +53,10 @@ public class DBService {
     public List<String> getAllDirectoryNames() {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
 //TODO 这个方法需要优化
-        List<DirectoryInfo> list = getAllDirectoryInfo();
+        List<DirInfo> list = getAllDirectoryInfo();
         ArrayList<String> ans = new ArrayList<>(list.size());
-        for (DirectoryInfo directoryInfo : list) {
-            ans.add(directoryInfo.getDirname());
+        for (DirInfo dirInfo : list) {
+            ans.add(dirInfo.getDirname());
         }
         return ans;
 
@@ -155,11 +155,11 @@ public class DBService {
     /**
      * 在directories中插入一条新记录
      */
-    public void createNewDirectory(DirectoryInfo directoryInfo) {
+    public void createNewDirectory(DirInfo dirInfo) {
         Preconditions.checkState(accountService.getLoginStatus(), "数据库账户未登录");
-        Preconditions.checkNotNull(directoryInfo);
-        Preconditions.checkArgument(!directoryExists(directoryInfo.getDirname()),
-                String.format("%s表已存在，无法再次创建", directoryInfo.getDirname()));
+        Preconditions.checkNotNull(dirInfo);
+        Preconditions.checkArgument(!directoryExists(dirInfo.getDirname()),
+                String.format("%s表已存在，无法再次创建", dirInfo.getDirname()));
 
         Connection connection = accountService.getConnection();
 
@@ -167,12 +167,12 @@ public class DBService {
 
             directoryInfoDAO.update(connection,
                     "INSERT INTO directories(dirname, note) VALUES (?, ?)",
-                    directoryInfo.getDirname(), directoryInfo.getNote());
+                    dirInfo.getDirname(), dirInfo.getNote());
 
-            Utility.assertion(directoryExists(directoryInfo.getDirname()),
-                    String.format("%s表创建失败", directoryInfo.getDirname()));
+            Utility.assertion(directoryExists(dirInfo.getDirname()),
+                    String.format("%s表创建失败", dirInfo.getDirname()));
 
-            System.out.format("%s表创建成功\n", directoryInfo.getDirname());
+            System.out.format("%s表创建成功\n", dirInfo.getDirname());
 
             connection.commit();
         } catch (Exception e) {

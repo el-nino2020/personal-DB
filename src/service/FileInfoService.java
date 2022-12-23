@@ -34,12 +34,12 @@ public class FileInfoService {
                 "VALUES (?, now(), ?, ?, ?, ?, ?);";
 
         fileInfoDAO.update(accountService.getConnection(), sql,
-                info.getFilename(),
-                info.getPasswd(),
+                info.getName(),
+                info.getPassword(),
                 info.getMd5value(),
                 info.getNote(),
-                info.getFilesize(),
-                info.getDirid());
+                info.getSize(),
+                info.getDirId());
     }
 
     /**
@@ -80,12 +80,12 @@ public class FileInfoService {
 
         FileInfo ans = new FileInfo();
 
-        ans.setFilename(originalName);
-        ans.setFilesize(file.length());
+        ans.setName(originalName);
+        ans.setSize(file.length());
         ans.setMd5value(Utility.getFileMD5(file));
-        ans.setPasswd(archivePassword);
+        ans.setPassword(archivePassword);
         ans.setNote(note);
-        ans.setDirid(directoryID);
+        ans.setDirId(directoryID);
 
         return ans;
     }
