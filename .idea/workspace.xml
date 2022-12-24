@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -274,14 +274,7 @@
       <workItem from="1671747583621" duration="11000" />
       <workItem from="1671786381164" duration="4637000" />
       <workItem from="1671834478838" duration="4000" />
-      <workItem from="1671866545034" duration="1093000" />
-    </task>
-    <task id="LOCAL-00031" summary="包含jar包的编译搞定了">
-      <created>1665925407339</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1665925407339</updated>
+      <workItem from="1671866545034" duration="1760000" />
     </task>
     <task id="LOCAL-00032" summary="以后直接在cmd中运行这个文件就可以测试了">
       <created>1665925924379</created>
@@ -619,7 +612,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671796282741</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="优化登录界面和错误提示">
+      <created>1671867720147</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1671867720148</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,8 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="基本设计好了3个功能对应的JPanel" />
-    <MESSAGE value="开发中，JTable需要花费很多功夫" />
     <MESSAGE value="只剩下Filter要实现了" />
     <MESSAGE value="貌似搞定了，但三个功能的交互可能出现bug。也许还要再测试" />
     <MESSAGE value="使用Oracle的教程提供的`ListDialog`完成了CompressPanel，下面就是设计最后的JFrame了" />
@@ -664,7 +662,9 @@
     <MESSAGE value="修复修改JavaBean后的错误" />
     <MESSAGE value="修改对应的SQL语句" />
     <MESSAGE value="继续修正" />
-    <option name="LAST_COMMIT_MESSAGE" value="继续修正" />
+    <MESSAGE value="优化登录界面" />
+    <MESSAGE value="优化登录界面和错误提示" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化登录界面和错误提示" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -703,22 +703,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="336" key="GridCell.Tab.0.bottom" timestamp="1671867625064">
+    <state width="1995" height="336" key="GridCell.Tab.0.bottom" timestamp="1671868249075">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671867625064" />
-    <state width="1995" height="336" key="GridCell.Tab.0.center" timestamp="1671867625064">
+    <state width="1995" height="336" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671868249075" />
+    <state width="1995" height="336" key="GridCell.Tab.0.center" timestamp="1671868249075">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671867625064" />
-    <state width="1995" height="336" key="GridCell.Tab.0.left" timestamp="1671867625064">
+    <state width="1995" height="336" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671868249075" />
+    <state width="1995" height="336" key="GridCell.Tab.0.left" timestamp="1671868249074">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671867625064" />
-    <state width="1995" height="336" key="GridCell.Tab.0.right" timestamp="1671867625064">
+    <state width="1995" height="336" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671868249074" />
+    <state width="1995" height="336" key="GridCell.Tab.0.right" timestamp="1671868249075">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671867625064" />
+    <state width="1995" height="336" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671868249075" />
     <state width="1995" height="181" key="GridCell.Tab.1.bottom" timestamp="1671867309752">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

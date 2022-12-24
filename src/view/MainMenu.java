@@ -156,8 +156,8 @@ public class MainMenu extends javax.swing.JFrame {
         choicesList = new javax.swing.JList<>();
         textAreaPane = new javax.swing.JScrollPane();
         logTextArea = new javax.swing.JTextArea();
-        logLabel = new javax.swing.JLabel();
         bottomPanel = new javax.swing.JPanel();
+        clearLogButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(200, 200));
@@ -197,28 +197,30 @@ public class MainMenu extends javax.swing.JFrame {
         getContentPane().add(textAreaPane);
         textAreaPane.setBounds(21, 759, 1421, 158);
 
-        logLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
-        logLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logLabel.setText("Log");
-        logLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        getContentPane().add(logLabel);
-        logLabel.setBounds(21, 723, 92, 30);
-
         bottomPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
         bottomPanel.setLayout(bottomPanelLayout);
         bottomPanelLayout.setHorizontalGroup(
-                bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 1194, Short.MAX_VALUE)
+            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1194, Short.MAX_VALUE)
         );
         bottomPanelLayout.setVerticalGroup(
-                bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 674, Short.MAX_VALUE)
+            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 674, Short.MAX_VALUE)
         );
 
         getContentPane().add(bottomPanel);
         bottomPanel.setBounds(240, 60, 1200, 680);
+
+        clearLogButton.setText("清空日志");
+        clearLogButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearLogButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(clearLogButton);
+        clearLogButton.setBounds(50, 720, 150, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -235,6 +237,11 @@ public class MainMenu extends javax.swing.JFrame {
         currentShowingPanel = panel;
 
     }//GEN-LAST:event_choicesListValueChanged
+
+    private void clearLogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearLogButtonActionPerformed
+        // TODO add your handling code here:
+        logTextArea.setText("");
+    }//GEN-LAST:event_clearLogButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,8 +270,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel bottomPanel;
     private javax.swing.JLabel choicesLabel;
     private javax.swing.JList<String> choicesList;
+    private javax.swing.JButton clearLogButton;
     private javax.swing.JScrollPane listPanel;
-    private javax.swing.JLabel logLabel;
     private javax.swing.JTextArea logTextArea;
     private javax.swing.JScrollPane textAreaPane;
     private javax.swing.JLabel titleLabel;
