@@ -8,6 +8,7 @@ import domain.DirInfo;
 import service.AccountService;
 import service.DBService;
 import service.FileInfoService;
+import utils.GUIUtils;
 import utils.MessageConsole;
 
 import javax.swing.*;
@@ -72,9 +73,25 @@ public class MainMenu extends javax.swing.JFrame {
         while (true) {
             String password = JOptionPane.showInputDialog(this,
                     "请输入账户" + AccountService.USER + "的密码");
-            if (accountService.loginDBMS(password)) {
+            //password为null是因为按下了取消案件
+            if (password == null) {
+                GUIUtils.showErrorMessage(this, "必须登录数据库，不能取消", "非法操作");
+                continue;
+            }
+//                    || ("".equals(password))) continue;
+            boolean result = false;
+
+            try {
+                result = accountService.loginDBMS(password);
+            } catch (Exception e) {
+
+            }
+            if (result) {
                 System.out.println("数据库账户登录成功");
+                GUIUtils.showInfoMessage(this, "数据库登录成功", "登录成功");
                 break;
+            } else {
+                GUIUtils.showErrorMessage(this, "密码错误", "数据库登录失败");
             }
         }
     }

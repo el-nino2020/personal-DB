@@ -40,7 +40,7 @@ public class AccountService {
             connection.setAutoCommit(false);
             Utility.assertion(!connection.getAutoCommit(),"取消自动提交 失败!!!");
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -51,7 +51,7 @@ public class AccountService {
             connection = DriverManager.getConnection(DBMS_URL, USER, password);
             DBMSPassword = password;
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
         if (connection != null) {
             loginStatus = true;
