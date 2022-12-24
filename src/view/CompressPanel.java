@@ -144,13 +144,10 @@ public class CompressPanel extends javax.swing.JPanel {
         noteLabel = new javax.swing.JLabel();
         noteScrollPane = new javax.swing.JScrollPane();
         noteTextArea = new javax.swing.JTextArea();
-        archiveNameLabel = new javax.swing.JLabel();
         archiveDirectoryLabel = new javax.swing.JLabel();
-        archiveNameTextField = new javax.swing.JTextField();
         archiveDirectoryTextField = new javax.swing.JTextField();
-        noticeLabel = new javax.swing.JLabel();
         finalDecisionButton = new javax.swing.JButton();
-        finalResultLabel = new javax.swing.JLabel();
+        openArchiveDirectoryButton = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setEnabled(false);
@@ -210,21 +207,9 @@ public class CompressPanel extends javax.swing.JPanel {
         noteTextArea.setRows(5);
         noteScrollPane.setViewportView(noteTextArea);
 
-        archiveNameLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
-        archiveNameLabel.setText("生成的压缩包名：");
-        archiveNameLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
         archiveDirectoryLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
         archiveDirectoryLabel.setText("生成的压缩包的目录：");
         archiveDirectoryLabel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        archiveNameTextField.setEditable(false);
-        archiveNameTextField.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
-        archiveNameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                archiveNameTextFieldActionPerformed(evt);
-            }
-        });
 
         archiveDirectoryTextField.setEditable(false);
         archiveDirectoryTextField.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
@@ -234,10 +219,6 @@ public class CompressPanel extends javax.swing.JPanel {
             }
         });
 
-        noticeLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
-        noticeLabel.setText("提示：可以压缩 / 目录下存在名为%s的文件，与将要生成的压缩包同名");
-        noticeLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         finalDecisionButton.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
         finalDecisionButton.setText("压缩并记录");
         finalDecisionButton.addActionListener(new java.awt.event.ActionListener() {
@@ -246,90 +227,81 @@ public class CompressPanel extends javax.swing.JPanel {
             }
         });
 
-        finalResultLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
-        finalResultLabel.setText("结果：");
-        finalResultLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        openArchiveDirectoryButton.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
+        openArchiveDirectoryButton.setText("打开目录");
+        openArchiveDirectoryButton.setEnabled(false);
+        openArchiveDirectoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openArchiveDirectoryButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(433, 433, 433)
+                        .addComponent(titleLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(chooseTableButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(chooseFileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(chosedFileLabel)
+                                    .addComponent(chosedTableLabel))
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(433, 433, 433)
-                                                .addComponent(titleLabel))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(16, 16, 16)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                        .addComponent(chooseTableButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                        .addComponent(chooseFileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                                .addGap(29, 29, 29)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(chosedFileLabel)
-                                                                        .addComponent(chosedTableLabel))
-                                                                .addGap(18, 18, 18)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(chosedFileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(chosedTableTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(archiveDirectoryLabel)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(archiveDirectoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(noteLabel)
-                                                                        .addComponent(archiveNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(27, 27, 27)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(archiveNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 921, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(44, 44, 44)
-                                                .addComponent(noticeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 1049, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(421, 421, 421)
-                                                .addComponent(finalDecisionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(84, 84, 84)
-                                                .addComponent(finalResultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(55, Short.MAX_VALUE))
+                                    .addComponent(chosedFileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chosedTableTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(archiveDirectoryLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(archiveDirectoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(openArchiveDirectoryButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(noteLabel)
+                                .addGap(27, 27, 27)
+                                .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 921, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(432, 432, 432)
+                        .addComponent(finalDecisionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(titleLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(chooseFileButton)
-                                        .addComponent(chosedFileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(chosedFileLabel))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(chooseTableButton)
-                                        .addComponent(chosedTableLabel)
-                                        .addComponent(chosedTableTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(noteLabel)
-                                        .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(17, 17, 17)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(archiveNameLabel)
-                                        .addComponent(archiveNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(archiveDirectoryLabel)
-                                        .addComponent(archiveDirectoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(noticeLabel)
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(finalDecisionButton)
-                                        .addComponent(finalResultLabel))
-                                .addContainerGap(208, Short.MAX_VALUE))
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(titleLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chooseFileButton)
+                    .addComponent(chosedFileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chosedFileLabel))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chooseTableButton)
+                    .addComponent(chosedTableLabel)
+                    .addComponent(chosedTableTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(noteLabel)
+                    .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(archiveDirectoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(archiveDirectoryLabel)
+                    .addComponent(openArchiveDirectoryButton))
+                .addGap(50, 50, 50)
+                .addComponent(finalDecisionButton)
+                .addContainerGap(242, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -338,6 +310,7 @@ public class CompressPanel extends javax.swing.JPanel {
         if (selectedFile == null) return;
         chosedFileTextField.setText(selectedFile.getAbsolutePath());
         archiveDirectoryTextField.setText(selectedFile.getParent());
+        openArchiveDirectoryButton.setEnabled(true);
     }//GEN-LAST:event_chooseFileButtonActionPerformed
 
     private void chosedFileTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chosedFileTextFieldActionPerformed
@@ -362,10 +335,6 @@ public class CompressPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_chosedTableTextFieldActionPerformed
 
-    private void archiveNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archiveNameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_archiveNameTextFieldActionPerformed
-
     private void archiveDirectoryTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archiveDirectoryTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_archiveDirectoryTextFieldActionPerformed
@@ -374,12 +343,14 @@ public class CompressPanel extends javax.swing.JPanel {
         makeArchiveAndRecord();
     }//GEN-LAST:event_finalDecisionButtonActionPerformed
 
+    private void openArchiveDirectoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openArchiveDirectoryButtonActionPerformed
+        GUIUtils.openDirectoryInWindowsExplorer(new File(archiveDirectoryTextField.getText()));
+    }//GEN-LAST:event_openArchiveDirectoryButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel archiveDirectoryLabel;
     private javax.swing.JTextField archiveDirectoryTextField;
-    private javax.swing.JLabel archiveNameLabel;
-    private javax.swing.JTextField archiveNameTextField;
     private javax.swing.JButton chooseFileButton;
     private javax.swing.JButton chooseTableButton;
     private javax.swing.JLabel chosedFileLabel;
@@ -387,11 +358,10 @@ public class CompressPanel extends javax.swing.JPanel {
     private javax.swing.JLabel chosedTableLabel;
     private javax.swing.JTextField chosedTableTextField;
     private javax.swing.JButton finalDecisionButton;
-    private javax.swing.JLabel finalResultLabel;
     private javax.swing.JLabel noteLabel;
     private javax.swing.JScrollPane noteScrollPane;
     private javax.swing.JTextArea noteTextArea;
-    private javax.swing.JLabel noticeLabel;
+    private javax.swing.JButton openArchiveDirectoryButton;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 

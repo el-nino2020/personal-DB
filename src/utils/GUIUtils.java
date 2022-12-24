@@ -2,6 +2,7 @@ package utils;
 
 import common.GUIParam;
 import common.Param;
+import domain.FileInfo;
 import view.MainMenu;
 
 import javax.swing.*;
@@ -46,7 +47,15 @@ public class GUIUtils {
                 message, title, JOptionPane.PLAIN_MESSAGE);
     }
 
+    //参考 https://stackoverflow.com/a/15875367
+    public static void openDirectoryInWindowsExplorer(File file) {
+        Utility.assertion(file.exists(), "文件夹不存在");
+        Utility.assertion(file.isDirectory(), "这不是文件夹");
 
+        Utility.runSystemCommand(null,
+                Param.CMD_PATH, "/c",
+                "explorer " + file.getAbsolutePath());
+    }
 
 
     /**

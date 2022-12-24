@@ -53,29 +53,19 @@
                               <Component id="archiveDirectoryLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="archiveDirectoryTextField" min="-2" pref="756" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="openArchiveDirectoryButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="noteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="archiveNameLabel" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="noteLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="archiveNameTextField" min="-2" pref="756" max="-2" attributes="0"/>
-                                  <Component id="noteScrollPane" min="-2" pref="921" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="noteScrollPane" min="-2" pref="921" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="noticeLabel" min="-2" pref="1049" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="421" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="432" max="-2" attributes="0"/>
                       <Component id="finalDecisionButton" min="-2" pref="215" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="finalResultLabel" min="-2" pref="223" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="55" max="32767" attributes="0"/>
@@ -102,26 +92,17 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="noteLabel" min="-2" max="-2" attributes="0"/>
-                  <Component id="noteScrollPane" min="-2" pref="81" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="archiveNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="archiveNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="noteScrollPane" min="-2" pref="134" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="archiveDirectoryLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="archiveDirectoryTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="archiveDirectoryLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="openArchiveDirectoryButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="noticeLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="finalDecisionButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="finalResultLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="208" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <Component id="finalDecisionButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="242" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -239,19 +220,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="archiveNameLabel">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Microsoft YaHei UI" size="21" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="&#x751f;&#x6210;&#x7684;&#x538b;&#x7f29;&#x5305;&#x540d;&#xff1a;"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="archiveDirectoryLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -265,17 +233,6 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="archiveNameTextField">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Microsoft YaHei UI" size="21" style="0"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="archiveNameTextFieldActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JTextField" name="archiveDirectoryTextField">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
@@ -286,19 +243,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="archiveDirectoryTextFieldActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="noticeLabel">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Microsoft YaHei UI" size="21" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="&#x63d0;&#x793a;&#xff1a;&#x53ef;&#x4ee5;&#x538b;&#x7f29; / &#x76ee;&#x5f55;&#x4e0b;&#x5b58;&#x5728;&#x540d;&#x4e3a;%s&#x7684;&#x6587;&#x4ef6;&#xff0c;&#x4e0e;&#x5c06;&#x8981;&#x751f;&#x6210;&#x7684;&#x538b;&#x7f29;&#x5305;&#x540c;&#x540d;"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="finalDecisionButton">
       <Properties>
@@ -311,18 +255,17 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="finalDecisionButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="finalResultLabel">
+    <Component class="javax.swing.JButton" name="openArchiveDirectoryButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="21" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#x7ed3;&#x679c;&#xff1a;"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
+        <Property name="text" type="java.lang.String" value="&#x6253;&#x5f00;&#x76ee;&#x5f55;"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="openArchiveDirectoryButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

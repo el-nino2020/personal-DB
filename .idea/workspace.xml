@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="862f5ffb-7d82-4f1b-8c41-7b64d6f8f6a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/GUIUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GUIUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/CompressPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CompressPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/CompressPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CompressPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,14 +275,7 @@
       <workItem from="1671747583621" duration="11000" />
       <workItem from="1671786381164" duration="4637000" />
       <workItem from="1671834478838" duration="4000" />
-      <workItem from="1671866545034" duration="1760000" />
-    </task>
-    <task id="LOCAL-00032" summary="以后直接在cmd中运行这个文件就可以测试了">
-      <created>1665925924379</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1665925924379</updated>
+      <workItem from="1671866545034" duration="4888000" />
     </task>
     <task id="LOCAL-00033" summary="用于删除生成的.class文件">
       <created>1665926086997</created>
@@ -619,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671867720148</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="将日志标签修改为清空日志的按钮">
+      <created>1671868877651</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1671868877651</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="只剩下Filter要实现了" />
     <MESSAGE value="貌似搞定了，但三个功能的交互可能出现bug。也许还要再测试" />
     <MESSAGE value="使用Oracle的教程提供的`ListDialog`完成了CompressPanel，下面就是设计最后的JFrame了" />
     <MESSAGE value="为什么layeredPane不起作用?" />
@@ -664,7 +664,8 @@
     <MESSAGE value="继续修正" />
     <MESSAGE value="优化登录界面" />
     <MESSAGE value="优化登录界面和错误提示" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化登录界面和错误提示" />
+    <MESSAGE value="将日志标签修改为清空日志的按钮" />
+    <option name="LAST_COMMIT_MESSAGE" value="将日志标签修改为清空日志的按钮" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -703,22 +704,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="336" key="GridCell.Tab.0.bottom" timestamp="1671868249075">
+    <state width="1995" height="336" key="GridCell.Tab.0.bottom" timestamp="1671871416007">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671868249075" />
-    <state width="1995" height="336" key="GridCell.Tab.0.center" timestamp="1671868249075">
+    <state width="1995" height="336" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671871416007" />
+    <state width="1995" height="336" key="GridCell.Tab.0.center" timestamp="1671871416006">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671868249075" />
-    <state width="1995" height="336" key="GridCell.Tab.0.left" timestamp="1671868249074">
+    <state width="1995" height="336" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671871416006" />
+    <state width="1995" height="336" key="GridCell.Tab.0.left" timestamp="1671871416006">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671868249074" />
-    <state width="1995" height="336" key="GridCell.Tab.0.right" timestamp="1671868249075">
+    <state width="1995" height="336" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671871416006" />
+    <state width="1995" height="336" key="GridCell.Tab.0.right" timestamp="1671871416007">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671868249075" />
+    <state width="1995" height="336" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671871416007" />
     <state width="1995" height="181" key="GridCell.Tab.1.bottom" timestamp="1671867309752">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -743,14 +744,14 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="377" y="26" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1670666922971" />
-    <state width="623" height="498" key="SwitcherDM" timestamp="1671696480683">
+    <state width="623" height="498" key="SwitcherDM" timestamp="1671870744597">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="623" height="498" key="SwitcherDM/0.0.2048.1112@0.0.2048.1112" timestamp="1671696480683" />
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1671795809345">
+    <state width="623" height="498" key="SwitcherDM/0.0.2048.1112@0.0.2048.1112" timestamp="1671870744597" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2" timestamp="1671868888442">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1671795809345" />
+    <state x="517" y="223" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1671868888442" />
     <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1667021837134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -767,19 +768,19 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="193" y="107" width="1672" height="816" key="find.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1671795500952" />
-    <state x="249" y="65" width="1550" height="982" key="new project wizard" timestamp="1667869655383">
+    <state x="249" y="65" width="1550" height="982" key="new project wizard" timestamp="1671869389868">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="249" y="65" width="1550" height="982" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1667869655383" />
+    <state x="249" y="65" width="1550" height="982" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1671869389868" />
     <state x="697" y="253" key="refactoring.ChangeSignatureDialog" timestamp="1667020637541">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="697" y="253" key="refactoring.ChangeSignatureDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1667020637541" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1671794189301">
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup" timestamp="1671870735599">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="378" y="54" width="672" height="707" key="search.everywhere.popup/0.0.1280.760@0.0.1280.760" timestamp="1667537778190" />
-    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1671794189301" />
+    <state x="603" y="77" width="840" height="1034" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1671870735599" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
