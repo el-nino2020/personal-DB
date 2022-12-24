@@ -275,14 +275,7 @@
       <workItem from="1671747583621" duration="11000" />
       <workItem from="1671786381164" duration="4637000" />
       <workItem from="1671834478838" duration="4000" />
-      <workItem from="1671866545034" duration="4888000" />
-    </task>
-    <task id="LOCAL-00033" summary="用于删除生成的.class文件">
-      <created>1665926086997</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1665926086997</updated>
+      <workItem from="1671866545034" duration="5674000" />
     </task>
     <task id="LOCAL-00034" summary="update">
       <created>1665986494799</created>
@@ -620,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671868877651</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="删除了无用的components；增加了打开文件夹功能">
+      <created>1671871471657</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1671871471657</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,7 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="貌似搞定了，但三个功能的交互可能出现bug。也许还要再测试" />
     <MESSAGE value="使用Oracle的教程提供的`ListDialog`完成了CompressPanel，下面就是设计最后的JFrame了" />
     <MESSAGE value="为什么layeredPane不起作用?" />
     <MESSAGE value="功能基本完成了" />
@@ -665,7 +664,8 @@
     <MESSAGE value="优化登录界面" />
     <MESSAGE value="优化登录界面和错误提示" />
     <MESSAGE value="将日志标签修改为清空日志的按钮" />
-    <option name="LAST_COMMIT_MESSAGE" value="将日志标签修改为清空日志的按钮" />
+    <MESSAGE value="删除了无用的components；增加了打开文件夹功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除了无用的components；增加了打开文件夹功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="26" key="#Project_Structure" timestamp="1665139426098">
@@ -704,22 +704,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="752" y="200" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1665139500539" />
-    <state width="1995" height="336" key="GridCell.Tab.0.bottom" timestamp="1671871416007">
+    <state width="1995" height="235" key="GridCell.Tab.0.bottom" timestamp="1671871883778">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671871416007" />
-    <state width="1995" height="336" key="GridCell.Tab.0.center" timestamp="1671871416006">
+    <state width="1995" height="235" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1671871883778" />
+    <state width="1995" height="235" key="GridCell.Tab.0.center" timestamp="1671871883778">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671871416006" />
-    <state width="1995" height="336" key="GridCell.Tab.0.left" timestamp="1671871416006">
+    <state width="1995" height="235" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1671871883778" />
+    <state width="1995" height="235" key="GridCell.Tab.0.left" timestamp="1671871883778">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671871416006" />
-    <state width="1995" height="336" key="GridCell.Tab.0.right" timestamp="1671871416007">
+    <state width="1995" height="235" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1671871883778" />
+    <state width="1995" height="235" key="GridCell.Tab.0.right" timestamp="1671871883778">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1995" height="336" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671871416007" />
+    <state width="1995" height="235" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1671871883778" />
     <state width="1995" height="181" key="GridCell.Tab.1.bottom" timestamp="1671867309752">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

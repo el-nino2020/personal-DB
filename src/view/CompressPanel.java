@@ -30,6 +30,7 @@ public class CompressPanel extends javax.swing.JPanel {
     private final DBService dbService;//这个字段是对MainMenu中的同名字段的引用
     private final FileInfoService fileInfoService;
     private final AccountService accountService;
+    private File lastCreatedArchive = null;
 
 
     public void setDirectoryNames(String[] directoryNames) {
@@ -101,12 +102,15 @@ public class CompressPanel extends javax.swing.JPanel {
             GUIUtils.showInfoMessage(this, "数据库记录成功", "成功");
             System.out.println("生成的压缩包为" + archiveFile.getAbsolutePath());
             GUIUtils.showInfoMessage(this, "『压缩并记录』成功", "总结");
+
+            lastCreatedArchive = archiveFile;
+            openLastArchiveLocationButton.setEnabled(true);
         } else {
             dbService.rollback();
             boolean deleteResult = archiveFile.delete();
             if (deleteResult) {
                 GUIUtils.showInfoMessage(this, "生成的压缩包已被删除", "提示");
-            }else {
+            } else {
                 GUIUtils.showInfoMessage(this, "生成的压缩包删除失败，请手动删除", "提示");
             }
         }
@@ -148,6 +152,7 @@ public class CompressPanel extends javax.swing.JPanel {
         archiveDirectoryTextField = new javax.swing.JTextField();
         finalDecisionButton = new javax.swing.JButton();
         openArchiveDirectoryButton = new javax.swing.JButton();
+        openLastArchiveLocationButton = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setEnabled(false);
@@ -236,72 +241,85 @@ public class CompressPanel extends javax.swing.JPanel {
             }
         });
 
+        openLastArchiveLocationButton.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 21)); // NOI18N
+        openLastArchiveLocationButton.setText("上一次压缩的文件的位置");
+        openLastArchiveLocationButton.setEnabled(false);
+        openLastArchiveLocationButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openLastArchiveLocationButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(433, 433, 433)
-                        .addComponent(titleLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(chooseTableButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(chooseFileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(29, 29, 29)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(chosedFileLabel)
-                                    .addComponent(chosedTableLabel))
-                                .addGap(18, 18, 18)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(chosedFileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(chosedTableTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(archiveDirectoryLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(archiveDirectoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(openArchiveDirectoryButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(noteLabel)
-                                .addGap(27, 27, 27)
-                                .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 921, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(432, 432, 432)
-                        .addComponent(finalDecisionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(433, 433, 433)
+                                                .addComponent(titleLabel))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(16, 16, 16)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                        .addComponent(chooseTableButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(chooseFileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                .addGap(29, 29, 29)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(chosedFileLabel)
+                                                                        .addComponent(chosedTableLabel))
+                                                                .addGap(18, 18, 18)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(chosedFileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(chosedTableTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(archiveDirectoryLabel)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(archiveDirectoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(openArchiveDirectoryButton))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(noteLabel)
+                                                                .addGap(27, 27, 27)
+                                                                .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 921, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(432, 432, 432)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(openLastArchiveLocationButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(finalDecisionButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(titleLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chooseFileButton)
-                    .addComponent(chosedFileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chosedFileLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chooseTableButton)
-                    .addComponent(chosedTableLabel)
-                    .addComponent(chosedTableTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(noteLabel)
-                    .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(archiveDirectoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(archiveDirectoryLabel)
-                    .addComponent(openArchiveDirectoryButton))
-                .addGap(50, 50, 50)
-                .addComponent(finalDecisionButton)
-                .addContainerGap(242, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(titleLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(chooseFileButton)
+                                        .addComponent(chosedFileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(chosedFileLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(chooseTableButton)
+                                        .addComponent(chosedTableLabel)
+                                        .addComponent(chosedTableTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(noteLabel)
+                                        .addComponent(noteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(archiveDirectoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(archiveDirectoryLabel)
+                                        .addComponent(openArchiveDirectoryButton))
+                                .addGap(50, 50, 50)
+                                .addComponent(finalDecisionButton)
+                                .addGap(33, 33, 33)
+                                .addComponent(openLastArchiveLocationButton)
+                                .addContainerGap(173, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -347,6 +365,15 @@ public class CompressPanel extends javax.swing.JPanel {
         GUIUtils.openDirectoryInWindowsExplorer(new File(archiveDirectoryTextField.getText()));
     }//GEN-LAST:event_openArchiveDirectoryButtonActionPerformed
 
+    private void openLastArchiveLocationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openLastArchiveLocationButtonActionPerformed
+        if (lastCreatedArchive.exists()) {
+            GUIUtils.openDirectoryInWindowsExplorer(lastCreatedArchive);
+        } else {
+            GUIUtils.showErrorMessage(this, "无法找到该压缩文件", "失败");
+            openLastArchiveLocationButton.setEnabled(false);
+        }
+    }//GEN-LAST:event_openLastArchiveLocationButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel archiveDirectoryLabel;
@@ -362,6 +389,7 @@ public class CompressPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane noteScrollPane;
     private javax.swing.JTextArea noteTextArea;
     private javax.swing.JButton openArchiveDirectoryButton;
+    private javax.swing.JButton openLastArchiveLocationButton;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 

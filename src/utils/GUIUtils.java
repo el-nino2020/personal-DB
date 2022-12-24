@@ -50,11 +50,17 @@ public class GUIUtils {
     //参考 https://stackoverflow.com/a/15875367
     public static void openDirectoryInWindowsExplorer(File file) {
         Utility.assertion(file.exists(), "文件夹不存在");
-        Utility.assertion(file.isDirectory(), "这不是文件夹");
+
+        String parameters = "";
+        //如果这是个文件，则打开文件夹后该文件应该被选中，
+        //参考: https://stackoverflow.com/a/25726480
+        if (file.isFile()) {
+            parameters = "/select, ";
+        }
 
         Utility.runSystemCommand(null,
                 Param.CMD_PATH, "/c",
-                "explorer " + file.getAbsolutePath());
+                "explorer " + parameters + file.getAbsolutePath());
     }
 
 
